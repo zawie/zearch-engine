@@ -30,4 +30,23 @@ class ScraperTest {
         assertEquals(metaData.get("description"), "test description");
         assertEquals(metaData.get("keywords"), "test, sample, word");
     }
+
+    @Test
+    void parseTextGramsTest() throws IOException {
+        Document doc = Scraper.getDocumentFromFilepath("tst/html/simple.html");
+        Map<String, Integer> grams = Scraper.parseTextGrams(doc);
+        assertNull(grams.get("htm"));
+        assertNotNull(grams.get("tes"));
+    }
+
+    @Test
+    void parseMetaGramTest() throws IOException {
+        Document doc = Scraper.getDocumentFromFilepath("tst/html/simple.html");
+        Map<String, Integer> grams = Scraper.parseMetaGrams(doc);
+        assertNull(grams.get("htm"));
+        assertNull(grams.get("som"));
+        assertNotNull(grams.get("tit"));
+        assertNotNull(grams.get("tes"));
+        assertNotNull(grams.get("wor"));
+    }
 }

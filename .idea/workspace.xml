@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="more implementation &amp; tests">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="parseMetaDataTest">
       <change beforePath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,33 +59,18 @@
       <recent name="zearch.gram" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ScraperTest.parseMetaDataTest">
-    <configuration name="GrammifierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ScraperTest.parseMetaGramTest">
+    <configuration name="ScraperTest.parse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spider" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.gram.*" />
+          <option name="PATTERN" value="zearch.spider.scraper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="zearch.gram" />
-      <option name="MAIN_CLASS_NAME" value="zearch.gram.GrammifierTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GrammifierTest.grammify" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spider" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="zearch.gram.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="zearch.gram" />
-      <option name="MAIN_CLASS_NAME" value="zearch.gram.GrammifierTest" />
-      <option name="METHOD_NAME" value="grammify" />
+      <option name="PACKAGE_NAME" value="zearch.spider.scraper" />
+      <option name="MAIN_CLASS_NAME" value="zearch.spider.scraper.ScraperTest" />
+      <option name="METHOD_NAME" value="parse" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,12 +108,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ScraperTest.parseMetaGramTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.spider.scraper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zearch.spider.scraper" />
+      <option name="MAIN_CLASS_NAME" value="zearch.spider.scraper.ScraperTest" />
+      <option name="METHOD_NAME" value="parseMetaGramTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScraperTest.parseTextGramsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.spider.scraper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zearch.spider.scraper" />
+      <option name="MAIN_CLASS_NAME" value="zearch.spider.scraper.ScraperTest" />
+      <option name="METHOD_NAME" value="parseTextGramsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ScraperTest.parseMetaGramTest" />
+        <item itemvalue="JUnit.ScraperTest.parseTextGramsTest" />
+        <item itemvalue="JUnit.ScraperTest.parse" />
         <item itemvalue="JUnit.ScraperTest.parseMetaDataTest" />
         <item itemvalue="JUnit.ScraperTest.parseLinksTest" />
-        <item itemvalue="JUnit.GrammifierTest.grammify" />
-        <item itemvalue="JUnit.GrammifierTest" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671584809206</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="parseMetaDataTest">
+      <created>1671584984005</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671584984005</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,6 +213,7 @@
     <MESSAGE value="BoundedQueue" />
     <MESSAGE value="crawler" />
     <MESSAGE value="more implementation &amp; tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="more implementation &amp; tests" />
+    <MESSAGE value="parseMetaDataTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="parseMetaDataTest" />
   </component>
 </project>
