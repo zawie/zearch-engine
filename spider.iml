@@ -26,5 +26,8 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="h2-2.1.214" level="project" />
+    <orderEntry type="library" name="derby" level="project" />
+    <orderEntry type="library" name="derbyshared" level="project" />
+    <orderEntry type="library" name="derbytools" level="project" />
   </component>
 </module>

@@ -1,7 +1,6 @@
 package zearch.index;
 
 import zearch.gram.GramData;
-import zearch.gram.Grammifier;
 
 import java.sql.*;
 import java.util.*;
@@ -10,22 +9,23 @@ public class IndexDatabase {
     private  Connection connection;
 
     private static Collection<String> indexGrams = GramData.SINGLETON.getGrams();
-    public IndexDatabase() throws SQLException {
-        // NOTE: This is an embedded database, so the password need not be secret.
-        String jdbcURL = "jdbc:h2:~/Developer/db/zearch-index-dev"; //TODO: Abstract out
+    public IndexDatabase() throws SQLException, Exception {
+        Class.forName("org.apache.derby.jdbc.EmbeddedDriver").newInstance();
+
+        String jdbcURL = "jdbc:derby:~/Developer/db/zearch-index-db;create=true"; //TODO: Abstract out
 
         this.connection = DriverManager.getConnection(jdbcURL, "admin", "password");
 
-        System.out.println("Connected to H2 embedded database.");
+        System.out.println("Connected to Derby embedded database.");
 
         Statement statement = connection.createStatement();
 
-        StringBuilder gramTableColumns = new StringBuilder("`link` VARCHAR(2048) PRIMARY KEY");
+        StringBuilder gramTableColumns = new StringBuilder("\"link\" VARCHAR(2048) PRIMARY KEY");
         gramTableColumns.append(", Timestamp DATETIME NOT NULL DEFAULT(CURRENT_TIMESTAMP)");
         for (String gram: indexGrams) {
-            gramTableColumns.append(", `"+gram+"` TINYINT"); //UNSIGNED SPARSE
+            gramTableColumns.append(", \""+gram+"\" TINYINT"); //UNSIGNED SPARSE
         }
-        statement.execute("CREATE TABLE IF NOT EXISTS text_gram_table ("+gramTableColumns+");");
+        statement.execute("CREATE TABLE text_gram_table ( "+gramTableColumns+" );");
         connection.commit(); // now the database physically exists
     }
 

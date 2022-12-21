@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="combined score">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="fix normalization">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/derby.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/derbyshared.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/derby.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/derbyshared.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/derbytools.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/gram/Grammifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/gram/Grammifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/trigrams.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/trigrams.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spider.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tst/zearch/index/IndexDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/index/IndexDatabaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +66,9 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -82,18 +90,18 @@
       <recent name="zearch.spider.scraper" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ScraperTest">
-    <configuration name="GrammifierTest.computeGramScoreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.IndexDatabaseTest.connectionTest">
+    <configuration name="IndexDatabaseTest.connectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spider" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.gram.*" />
+          <option name="PATTERN" value="zearch.index.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="zearch.gram" />
-      <option name="MAIN_CLASS_NAME" value="zearch.gram.GrammifierTest" />
-      <option name="METHOD_NAME" value="computeGramScoreTest" />
+      <option name="PACKAGE_NAME" value="zearch.index" />
+      <option name="MAIN_CLASS_NAME" value="zearch.index.IndexDatabaseTest" />
+      <option name="METHOD_NAME" value="connectionTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IndexDatabaseTest.connectionTest" />
         <item itemvalue="JUnit.ScraperTest" />
         <item itemvalue="JUnit.ScraperTest.computeDocumentScoreTest3" />
         <item itemvalue="JUnit.ScraperTest.computeDocumentScoreTest4" />
         <item itemvalue="JUnit.ScraperTest.computeDocumentScoreTest2" />
-        <item itemvalue="JUnit.GrammifierTest.computeGramScoreTest" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +189,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671563140136</updated>
       <workItem from="1671609120113" duration="77000" />
-      <workItem from="1671609402847" duration="18238000" />
+      <workItem from="1671609402847" duration="20779000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -288,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671659095215</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix normalization">
+      <created>1671660145251</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1671660145251</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +336,7 @@
     <MESSAGE value="gramToScore 2.0" />
     <MESSAGE value="1 byte score" />
     <MESSAGE value="combined score" />
-    <option name="LAST_COMMIT_MESSAGE" value="combined score" />
+    <MESSAGE value="fix normalization" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix normalization" />
   </component>
 </project>

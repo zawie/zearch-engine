@@ -10,12 +10,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class IndexDatabaseTest {
     @Test
-    void connectionTest() throws SQLException {
+    void connectionTest() throws SQLException, Exception {
         new IndexDatabase();
     }
 
     @Test
-    void readWriteTest() throws SQLException {
+    void readWriteTest() throws SQLException, Exception {
         IndexDatabase DB = new IndexDatabase();
         String url = "dbtest.zawie.io"; // fake url
         String content = "hello word the";
