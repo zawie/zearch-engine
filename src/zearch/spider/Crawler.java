@@ -3,20 +3,20 @@ package zearch.spider;
 import org.jsoup.nodes.Document;
 import zearch.spider.scraper.Scraper;
 
-import java.util.AbstractQueue;
+import java.util.Queue;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
 public class Crawler extends Thread {
 
-    private AbstractQueue<String> urlQueue;
+    private Queue<String> urlQueue;
 
-    public Crawler(AbstractQueue<String> urlQueue) {
+    public Crawler(Queue<String> urlQueue) {
         this.urlQueue = urlQueue;
     }
 
     public void run() {
-        Long id = Thread.currentThread().threadId();
+        Long id = Thread.currentThread().getId();
         System.out.println(
             "Crawler " + id + " is running.");
         while (true) {

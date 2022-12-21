@@ -5,30 +5,38 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import zearch.gram.Grammifier;
-import zearch.spider.urlqueue.IQueue;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Queue;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Scraper {
-
-    private IQueue<String> urlQueue;
-
-    public Scraper(IQueue<String> urlQueue) {
-        this.urlQueue = urlQueue;
+    public static Document getDocumentFromURL(String url) throws IOException {
+        return Jsoup.connect(url).get();
     }
 
-    public void scrapeUrl(String url) throws IOException {
-        parse(url, Jsoup.connect(url).get());
+    public static Document getDocumentFromFilepath(String filepath) throws IOException {
+        return Jsoup.parse(new File(filepath));
+    }
+    public static void parseLinks(String path, Document doc, Queue<String> urlQueue) {
+        String root = path;
+        if (root.endsWith("/"))
+            root = path.substring(0, path.length() - 1);
+        Elements linkTags = doc.getElementsByTag("a");
+        for (Element linkTag : linkTags) {
+            String href = linkTag.attr("href");
+            if (href.startsWith("#") || href.startsWith("."))
+                urlQueue.add(root + href.substring(1));
+            else if (href.startsWith("/"))
+                urlQueue.add(root+href);
+            else
+                urlQueue.add(href);
+        }
     }
 
-    public void scrapeFile(String filepath) throws IOException {
-        parse(filepath, Jsoup.parse(new File(filepath)));
-    }
-
-    private void parse(String path, Document doc) {
+    public static Map<String, String> parseMetaData(Document doc) {
         String title = doc.title();
         Elements metaTags = doc.getElementsByTag("meta");
 
@@ -41,20 +49,25 @@ public class Scraper {
             metaData.put(name,content);
             metaText.append(content).append(" ");
         }
-        //TODO: Record meta data somewhere
 
-        Elements linkTags = doc.getElementsByTag("a");
-        for (Element linkTag : linkTags) {
-            String href = linkTag.attr("href");
-            if (href.matches("(\\.|/|.)(.*)")) {
-                urlQueue.push(href.replaceFirst("(\\.|/|.)", path));
-            } else {
-                urlQueue.push(href);
-            }
+        return metaData;
+    }
+
+    public static Map<String,Integer> parseMetaGrams(Document doc) {
+        String title = doc.title();
+        Elements metaTags = doc.getElementsByTag("meta");
+
+        StringBuilder metaText = new StringBuilder(title);
+
+        for (Element metaTag : metaTags) {
+            String content = metaTag.attr("content");
+            metaText.append(content).append(" ");
         }
 
-        Map<String, Integer> textGrams = Grammifier.grammify(doc.text());
-        Map<String, Integer> metaGrams = Grammifier.grammify(metaText.toString());
-        //TODO: Record gram count somewhere
+        return Grammifier.grammify(metaText.toString());
+    }
+
+    public static Map<String,Integer> parseTextGrams(Document doc) {
+        return Grammifier.grammify(doc.text());
     }
 }
