@@ -53,7 +53,7 @@ public class Scraper {
         return metaData;
     }
 
-    public static Map<String,Integer> parseMetaGrams(Document doc) {
+    public static Map<String,Short> parseMetaGrams(Document doc) {
         String title = doc.title();
         Elements metaTags = doc.getElementsByTag("meta");
 
@@ -67,7 +67,7 @@ public class Scraper {
         return Grammifier.grammify(metaText.toString());
     }
 
-    public static Map<String,Integer> parseTextGrams(Document doc) {
+    public static Map<String,Short> parseTextGrams(Document doc) {
         return Grammifier.grammify(doc.text());
     }
 }

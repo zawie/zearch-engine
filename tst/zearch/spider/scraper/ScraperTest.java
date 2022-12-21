@@ -34,7 +34,7 @@ class ScraperTest {
     @Test
     void parseTextGramsTest() throws IOException {
         Document doc = Scraper.getDocumentFromFilepath("tst/html/simple.html");
-        Map<String, Integer> grams = Scraper.parseTextGrams(doc);
+        Map<String, Short> grams = Scraper.parseTextGrams(doc);
         assertNull(grams.get("htm"));
         assertNotNull(grams.get("tes"));
     }
@@ -42,7 +42,7 @@ class ScraperTest {
     @Test
     void parseMetaGramTest() throws IOException {
         Document doc = Scraper.getDocumentFromFilepath("tst/html/simple.html");
-        Map<String, Integer> grams = Scraper.parseMetaGrams(doc);
+        Map<String, Short> grams = Scraper.parseMetaGrams(doc);
         assertNull(grams.get("htm"));
         assertNull(grams.get("som"));
         assertNotNull(grams.get("tit"));
