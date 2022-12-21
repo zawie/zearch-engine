@@ -38,7 +38,7 @@ public class Grammifier {
         for (String gram : gramToCount.keySet()) {
             if (!indexGrams.contains(gram))
                 continue;
-            Integer score = Math.max(Math.min((int) (255*gramToTemp.get(gram)/totalCount) - 128, 128), -127);
+            Integer score = Math.max(Math.min((int) (255*gramToTemp.get(gram)/totalCount) - 128, 127), -128);
             gramToScore.put(gram, score);
         }
 

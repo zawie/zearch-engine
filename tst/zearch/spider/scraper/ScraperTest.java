@@ -50,4 +50,15 @@ class ScraperTest {
         }
     }
 
+    @Test
+    void computeDocumentScoreTest3() {
+        try {
+            Document doc = Scraper.getDocumentFromFilepath("tst/html/rome.html");
+            Map<String, Integer> gramScore = Scraper.computeDocumentScore(doc);
+            System.out.println(gramScore);
+        } catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
 }

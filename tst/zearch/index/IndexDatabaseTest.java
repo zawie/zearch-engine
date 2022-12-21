@@ -18,9 +18,10 @@ class IndexDatabaseTest {
     void readWriteTest() throws SQLException {
         IndexDatabase DB = new IndexDatabase();
         String url = "dbtest.zawie.io"; // fake url
-        String content = "sodifndsoifnsdoinfsdoibnf";
+        String content = "hello word the";
         Map<String, Integer> gramScoreWrote = Grammifier.computeGramScore(content);
 
+        System.out.println(gramScoreWrote);
         System.out.println("Writing");
         DB.write(url, gramScoreWrote);
 
