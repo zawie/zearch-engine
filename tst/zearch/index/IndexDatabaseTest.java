@@ -19,13 +19,13 @@ class IndexDatabaseTest {
         IndexDatabase DB = new IndexDatabase();
         String url = "dbtest.zawie.io"; // fake url
         String content = "sodifndsoifnsdoinfsdoibnf";
-        Map<String,Short> gramToCountWrote = Grammifier.grammify(content);
+        Map<String, Integer> gramScoreWrote = Grammifier.computeGramScore(content);
 
         System.out.println("Writing");
-        DB.write(url, gramToCountWrote);
+        DB.write(url, gramScoreWrote);
 
         System.out.println("Reading");
-        Map<String,Short> gramToCountRead = DB.read(url);
-        assertEquals(gramToCountWrote, gramToCountRead);
+        Map<String,Integer> gramScoreRead = DB.read(url);
+        assertEquals(gramScoreWrote, gramScoreRead);
     }
 }

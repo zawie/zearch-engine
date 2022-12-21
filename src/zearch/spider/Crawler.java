@@ -46,7 +46,6 @@ public class Crawler extends Thread {
         String url = urlQueue.remove();
         Document doc = Scraper.getDocumentFromURL(url);
         Scraper.parseLinks(url, doc, urlQueue);
-        Map<String, Short> textGrams = Scraper.parseTextGrams(doc);
-        Map<String, Short> metaGrams = Scraper.parseMetaGrams(doc);
+        Map<String, Integer> gramScore = Scraper.parseGramScore(doc);
     }
 }

@@ -13,25 +13,23 @@ public class IndexDatabase {
     public IndexDatabase() throws SQLException {
         // NOTE: This is an embedded database, so the password need not be secret.
         String jdbcURL = "jdbc:h2:~/Developer/db/zearch-index-dev"; //TODO: Abstract out
-        String username = "admin";
-        String password = "password";
 
-        this.connection = DriverManager.getConnection(jdbcURL, username, password);
+        this.connection = DriverManager.getConnection(jdbcURL, "admin", "password");
 
         System.out.println("Connected to H2 embedded database.");
 
         Statement statement = connection.createStatement();
 
         StringBuilder gramTableColumns = new StringBuilder("`link` VARCHAR(2048) PRIMARY KEY");
+        gramTableColumns.append(", Timestamp DATETIME NOT NULL DEFAULT(CURRENT_TIMESTAMP)");
         for (String gram: indexGrams) {
             gramTableColumns.append(", `"+gram+"` TINYINT"); //UNSIGNED SPARSE
         }
-        statement.execute("CREATE TABLE text_gram_table ("+gramTableColumns+");");
+        statement.execute("CREATE TABLE IF NOT EXISTS text_gram_table ("+gramTableColumns+");");
         connection.commit(); // now the database physically exists
-
     }
 
-    public void write(String url, Map<String, Short> gramToCount) throws SQLException {
+    public void write(String url, Map<String, Integer> gramToCount) throws SQLException {
         Statement statement = connection.createStatement();
 
         List<String> columns = new LinkedList<>();
@@ -40,28 +38,32 @@ public class IndexDatabase {
         columns.add(("`link`"));
         values.add("'"+url+"'");
 
-        for (Map.Entry<String,Short> entry : gramToCount.entrySet()) {
+        columns.add(("`Timestamp`"));
+        values.add("CURRENT_TIMESTAMP");
+
+        for (Map.Entry<String,Integer> entry : gramToCount.entrySet()) {
             if (indexGrams.contains(entry.getKey())) {
                 columns.add("`" + entry.getKey() + "`");
                 values.add(entry.getValue().toString());
             }
         }
 
+        statement.execute("DELETE FROM text_gram_table WHERE `link` = '"+url+"';");
         statement.execute("INSERT INTO text_gram_table " +
                 "(" +String.join(", ", columns)+ ")" +
                 " VALUES ("+ String.join(", ", values)+");");
     }
 
-    public Map<String, Short> read(String url) throws SQLException {
+    public Map<String, Integer> read(String url) throws SQLException {
         Statement statement = connection.createStatement();
 
         ResultSet rs = statement.executeQuery("SELECT * FROM text_gram_table WHERE link = '"+url+"';");
 
         rs.next();
-        Map<String, Short> gramToCount = new HashMap<>();
+        Map<String, Integer> gramToCount = new HashMap<>();
 
         for (String gram: indexGrams) {
-            Short v = rs.getShort(gram);
+            int v = rs.getInt(gram);
             if (v > 0)
                 gramToCount.put(gram, v);
         }

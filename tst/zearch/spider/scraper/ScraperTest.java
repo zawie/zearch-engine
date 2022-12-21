@@ -32,21 +32,11 @@ class ScraperTest {
     }
 
     @Test
-    void parseTextGramsTest() throws IOException {
+    void parseGramScoreTest() throws IOException {
         Document doc = Scraper.getDocumentFromFilepath("tst/html/simple.html");
-        Map<String, Short> grams = Scraper.parseTextGrams(doc);
+        Map<String, Integer> grams = Scraper.parseGramScore(doc);
         assertNull(grams.get("htm"));
         assertNotNull(grams.get("tes"));
     }
 
-    @Test
-    void parseMetaGramTest() throws IOException {
-        Document doc = Scraper.getDocumentFromFilepath("tst/html/simple.html");
-        Map<String, Short> grams = Scraper.parseMetaGrams(doc);
-        assertNull(grams.get("htm"));
-        assertNull(grams.get("som"));
-        assertNotNull(grams.get("tit"));
-        assertNotNull(grams.get("tes"));
-        assertNotNull(grams.get("wor"));
-    }
 }
