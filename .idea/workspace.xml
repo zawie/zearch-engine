@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="gramToScore 2.0">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="1 byte score">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/gram/Grammifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/gram/Grammifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,22 +83,7 @@
       <recent name="zearch.spider.scraper" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GrammifierTest.computeGramScoreTest">
-    <configuration name="GramDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spider" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="zearch.gram.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="zearch.gram" />
-      <option name="MAIN_CLASS_NAME" value="zearch.gram.GramDataTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ScraperTest.computeDocumentScoreTest2">
     <configuration name="GrammifierTest.computeGramScoreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spider" />
       <extension name="coverage">
@@ -127,7 +116,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScraperTest.parseGramScoreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ScraperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spider" />
       <extension name="coverage">
         <pattern>
@@ -137,13 +126,28 @@
       </extension>
       <option name="PACKAGE_NAME" value="zearch.spider.scraper" />
       <option name="MAIN_CLASS_NAME" value="zearch.spider.scraper.ScraperTest" />
-      <option name="METHOD_NAME" value="parseGramScoreTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScraperTest.computeDocumentScoreTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.spider.scraper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zearch.spider.scraper" />
+      <option name="MAIN_CLASS_NAME" value="zearch.spider.scraper.ScraperTest" />
+      <option name="METHOD_NAME" value="computeDocumentScoreTest2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScraperTest.parseTextGramsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ScraperTest.parseGramScoreTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spider" />
       <extension name="coverage">
         <pattern>
@@ -153,7 +157,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="zearch.spider.scraper" />
       <option name="MAIN_CLASS_NAME" value="zearch.spider.scraper.ScraperTest" />
-      <option name="METHOD_NAME" value="parseTextGramsTest" />
+      <option name="METHOD_NAME" value="parseGramScoreTest2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ScraperTest.computeDocumentScoreTest2" />
+        <item itemvalue="JUnit.ScraperTest" />
         <item itemvalue="JUnit.GrammifierTest.computeGramScoreTest" />
+        <item itemvalue="JUnit.ScraperTest.parseGramScoreTest2" />
         <item itemvalue="JUnit.IndexDatabaseTest.readWriteTest" />
-        <item itemvalue="JUnit.ScraperTest.parseGramScoreTest" />
-        <item itemvalue="JUnit.ScraperTest.parseTextGramsTest" />
-        <item itemvalue="JUnit.GramDataTest" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +182,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671563140136</updated>
       <workItem from="1671609120113" duration="77000" />
-      <workItem from="1671609402847" duration="15698000" />
+      <workItem from="1671609402847" duration="17513000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -271,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671656609064</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="1 byte score">
+      <created>1671657292166</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1671657292166</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,6 +313,7 @@
     <MESSAGE value="trigrams" />
     <MESSAGE value="initial gram score" />
     <MESSAGE value="gramToScore 2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="gramToScore 2.0" />
+    <MESSAGE value="1 byte score" />
+    <option name="LAST_COMMIT_MESSAGE" value="1 byte score" />
   </component>
 </project>

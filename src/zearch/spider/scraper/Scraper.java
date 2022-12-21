@@ -53,7 +53,29 @@ public class Scraper {
         return metaData;
     }
 
-    public static Map<String,Integer> parseGramScore(Document doc) {
-        return Grammifier.computeGramScore(doc.text());
+    public static Map<String,Integer> computeDocumentScore(Document doc) {
+        //Text Gram Score
+        Map<String, Integer> textGramScore = Grammifier.computeGramScore(doc.text());
+
+        // Meta Gram Score
+        StringBuilder metaText = new StringBuilder();
+        Map<String, String> metaData = parseMetaData(doc);
+        metaText.append(metaData.getOrDefault("title", "")).append(" ");
+        metaText.append(metaData.getOrDefault("description", "")).append(" ");
+        metaText.append(metaData.getOrDefault("keywords", "")).append(" ");
+
+        Map<String, Integer> metaGramScore = Grammifier.computeGramScore(metaText.toString());
+
+        //Average meta and text gram score.
+        Map<String, Integer> gramScore = new HashMap<>();
+        for (String gram : metaGramScore.keySet()) {
+            gramScore.put(gram, metaGramScore.get(gram));
+        }
+        for (String gram : textGramScore.keySet()) {
+            Integer score = gramScore.getOrDefault(gram, 0) + (textGramScore.get(gram));
+            gramScore.put(gram, score/2);
+        }
+
+        return gramScore;
     }
 }
