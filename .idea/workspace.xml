@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="jsoup">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/h2_2_1_214.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tst/zearch/index/IndexDatabaseTest.java" afterDir="false" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="database start">
+      <change afterPath="$PROJECT_DIR$/src/zearch/gram/GramData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tst/zearch/gram/GramDataTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spider.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/gram/Grammifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/gram/Grammifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/zearch/index/IndexDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/index/IndexDatabaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,16 +78,39 @@
       <recent name="$PROJECT_DIR$/lib" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="zearch.gram" />
       <recent name="zearch.index" />
       <recent name="zearch.spider.scraper" />
-      <recent name="zearch.gram" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.IndexDatabaseTest.readWriteTest">
-    <configuration name="All in spider" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GramDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spider" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.gram.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zearch.gram" />
+      <option name="MAIN_CLASS_NAME" value="zearch.gram.GramDataTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GramDataTest.GramDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.gram.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zearch.gram" />
+      <option name="MAIN_CLASS_NAME" value="zearch.gram.GramDataTest" />
+      <option name="METHOD_NAME" value="GramDataTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,27 +162,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="zearch in spider" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spider" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="zearch.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="zearch" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.IndexDatabaseTest.readWriteTest" />
+        <item itemvalue="JUnit.GramDataTest" />
+        <item itemvalue="JUnit.GramDataTest.GramDataTest" />
         <item itemvalue="JUnit.IndexDatabaseTest.connectionTest" />
         <item itemvalue="JUnit.IndexDatabaseTest" />
-        <item itemvalue="JUnit.All in spider" />
-        <item itemvalue="JUnit.zearch in spider" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +181,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671563140136</updated>
       <workItem from="1671609120113" duration="77000" />
-      <workItem from="1671609402847" duration="5097000" />
+      <workItem from="1671609402847" duration="10827000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -224,7 +232,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671586705845</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="database start">
+      <created>1671614614420</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671614614420</updated>
+    </task>
+    <task id="LOCAL-00009" summary="database start">
+      <created>1671644205305</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671644205305</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +272,7 @@
     <MESSAGE value="scraper tests" />
     <MESSAGE value="shortify" />
     <MESSAGE value="jsoup" />
-    <option name="LAST_COMMIT_MESSAGE" value="jsoup" />
+    <MESSAGE value="database start" />
+    <option name="LAST_COMMIT_MESSAGE" value="database start" />
   </component>
 </project>

@@ -21,9 +21,11 @@ class IndexDatabaseTest {
         String content = "sodifndsoifnsdoinfsdoibnf";
         Map<String,Short> gramToCountWrote = Grammifier.grammify(content);
 
+        System.out.println("Writing");
         DB.write(url, gramToCountWrote);
-        Map<String,Short> gramToCountRead = DB.read(url);
 
+        System.out.println("Reading");
+        Map<String,Short> gramToCountRead = DB.read(url);
         assertEquals(gramToCountWrote, gramToCountRead);
     }
 }

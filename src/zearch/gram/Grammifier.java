@@ -23,33 +23,4 @@ public class Grammifier {
         }
         return gramToCount;
     }
-
-    public static Iterator<String> grams() {
-        return new Iterator<>() {
-
-            char[] intToChar = "abcdefghijklmnopqrstuvwxyz 0123456789".toCharArray();
-            int i = 0;
-            int j = 0;
-            int k = 0;
-            @Override
-            public boolean hasNext() {
-                return k < intToChar.length;
-            }
-
-            @Override
-            public String next() {
-                String gram = ""+intToChar[i]+intToChar[j]+intToChar[k];
-                i++;
-                if (i == intToChar.length) {
-                    i = 0;
-                    j++;
-                    if (j == intToChar.length) {
-                        j = 0;
-                        k++;
-                    }
-                }
-                return gram;
-            }
-        };
-    }
 }

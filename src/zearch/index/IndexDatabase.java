@@ -1,5 +1,6 @@
 package zearch.index;
 
+import zearch.gram.GramData;
 import zearch.gram.Grammifier;
 
 import java.sql.*;
@@ -7,6 +8,8 @@ import java.util.*;
 
 public class IndexDatabase {
     private  Connection connection;
+
+    private static Collection<String> indexGrams = GramData.SINGLETON.getGrams();
     public IndexDatabase() throws SQLException {
         // NOTE: This is an embedded database, so the password need not be secret.
         String jdbcURL = "jdbc:h2:~/Developer/db/zearch-index-dev"; //TODO: Abstract out
@@ -19,23 +22,13 @@ public class IndexDatabase {
 
         Statement statement = connection.createStatement();
 
-        try {
-            // Create columns;
-            StringBuilder gramTableColumns = new StringBuilder("URL VARCHAR(2048) PRIMARY KEY");
-            Iterator<String> gramIterator = Grammifier.grams();
-            while (gramIterator.hasNext()) {
-               String gram = gramIterator.next();
-               gramTableColumns.append(",\n["+gram+"] SMALLINT UNSIGNED SPARSE");
-            }
-
-//            statement.execute("CREATE DATABASE IndexDB;");
-            statement.execute("CREATE TABLE text_gram_table ("+gramTableColumns+");");
-            connection.commit(); // now the database physically exists
-        } catch (SQLException exception) {
-//            System.out.println(exception.toString());
-            // we are here if database exists
-//            statement.execute("OPEN DATABASE IndexDB");
+        StringBuilder gramTableColumns = new StringBuilder("`link` VARCHAR(2048) PRIMARY KEY");
+        for (String gram: indexGrams) {
+            gramTableColumns.append(", `"+gram+"` TINYINT"); //UNSIGNED SPARSE
         }
+        statement.execute("CREATE TABLE text_gram_table ("+gramTableColumns+");");
+        connection.commit(); // now the database physically exists
+
     }
 
     public void write(String url, Map<String, Short> gramToCount) throws SQLException {
@@ -44,28 +37,30 @@ public class IndexDatabase {
         List<String> columns = new LinkedList<>();
         List<String> values = new LinkedList<>();
 
-        columns.add(("[URL]"));
-        values.add('"'+url+'"');
+        columns.add(("`link`"));
+        values.add("'"+url+"'");
 
         for (Map.Entry<String,Short> entry : gramToCount.entrySet()) {
-            columns.add("["+entry.getKey()+"]");
-            values.add(entry.getValue().toString());
+            if (indexGrams.contains(entry.getKey())) {
+                columns.add("`" + entry.getKey() + "`");
+                values.add(entry.getValue().toString());
+            }
         }
 
         statement.execute("INSERT INTO text_gram_table " +
                 "(" +String.join(", ", columns)+ ")" +
-                "VALUES ("+ String.join(", ", values)+");");
+                " VALUES ("+ String.join(", ", values)+");");
     }
 
     public Map<String, Short> read(String url) throws SQLException {
         Statement statement = connection.createStatement();
 
-        ResultSet rs = statement.executeQuery("SELECT * FROM text_gram_table WHERE URL = \""+url+"\";");
+        ResultSet rs = statement.executeQuery("SELECT * FROM text_gram_table WHERE link = '"+url+"';");
 
+        rs.next();
         Map<String, Short> gramToCount = new HashMap<>();
-        Iterator<String> gramIterator = Grammifier.grams();
-        while (gramIterator.hasNext()) {
-            String gram = gramIterator.next();
+
+        for (String gram: indexGrams) {
             Short v = rs.getShort(gram);
             if (v > 0)
                 gramToCount.put(gram, v);
@@ -73,4 +68,5 @@ public class IndexDatabase {
 
         return gramToCount;
     }
+
 }
