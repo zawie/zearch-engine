@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="trigrams">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="initial gram score">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/gram/Grammifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/gram/Grammifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/gram/GrammifierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/gram/GrammifierTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/index/IndexDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/index/IndexDatabaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +178,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671563140136</updated>
       <workItem from="1671609120113" duration="77000" />
-      <workItem from="1671609402847" duration="14006000" />
+      <workItem from="1671609402847" duration="15084000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -263,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671651972883</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="initial gram score">
+      <created>1671655750879</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1671655750879</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,6 +293,7 @@
     <MESSAGE value="database start" />
     <MESSAGE value="first working database" />
     <MESSAGE value="trigrams" />
-    <option name="LAST_COMMIT_MESSAGE" value="trigrams" />
+    <MESSAGE value="initial gram score" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial gram score" />
   </component>
 </project>

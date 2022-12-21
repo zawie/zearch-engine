@@ -26,19 +26,23 @@ public class Grammifier {
         for (String gram : gramToCount.keySet()) {
             if (!indexGrams.contains(gram))
                 continue;
-            Integer count = gramToCount.get(gram);
-            if (count <= 0)
+            Integer countInDocument = gramToCount.get(gram);
+            if (countInDocument <= 0)
                 continue;
-            totalCount += count;
+            totalCount += countInDocument;
 
-            gramToScoreDouble.put(gram, Math.log(GramData.SINGLETON.getCount(gram)) - Math.log(count));
+            Double countInEnglish = (double) GramData.SINGLETON.getCount(gram);
+            Double numberOfTris =  (double) GramData.SINGLETON.getCount("the");
+
+            // countInDocument / (countInEnglish/numberOfTris)
+            gramToScoreDouble.put(gram, ((double) countInDocument)*numberOfTris/countInEnglish);
         }
 
         Map<String, Integer> gramToScore= new HashMap<>();
         for (String gram : gramToCount.keySet()) {
             if (!indexGrams.contains(gram))
                 continue;
-            gramToScore.put(gram, (int) ((gramToScoreDouble.get(gram) + Math.log(totalCount))/Math.log(2)));
+            gramToScore.put(gram, (int) Math.log(gramToScoreDouble.get(gram) / totalCount));
         }
 
         return gramToScore;
