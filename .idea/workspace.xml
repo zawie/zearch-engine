@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="initial gram score">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="gramToScore 2.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/gram/Grammifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/gram/Grammifier.java" afterDir="false" />
     </list>
@@ -178,7 +178,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671563140136</updated>
       <workItem from="1671609120113" duration="77000" />
-      <workItem from="1671609402847" duration="15084000" />
+      <workItem from="1671609402847" duration="15698000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -264,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671655750879</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="gramToScore 2.0">
+      <created>1671656609064</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1671656609064</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +301,7 @@
     <MESSAGE value="first working database" />
     <MESSAGE value="trigrams" />
     <MESSAGE value="initial gram score" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial gram score" />
+    <MESSAGE value="gramToScore 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="gramToScore 2.0" />
   </component>
 </project>

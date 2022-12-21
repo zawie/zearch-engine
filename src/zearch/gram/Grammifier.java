@@ -14,14 +14,10 @@ public class Grammifier {
     private static Collection<String> indexGrams = GramData.SINGLETON.getGrams();
 
 
-    /*
-        Score("abc") = log(num tries in doc) + log(abc's in english) - log(abc's in doc)
-        Note: Smaller score is "better".
-     */
     public static Map<String, Integer> computeGramScore(String str) {
         Map<String, Integer> gramToCount = grammify(str);
 
-        Map<String, Double> gramToScoreDouble = new HashMap<>();
+        Map<String, Double> gramToTemp = new HashMap<>();
         int totalCount = 0;
         for (String gram : gramToCount.keySet()) {
             if (!indexGrams.contains(gram))
@@ -35,14 +31,14 @@ public class Grammifier {
             Double numberOfTris =  (double) GramData.SINGLETON.getCount("the");
 
             // countInDocument / (countInEnglish/numberOfTris)
-            gramToScoreDouble.put(gram, ((double) countInDocument)*numberOfTris/countInEnglish);
+            gramToTemp.put(gram, ((double) countInDocument)*numberOfTris/countInEnglish);
         }
 
         Map<String, Integer> gramToScore= new HashMap<>();
         for (String gram : gramToCount.keySet()) {
             if (!indexGrams.contains(gram))
                 continue;
-            gramToScore.put(gram, (int) Math.log(gramToScoreDouble.get(gram) / totalCount));
+            gramToScore.put(gram, 0xFF & (int) (256*gramToTemp.get(gram)/totalCount));
         }
 
         return gramToScore;
