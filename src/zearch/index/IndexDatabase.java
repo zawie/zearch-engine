@@ -7,14 +7,23 @@ import java.sql.*;
 import java.util.*;
 
 public class IndexDatabase {
-    private  Connection connection;
 
     private static Collection<String> indexGrams = GramData.SINGLETON.getGrams();
-    public IndexDatabase() throws SQLException {
-        // NOTE: This is an embedded database, so the password need not be secret.
-        String jdbcURL = "jdbc:h2:~/Developer/db/zearch-index-dev"; //TODO: Abstract out
+    private static Connection connection;
 
-        this.connection = DriverManager.getConnection(jdbcURL, "admin", "password");
+    public static void close() throws SQLException {
+        connection.close();
+    }
+
+    public static void connect(String dbFilepath) throws SQLException {
+        // NOTE: This is an embedded database, so the password need not be secret.
+        connect(dbFilepath, "admin", "password");
+    }
+
+    public static void connect(String dbFilepath, String dbUser, String dbPassword) throws SQLException {
+        String jdbcURL = "jdbc:h2:"+dbFilepath;
+
+        connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 
         System.out.println("Connected to H2 embedded database.");
 
@@ -28,8 +37,7 @@ public class IndexDatabase {
         statement.execute("CREATE TABLE IF NOT EXISTS text_gram_table ("+gramTableColumns+");");
         connection.commit(); // now the database physically exists
     }
-
-    public void write(String url, Map<String, Integer> gramToCount) throws SQLException {
+    public static void write(String url, Map<String, Integer> gramToCount) throws SQLException {
         Statement statement = connection.createStatement();
 
         List<String> columns = new LinkedList<>();
@@ -54,7 +62,7 @@ public class IndexDatabase {
                 " VALUES ("+ String.join(", ", values)+");");
     }
 
-    public Map<String, Integer> read(String url) throws SQLException {
+    public static Map<String, Integer> read(String url) throws SQLException {
         Statement statement = connection.createStatement();
 
         ResultSet rs = statement.executeQuery("SELECT * FROM text_gram_table WHERE link = '"+url+"';");
@@ -69,6 +77,25 @@ public class IndexDatabase {
         }
 
         return gramToCount;
+    }
+
+    public static List<URLScorePair> best(Map<String, Integer> gramToCount) throws SQLException {
+
+        StringBuilder expression = new StringBuilder();
+        for (Map.Entry entry : gramToCount.entrySet()) {
+            String col = "`"+entry.getKey()+"`";
+            expression.append("+ "+entry.getValue()+"*NVL2("+col+", "+col+", 0)");
+        }
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT TOP 1000 `link`, "+expression+" as Score FROM text_gram_table GROUP BY `link` ORDER BY Score DESC;");
+
+        List<URLScorePair> output = new ArrayList<>(1000);
+        while (resultSet.next()) {
+            String url = resultSet.getString(1);
+            Integer score = Integer.parseInt(resultSet.getString(2));
+            output.add(new URLScorePair(url, score));
+        }
+        return output;
     }
 
 }
