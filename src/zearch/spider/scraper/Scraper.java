@@ -8,31 +8,42 @@ import zearch.gram.Grammifier;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Deque;
 import java.util.Queue;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Scraper {
-    public static Document getDocumentFromURL(String url) throws IOException {
-        return Jsoup.connect(url).get();
+    public static Document getDocumentFromURL(URL url) throws IOException {
+        return Jsoup.connect(url.toExternalForm()).get();
     }
 
     public static Document getDocumentFromFilepath(String filepath) throws IOException {
         return Jsoup.parse(new File(filepath));
     }
-    public static void parseLinks(String path, Document doc, Queue<String> urlQueue) {
-        String root = path;
-        if (root.endsWith("/"))
-            root = path.substring(0, path.length() - 1);
+    public static void parseLinks(URL path, Document doc, Deque<URL> urlDeque) throws MalformedURLException {
+        String root = path.getProtocol()+"://"+path.getHost();
         Elements linkTags = doc.getElementsByTag("a");
         for (Element linkTag : linkTags) {
             String href = linkTag.attr("href");
-            if (href.startsWith("#") || href.startsWith("."))
-                urlQueue.add(root + href.substring(1));
-            else if (href.startsWith("/"))
-                urlQueue.add(root+href);
-            else
-                urlQueue.add(href);
+            try {
+                if (href.startsWith("#") || href.startsWith("."))
+                    urlDeque.push(new URL(root+"/"+href.substring(1)));
+                else if (href.startsWith("/"))
+                    urlDeque.push(new URL(root+href));
+                else if (href.startsWith("www.")) {
+                    urlDeque.push(new URL("https://"+href));
+                    urlDeque.push(new URL("http://"+href));
+                } else {
+                    urlDeque.push(new URL(href));
+                }
+            } catch (MalformedURLException e){
+//                System.out.println("\t" + href + " is not a valid link.");
+            } catch (IllegalStateException e) {
+                // nothing
+            }
         }
     }
 

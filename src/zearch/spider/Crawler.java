@@ -5,18 +5,16 @@ import zearch.index.IndexDatabase;
 import zearch.query.SearchEngine;
 import zearch.spider.scraper.Scraper;
 
-import java.util.AbstractQueue;
-import java.util.Queue;
-import java.util.Map;
-import java.util.NoSuchElementException;
+import java.net.URL;
+import java.util.*;
 
 public class Crawler extends Thread {
 
-    private Queue<String> urlQueue;
+    private Deque<URL> urlDeque;
     private int period;
 
-    public Crawler(Queue<String> urlQueue, Integer period) {
-        this.urlQueue = urlQueue;
+    public Crawler(Deque<URL> urlQueue, Integer period) {
+        this.urlDeque = urlQueue;
         this.period = period;
     }
 
@@ -34,7 +32,8 @@ public class Crawler extends Thread {
                 sleep(1000);
             } catch (Exception e) {
                 System.out.println(
-                        "Crawler " + id + " encountered an exception: " + e.getStackTrace());
+                        "Crawler " + id + " encountered an exception:");
+                e.printStackTrace();
                 sleep(1000);
             }
         }
@@ -50,11 +49,11 @@ public class Crawler extends Thread {
 
     private void step() throws Exception {
         Long id = Thread.currentThread().getId();
-        String url = urlQueue.remove();
+        URL url = urlDeque.pop();
+        System.out.println("Crawler "+id+ " scraping :\t" +url);
         Document doc = Scraper.getDocumentFromURL(url);
-        Scraper.parseLinks(url, doc, urlQueue);
+        Scraper.parseLinks(url, doc, urlDeque);
         Map<String, Integer> score = Scraper.computeDocumentScore(doc);
-        IndexDatabase.write(url, score);
-        System.out.println("Crawler "+id+ " scraped :\t" +url);
+        IndexDatabase.write(url.toExternalForm(), score);
     }
 }

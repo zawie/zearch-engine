@@ -2,8 +2,10 @@ package zearch.spider;
 
 import zearch.index.IndexDatabase;
 
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.AbstractQueue;
+import java.util.Deque;
 import java.util.concurrent.LinkedBlockingDeque;
 
 public class Spider {
@@ -18,13 +20,13 @@ public class Spider {
 
         IndexDatabase.connect(dbFilepath);
 
-        AbstractQueue<String> urlQueue = new LinkedBlockingDeque<>( 1024);
+        Deque<URL> urlDeque = new LinkedBlockingDeque<>( 1024);
         for (int i = 2; i < args.length; i++) {
-            urlQueue.add(args[i]);
+            urlDeque.push(new URL(args[i]));
         }
 
         for (int i = 0; i < numCrawlers; i++) {
-            Crawler crawler = new Crawler(urlQueue, 1000);
+            Crawler crawler = new Crawler(urlDeque, 1000);
             crawler.start();
         }
     }

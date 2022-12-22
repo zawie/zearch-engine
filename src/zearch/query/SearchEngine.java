@@ -21,8 +21,13 @@ public class SearchEngine {
 
         String query = args[1];
 
+        System.out.println("query: "+query);
+
         Integer amount = args.length > 2 ? Integer.parseInt(args[2]) : 16;
-        search(query, amount);
+        List<URLScorePair> results = search(query, amount);
+        for (URLScorePair r : results) {
+            System.out.println(r);
+        }
     }
         public static List<URLScorePair> search(String query) throws SQLException {
             return search(query, 16);

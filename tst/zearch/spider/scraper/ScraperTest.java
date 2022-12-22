@@ -4,6 +4,7 @@ import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
@@ -15,9 +16,9 @@ class ScraperTest {
     @Test
     void parseLinksTest() throws IOException {
         Document doc = Scraper.getDocumentFromFilepath("tst/html/simple.html");
-        Queue<String> links = new LinkedList<>();
-        Scraper.parseLinks("https://www.sample.com", doc, links);
-        assertTrue(links.contains("https://www.sample.com/something1"));
+        Queue<URL> links = new LinkedList<>();
+        Scraper.parseLinks(new URL("https://www.sample.com"), doc, links);
+        assertTrue(links.contains(new URL("https://www.sample.com/something1"));
         assertTrue(links.contains("https://www.sample.com/something2"));
         assertTrue(links.contains("https://www.sample.com/something3"));
         assertTrue(links.contains("https://www.zawie.io"));
