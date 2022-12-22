@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="better crawler">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="better robots parser">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +98,7 @@
       <recent name="zearch.spider.scraper" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RobotsParserTest.wikipediaTest">
+  <component name="RunManager" selected="JUnit.All in spider">
     <configuration name="Spider" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zearch.spider.Spider" />
       <module name="spider" />
@@ -182,8 +186,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RobotsParserTest.wikipediaTest" />
         <item itemvalue="JUnit.All in spider" />
+        <item itemvalue="JUnit.RobotsParserTest.wikipediaTest" />
         <item itemvalue="JUnit.SearchEngineTest.searchTestWeb" />
         <item itemvalue="JUnit.SearchEngineTest.searchTestLocal" />
         <item itemvalue="Makefile Target.build" />
@@ -200,7 +204,7 @@
       <updated>1671563140136</updated>
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
-      <workItem from="1671678194877" duration="14574000" />
+      <workItem from="1671678194877" duration="16218000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -342,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671726732051</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="better robots parser">
+      <created>1671727006354</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1671727006354</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,6 +392,7 @@
     <MESSAGE value="running version" />
     <MESSAGE value="updates and fix tests" />
     <MESSAGE value="better crawler" />
-    <option name="LAST_COMMIT_MESSAGE" value="better crawler" />
+    <MESSAGE value="better robots parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="better robots parser" />
   </component>
 </project>

@@ -25,12 +25,13 @@ public class Spider {
         Set<URL> urlVisited = new HashSet<>();
 
         IPool<URL> urlPool = new IPool<>() {
+            boolean stackQueueToggle = false;
             @Override
             public void push(URL url) {
                 if (urlVisited.contains(url))
                     return;
                 if (!RobotsParser.SINGLETON.isAllowed(url)) {
-                    System.out.println(url.toString() + " is disallowed");
+//                    System.out.println(url.toString() + " is disallowed");
                     return;
                 }
                 try {
@@ -46,7 +47,10 @@ public class Spider {
 
             @Override
             public URL pull() {
-                return urlDeque.removeFirst();
+                stackQueueToggle = !stackQueueToggle;
+                if (stackQueueToggle)
+                    return urlDeque.removeFirst();
+                return urlDeque.removeLast();
             }
         };
 
@@ -56,7 +60,7 @@ public class Spider {
         }
 
         for (int i = 0; i < numCrawlers; i++) {
-            Crawler crawler = new Crawler(urlPool, 500);
+            Crawler crawler = new Crawler(urlPool, 100);
             crawler.start();
         }
     }

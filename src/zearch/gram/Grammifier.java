@@ -46,7 +46,7 @@ public class Grammifier {
     }
 
     private static String alphanumeritize(String str) {
-        return str.replaceAll("\s+", " ")
+        return str.replaceAll("\\s+", " ")
                   .replaceAll("[^a-zA-Z0-9\\s]", "")
                   .toLowerCase();
     }

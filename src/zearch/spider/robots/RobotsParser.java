@@ -24,8 +24,12 @@ public class RobotsParser {
         }
 
         for (String disallow : disallowedPaths) {
-            if ((url.getPath()+"/").matches(disallow+".*")) {
-                return false;
+            try {
+                if ((url.getPath()+"/").matches(disallow+".*")) {
+                    return false;
+                }
+            } catch (Exception e){
+                continue;
             }
         }
         return true;
@@ -60,6 +64,8 @@ public class RobotsParser {
                 String path = line.substring("disallow:".length()).trim();
                 if (!path.endsWith("/"))
                     path += "/";
+                if (path.startsWith("*"))
+                    path = "."+path;
                 disallowed.add(path);
             }
         }
