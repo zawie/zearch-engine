@@ -79,7 +79,7 @@ public class IndexDatabase {
         return gramToCount;
     }
 
-    public static List<URLScorePair> best(Map<String, Integer> gramToCount) throws SQLException {
+    public static List<URLScorePair> best(Map<String, Integer> gramToCount, Integer amount) throws SQLException {
 
         StringBuilder expression = new StringBuilder();
         for (Map.Entry entry : gramToCount.entrySet()) {
@@ -87,7 +87,7 @@ public class IndexDatabase {
             expression.append("+ "+entry.getValue()+"*NVL2("+col+", "+col+", 0)");
         }
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT TOP 1000 `link`, "+expression+" as Score FROM text_gram_table GROUP BY `link` ORDER BY Score DESC;");
+        ResultSet resultSet = statement.executeQuery("SELECT TOP "+amount+" `link`, "+expression+" as Score FROM text_gram_table GROUP BY `link` ORDER BY Score DESC;");
 
         List<URLScorePair> output = new ArrayList<>(1000);
         while (resultSet.next()) {
