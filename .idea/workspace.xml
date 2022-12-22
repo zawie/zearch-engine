@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="updates and fix tests">
-      <change afterPath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tst/zearch/spider/robots/RobotsParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" afterDir="false" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="better crawler">
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +200,7 @@
       <updated>1671563140136</updated>
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
-      <workItem from="1671678194877" duration="14514000" />
+      <workItem from="1671678194877" duration="14574000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -342,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671695933375</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="better crawler">
+      <created>1671726732051</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1671726732051</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,6 +380,7 @@
     <MESSAGE value="more work" />
     <MESSAGE value="running version" />
     <MESSAGE value="updates and fix tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates and fix tests" />
+    <MESSAGE value="better crawler" />
+    <option name="LAST_COMMIT_MESSAGE" value="better crawler" />
   </component>
 </project>

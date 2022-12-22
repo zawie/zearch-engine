@@ -12,20 +12,18 @@ import java.util.Set;
 public class RobotsParser {
 
     public static RobotsParser SINGLETON = new RobotsParser();
-    private Cache<URL, Set<String>> cache;
+    private Cache<String, Set<String>> cache;
     private RobotsParser() {
         this.cache = new Cache<>(256);
     }
     public boolean isAllowed(URL url) {
-        Set<String> disallowedPaths = cache.get(url);
+        Set<String> disallowedPaths = cache.get(url.getHost());
         if (disallowedPaths == null) {
             disallowedPaths = getDisallowedPaths(url);
-            cache.put(url, disallowedPaths);
+            cache.put(url.getHost(), disallowedPaths);
         }
 
-        System.out.println("path: "+ url.getPath());
         for (String disallow : disallowedPaths) {
-            System.out.println("disallow pattern: "+ disallow+".*");
             if ((url.getPath()+"/").matches(disallow+".*")) {
                 return false;
             }
@@ -79,8 +77,8 @@ public class RobotsParser {
             scanner.useDelimiter("\\Z");
             content = scanner.next();
             scanner.close();
-        }catch ( Exception ex ) {
-            ex.printStackTrace();
+        } catch ( Exception ex ) {
+            return null;
         }
         return content;
     }
