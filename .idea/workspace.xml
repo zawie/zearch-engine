@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="running version">
-      <change afterPath="$PROJECT_DIR$/src/zearch/spider/IPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsData.java" afterDir="false" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="updates and fix tests">
       <change afterPath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tst/zearch/spider/robots/RobotsParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/robots/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/robots/Cache.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,10 +25,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="package-info" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -53,34 +52,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/zawie/Developer/repos/zearch/spider&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "/Users/zawie/Developer/repos/zearch/spider",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="zearch.index" />
@@ -95,13 +94,14 @@
       <recent name="$PROJECT_DIR$/lib" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="zearch.spider.robots" />
       <recent name="zearch.query" />
       <recent name="zearch.gram" />
       <recent name="zearch.index" />
       <recent name="zearch.spider.scraper" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in spider">
+  <component name="RunManager" selected="JUnit.RobotsParserTest.wikipediaTest">
     <configuration name="Spider" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zearch.spider.Spider" />
       <module name="spider" />
@@ -121,6 +121,22 @@
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RobotsParserTest.wikipediaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.spider.robots.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zearch.spider.robots" />
+      <option name="MAIN_CLASS_NAME" value="zearch.spider.robots.RobotsParserTest" />
+      <option name="METHOD_NAME" value="wikipediaTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,6 +181,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.Spider" />
+      <item itemvalue="JUnit.RobotsParserTest.wikipediaTest" />
       <item itemvalue="JUnit.SearchEngineTest.searchTestLocal" />
       <item itemvalue="JUnit.All in spider" />
       <item itemvalue="JUnit.SearchEngineTest.searchTestWeb" />
@@ -172,10 +189,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RobotsParserTest.wikipediaTest" />
         <item itemvalue="JUnit.All in spider" />
         <item itemvalue="JUnit.SearchEngineTest.searchTestWeb" />
         <item itemvalue="JUnit.SearchEngineTest.searchTestLocal" />
-        <item itemvalue="Makefile Target.build" />
         <item itemvalue="Makefile Target.build" />
       </list>
     </recent_temporary>
@@ -190,7 +207,7 @@
       <updated>1671563140136</updated>
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
-      <workItem from="1671678194877" duration="8477000" />
+      <workItem from="1671678194877" duration="14514000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -318,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671689347747</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="updates and fix tests">
+      <created>1671695933375</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1671695933375</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,6 +379,7 @@
     <MESSAGE value="test html files" />
     <MESSAGE value="more work" />
     <MESSAGE value="running version" />
-    <option name="LAST_COMMIT_MESSAGE" value="running version" />
+    <MESSAGE value="updates and fix tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates and fix tests" />
   </component>
 </project>

@@ -11,8 +11,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Deque;
-import java.util.Queue;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,11 +28,16 @@ public class Scraper {
         for (Element linkTag : linkTags) {
             String href = linkTag.attr("href");
             try {
-                if (href.startsWith("#") || href.startsWith("."))
-                    urlDeque.push(new URL(root+href.substring(1)));
-                else if (href.startsWith("/"))
+                if (href.startsWith("#") || href.startsWith(".")) {
+                    href = href.substring(1);
+                    if (href.startsWith("/")) {
+                        urlDeque.push(new URL(root+href));
+                    } else {
+                        urlDeque.push(new URL(root+"/"+href));
+                    }
+                } else if (href.startsWith("/"))
                     urlDeque.push(new URL(root+href));
-                else if (href.startsWith("www.")) {
+                else if (href.matches("^([a-zA-Z0-9]+\\.)?[a-zA-Z0-9]+\\.[a-zA-Z0-9]+.*")) {
                     urlDeque.push(new URL("https://"+href));
                     urlDeque.push(new URL("http://"+href));
                 } else {

@@ -1,6 +1,7 @@
 package zearch.spider;
 
 import zearch.index.IndexDatabase;
+import zearch.spider.robots.RobotsParser;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -28,6 +29,10 @@ public class Spider {
             public void push(URL url) {
                 if (urlVisited.contains(url))
                     return;
+                if (!RobotsParser.SINGLETON.isAllowed(url)) {
+                    System.out.println(url.toString() + " is disallowed");
+                    return;
+                }
                 try {
                     urlDeque.addLast(url);
                 } catch (IllegalStateException e) {
@@ -47,12 +52,11 @@ public class Spider {
 
         for (int i = 2; i < args.length; i++) {
             URL url = new URL(args[i]);
-            urlVisited.add(url);
-            urlDeque.push(url);
+            urlPool.push(url);
         }
 
         for (int i = 0; i < numCrawlers; i++) {
-            Crawler crawler = new Crawler(urlPool, 1000);
+            Crawler crawler = new Crawler(urlPool, 500);
             crawler.start();
         }
     }

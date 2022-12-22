@@ -32,8 +32,8 @@ public class Crawler extends Thread {
                 sleep(1000);
             } catch (Exception e) {
                 System.out.println(
-                        "Crawler " + id + " encountered an exception:");
-                e.printStackTrace();
+                        "Crawler " + id + " encountered an exception: " + e.toString());
+
                 sleep(1000);
             }
         }
@@ -48,9 +48,8 @@ public class Crawler extends Thread {
     }
 
     private void step() throws Exception {
-        Long id = Thread.currentThread().getId();
         URL url = urlPool.pull();
-        System.out.println("Crawler "+id+ " scraping :\t" +url);
+        System.out.println(url+"...");
         Document doc = Scraper.getDocumentFromURL(url);
         Scraper.parseLinks(url, doc, urlPool);
         Map<String, Integer> score = Scraper.computeDocumentScore(url.toString(), doc);
