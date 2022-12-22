@@ -10,11 +10,11 @@ import java.util.*;
 
 public class Crawler extends Thread {
 
-    private Deque<URL> urlDeque;
+    private IPool<URL> urlPool;
     private int period;
 
-    public Crawler(Deque<URL> urlQueue, Integer period) {
-        this.urlDeque = urlQueue;
+    public Crawler(IPool<URL> urlPool, Integer period) {
+        this.urlPool = urlPool;
         this.period = period;
     }
 
@@ -49,11 +49,11 @@ public class Crawler extends Thread {
 
     private void step() throws Exception {
         Long id = Thread.currentThread().getId();
-        URL url = urlDeque.pop();
+        URL url = urlPool.pull();
         System.out.println("Crawler "+id+ " scraping :\t" +url);
         Document doc = Scraper.getDocumentFromURL(url);
-        Scraper.parseLinks(url, doc, urlDeque);
-        Map<String, Integer> score = Scraper.computeDocumentScore(doc);
+        Scraper.parseLinks(url, doc, urlPool);
+        Map<String, Integer> score = Scraper.computeDocumentScore(url.toString(), doc);
         IndexDatabase.write(url.toExternalForm(), score);
     }
 }

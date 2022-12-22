@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="more work">
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/spider/robots/Cache.java" afterDir="false" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="running version">
+      <change afterPath="$PROJECT_DIR$/src/zearch/spider/IPool.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsData.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/query/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/query/SearchEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/robots/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/robots/Cache.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" afterDir="false" />
     </list>
@@ -30,10 +26,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="package-info" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -105,7 +101,7 @@
       <recent name="zearch.spider.scraper" />
     </key>
   </component>
-  <component name="RunManager" selected="Makefile Target.build">
+  <component name="RunManager" selected="JUnit.All in spider">
     <configuration name="Spider" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zearch.spider.Spider" />
       <module name="spider" />
@@ -125,6 +121,22 @@
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchEngineTest.searchTestLocal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.query.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zearch.query" />
+      <option name="MAIN_CLASS_NAME" value="zearch.query.SearchEngineTest" />
+      <option name="METHOD_NAME" value="searchTestLocal" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,16 +165,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Spider" />
+      <item itemvalue="JUnit.SearchEngineTest.searchTestLocal" />
       <item itemvalue="JUnit.All in spider" />
       <item itemvalue="JUnit.SearchEngineTest.searchTestWeb" />
       <item itemvalue="Makefile Target.build" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Makefile Target.build" />
-        <item itemvalue="Makefile Target.build" />
         <item itemvalue="JUnit.All in spider" />
         <item itemvalue="JUnit.SearchEngineTest.searchTestWeb" />
+        <item itemvalue="JUnit.SearchEngineTest.searchTestLocal" />
+        <item itemvalue="Makefile Target.build" />
+        <item itemvalue="Makefile Target.build" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +190,7 @@
       <updated>1671563140136</updated>
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
-      <workItem from="1671678194877" duration="6379000" />
+      <workItem from="1671678194877" duration="8477000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -297,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671675125781</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="running version">
+      <created>1671689347747</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1671689347747</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +354,7 @@
     <MESSAGE value="proof of concept" />
     <MESSAGE value="test html files" />
     <MESSAGE value="more work" />
-    <option name="LAST_COMMIT_MESSAGE" value="more work" />
+    <MESSAGE value="running version" />
+    <option name="LAST_COMMIT_MESSAGE" value="running version" />
   </component>
 </project>

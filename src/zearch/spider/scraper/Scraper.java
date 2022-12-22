@@ -5,6 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import zearch.gram.Grammifier;
+import zearch.spider.IPool;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,14 +24,14 @@ public class Scraper {
     public static Document getDocumentFromFilepath(String filepath) throws IOException {
         return Jsoup.parse(new File(filepath));
     }
-    public static void parseLinks(URL path, Document doc, Deque<URL> urlDeque) throws MalformedURLException {
+    public static void parseLinks(URL path, Document doc, IPool<URL> urlDeque) throws MalformedURLException {
         String root = path.getProtocol()+"://"+path.getHost();
         Elements linkTags = doc.getElementsByTag("a");
         for (Element linkTag : linkTags) {
             String href = linkTag.attr("href");
             try {
                 if (href.startsWith("#") || href.startsWith("."))
-                    urlDeque.push(new URL(root+"/"+href.substring(1)));
+                    urlDeque.push(new URL(root+href.substring(1)));
                 else if (href.startsWith("/"))
                     urlDeque.push(new URL(root+href));
                 else if (href.startsWith("www.")) {
@@ -64,12 +65,12 @@ public class Scraper {
         return metaData;
     }
 
-    public static Map<String,Integer> computeDocumentScore(Document doc) {
+    public static Map<String,Integer> computeDocumentScore(String url, Document doc) {
         //Text Gram Score
         Map<String, Integer> textGramScore = Grammifier.computeGramScore(doc.text());
 
         // Meta Gram Score
-        StringBuilder metaText = new StringBuilder();
+        StringBuilder metaText = new StringBuilder(url);
         Map<String, String> metaData = parseMetaData(doc);
         metaText.append(metaData.getOrDefault("title", "")).append(" ");
         metaText.append(metaData.getOrDefault("description", "")).append(" ");

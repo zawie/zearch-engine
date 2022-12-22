@@ -4,8 +4,7 @@ import zearch.index.IndexDatabase;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.AbstractQueue;
-import java.util.Deque;
+import java.util.*;
 import java.util.concurrent.LinkedBlockingDeque;
 
 public class Spider {
@@ -20,13 +19,40 @@ public class Spider {
 
         IndexDatabase.connect(dbFilepath);
 
-        Deque<URL> urlDeque = new LinkedBlockingDeque<>( 1024);
+        int capacity = 2048;
+        Deque<URL> urlDeque = new LinkedBlockingDeque<>( capacity);
+        Set<URL> urlVisited = new HashSet<>();
+
+        IPool<URL> urlPool = new IPool<>() {
+            @Override
+            public void push(URL url) {
+                if (urlVisited.contains(url))
+                    return;
+                try {
+                    urlDeque.addLast(url);
+                } catch (IllegalStateException e) {
+                    return;
+                }
+                urlVisited.add(url);
+                if (urlVisited.size() > 2048) {
+                    urlVisited.clear();
+                }
+            }
+
+            @Override
+            public URL pull() {
+                return urlDeque.removeFirst();
+            }
+        };
+
         for (int i = 2; i < args.length; i++) {
-            urlDeque.push(new URL(args[i]));
+            URL url = new URL(args[i]);
+            urlVisited.add(url);
+            urlDeque.push(url);
         }
 
         for (int i = 0; i < numCrawlers; i++) {
-            Crawler crawler = new Crawler(urlDeque, 1000);
+            Crawler crawler = new Crawler(urlPool, 1000);
             crawler.start();
         }
     }

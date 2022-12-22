@@ -6,6 +6,7 @@ import zearch.index.IndexDatabase;
 import zearch.spider.scraper.Scraper;
 
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.SQLException;
@@ -22,8 +23,8 @@ class SearchEngineTest {
         Document doc1 = Scraper.getDocumentFromFilepath("tst/html/rome.html");
         Document doc2 = Scraper.getDocumentFromFilepath("tst/html/test.html");
 
-        IndexDatabase.write("www.rome.com", Scraper.computeDocumentScore(doc1));
-        IndexDatabase.write("www.movie.com", Scraper.computeDocumentScore(doc2));
+        IndexDatabase.write("www.rome.com", Scraper.computeDocumentScore("www.rome.com", doc1));
+        IndexDatabase.write("www.movie.com", Scraper.computeDocumentScore("www.movie.com", doc2));
 
         String query;
         query = "roman empire information:";
@@ -39,11 +40,11 @@ class SearchEngineTest {
         Path path = Paths.get("tst/db/zearch-test");
         IndexDatabase.connect(path.toAbsolutePath().toString());
 
-        Document doc1 = Scraper.getDocumentFromURL("https://en.wikipedia.org/wiki/Rome");
-        Document doc2 = Scraper.getDocumentFromURL("https://www.youtube.com");
+        Document doc1 = Scraper.getDocumentFromURL(new URL("https://en.wikipedia.org/wiki/Rome"));
+        Document doc2 = Scraper.getDocumentFromURL(new URL("https://www.youtube.com"));
 
-        IndexDatabase.write("https://en.wikipedia.org/wiki/Rome", Scraper.computeDocumentScore(doc1));
-        IndexDatabase.write("https://www.youtube.com", Scraper.computeDocumentScore(doc2));
+        IndexDatabase.write("https://en.wikipedia.org/wiki/Rome", Scraper.computeDocumentScore("https://en.wikipedia.org/wiki/Rome", doc1));
+        IndexDatabase.write("https://www.youtube.com", Scraper.computeDocumentScore("https://www.youtube.com", doc2));
 
         String query;
         query = "roman empire information:";

@@ -2,9 +2,11 @@ package zearch.spider.scraper;
 
 import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.Test;
+import zearch.spider.IPool;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
@@ -16,12 +18,23 @@ class ScraperTest {
     @Test
     void parseLinksTest() throws IOException {
         Document doc = Scraper.getDocumentFromFilepath("tst/html/simple.html");
-        Queue<URL> links = new LinkedList<>();
-        Scraper.parseLinks(new URL("https://www.sample.com"), doc, links);
-        assertTrue(links.contains(new URL("https://www.sample.com/something1"));
-        assertTrue(links.contains("https://www.sample.com/something2"));
-        assertTrue(links.contains("https://www.sample.com/something3"));
-        assertTrue(links.contains("https://www.zawie.io"));
+        Deque<URL> links = new LinkedList<>();
+        Scraper.parseLinks(new URL("https://www.sample.com"), doc, new IPool<URL>() {
+            @Override
+            public void push(URL element) {
+                links.push(element);
+            }
+
+            @Override
+            public URL pull() {
+                return links.pop();
+            }
+        });
+
+        assertTrue(links.contains(new URL("https://www.sample.com/something1")));
+        assertTrue(links.contains(new URL("https://www.sample.com/something2")));
+        assertTrue(links.contains(new URL("https://www.sample.com/something3")));
+        assertTrue(links.contains(new URL("https://www.zawie.io")));
     }
     @Test
     void parseMetaDataTest() throws IOException {
@@ -35,7 +48,7 @@ class ScraperTest {
     @Test
     void computeDocumentScoreTest1() throws IOException {
         Document doc = Scraper.getDocumentFromFilepath("tst/html/simple.html");
-        Map<String, Integer> gramScore = Scraper.computeDocumentScore(doc);
+        Map<String, Integer> gramScore = Scraper.computeDocumentScore("simple", doc);
         assertNull(gramScore.get("htm"));
         assertNotNull(gramScore.get("tes"));
     }
@@ -44,7 +57,7 @@ class ScraperTest {
     void computeDocumentScoreTest2() {
         try {
             Document doc = Scraper.getDocumentFromFilepath("tst/html/test.html");
-            Map<String, Integer> gramScore = Scraper.computeDocumentScore(doc);
+            Map<String, Integer> gramScore = Scraper.computeDocumentScore("tst/html/test.html", doc);
             System.out.println(gramScore);
         } catch (Exception e){
             System.out.println(e);
@@ -55,7 +68,7 @@ class ScraperTest {
     void computeDocumentScoreTest3() {
         try {
             Document doc = Scraper.getDocumentFromFilepath("tst/html/rome.html");
-            Map<String, Integer> gramScore = Scraper.computeDocumentScore(doc);
+            Map<String, Integer> gramScore = Scraper.computeDocumentScore("www.fake-url.com", doc);
             System.out.println(gramScore);
         } catch (Exception e){
             System.out.println(e);

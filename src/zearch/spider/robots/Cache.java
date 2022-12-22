@@ -23,7 +23,7 @@ public class Cache<K, V> {
         return value;
     }
 
-    public put(K key, V value) {
+    public void put(K key, V value) {
         this.cache.put(key, value);
     }
 }
