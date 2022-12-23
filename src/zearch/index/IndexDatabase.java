@@ -97,4 +97,12 @@ public class IndexDatabase {
         return output;
     }
 
+    public static int getRowCount() throws SQLException {
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("SELECT count(*) from text_gram_table");
+        //Retrieving the result
+        rs.next();
+        return rs.getInt(1);
+    }
+
 }

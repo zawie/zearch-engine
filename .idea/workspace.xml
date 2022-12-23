@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="better url spider queue">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="better crawler">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/URLPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/URLPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/util/RoundPartition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/util/RoundPartition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/query/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/query/SearchEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +59,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "/Users/zawie/Developer/repos/zearch/spider",
+    "last_opened_file_path": "/Users/zawie/Developer/repos/zearch/engine",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -205,7 +202,8 @@
       <updated>1671563140136</updated>
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
-      <workItem from="1671678194877" duration="32316000" />
+      <workItem from="1671678194877" duration="33076000" />
+      <workItem from="1671821714890" duration="107000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -410,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671781494549</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="better crawler">
+      <created>1671783289768</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1671783289768</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +447,6 @@
     <MESSAGE value="more work" />
     <MESSAGE value="running version" />
     <MESSAGE value="updates and fix tests" />
-    <MESSAGE value="better crawler" />
     <MESSAGE value="better robots parser" />
     <MESSAGE value="downgrade to java 11" />
     <MESSAGE value="top500sites data" />
@@ -453,6 +457,7 @@
     <MESSAGE value="exit on empty line" />
     <MESSAGE value="adjust document score &amp; timeout on Jsoup" />
     <MESSAGE value="better url spider queue" />
-    <option name="LAST_COMMIT_MESSAGE" value="better url spider queue" />
+    <MESSAGE value="better crawler" />
+    <option name="LAST_COMMIT_MESSAGE" value="better crawler" />
   </component>
 </project>

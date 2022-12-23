@@ -20,6 +20,8 @@ public class SearchEngine {
         String dbFilepath = args[0];
         IndexDatabase.connect(dbFilepath);
 
+        System.out.println("URLs indexed: "+ IndexDatabase.getRowCount());
+
         Integer amount = 8;
         Scanner scanner = new Scanner(System.in);
 
