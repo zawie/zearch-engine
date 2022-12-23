@@ -10,10 +10,10 @@ import java.util.*;
 
 public class Crawler extends Thread {
 
-    private IPool<URL> urlPool;
+    private URLPool urlPool;
     private int period;
 
-    public Crawler(IPool<URL> urlPool, Integer period) {
+    public Crawler(URLPool urlPool, Integer period) {
         this.urlPool = urlPool;
         this.period = period;
     }
@@ -47,7 +47,13 @@ public class Crawler extends Thread {
     private void step() throws Exception {
         URL url = urlPool.pull();
         System.out.println(url+"...");
-        Document doc = Scraper.getDocumentFromURL(url);
+        Document doc = null;
+        try {
+           doc = Scraper.getDocumentFromURL(url);
+        } catch (Exception e) {
+            System.out.println("Exception "+e.toString()+" on "+url+": "+e.getMessage());
+            urlPool.groundHost(url, 60*1000); // Ground bad host for 1 minute.
+        }
         Scraper.parseLinks(url, doc, urlPool);
         Map<String, Integer> score = Scraper.computeDocumentScore(url.toString(), doc);
         IndexDatabase.write(url.toExternalForm(), score);

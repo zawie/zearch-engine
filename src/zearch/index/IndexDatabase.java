@@ -55,9 +55,7 @@ public class IndexDatabase {
                 values.add(entry.getValue().toString());
             }
         }
-
         statement.execute("DELETE FROM text_gram_table WHERE `link` = '"+url+"';");
-        connection.commit(); // now the database physically exists
         statement.execute("INSERT INTO text_gram_table " +
                 "(" +String.join(", ", columns)+ ")" +
                 " VALUES ("+ String.join(", ", values)+");");

@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="downgrade to java 11">
-      <change afterPath="$PROJECT_DIR$/data/top500sites.txt" afterDir="false" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="exit on empty line">
+      <change afterPath="$PROJECT_DIR$/src/zearch/spider/URLPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/spider/util/PartitionElementPair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/spider/util/RoundPartition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/IPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/IPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/robots/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/util/Cache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +30,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -104,7 +111,7 @@
       <module name="spider" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.spider.*" />
+          <option name="PATTERN" value="zearch.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,7 +133,7 @@
       <module name="spider" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.spider.robots.*" />
+          <option name="PATTERN" value="zearch.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -204,7 +211,7 @@
       <updated>1671563140136</updated>
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
-      <workItem from="1671678194877" duration="19364000" />
+      <workItem from="1671678194877" duration="30478000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -360,7 +367,42 @@
       <option name="project" value="LOCAL" />
       <updated>1671734865881</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="top500sites data">
+      <created>1671757685741</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1671757685741</updated>
+    </task>
+    <task id="LOCAL-00024" summary="don't wait on exception &amp; better initial pooling">
+      <created>1671757785277</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1671757785277</updated>
+    </task>
+    <task id="LOCAL-00025" summary="interactive search engine">
+      <created>1671760234972</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1671760234972</updated>
+    </task>
+    <task id="LOCAL-00026" summary="comment out disallow">
+      <created>1671760278307</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1671760278307</updated>
+    </task>
+    <task id="LOCAL-00027" summary="exit on empty line">
+      <created>1671773230716</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1671773230716</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,10 +420,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial spider" />
-    <MESSAGE value="BoundedQueue" />
-    <MESSAGE value="crawler" />
-    <MESSAGE value="more implementation &amp; tests" />
     <MESSAGE value="parseMetaDataTest" />
     <MESSAGE value="scraper tests" />
     <MESSAGE value="shortify" />
@@ -401,6 +439,12 @@
     <MESSAGE value="better crawler" />
     <MESSAGE value="better robots parser" />
     <MESSAGE value="downgrade to java 11" />
-    <option name="LAST_COMMIT_MESSAGE" value="downgrade to java 11" />
+    <MESSAGE value="top500sites data" />
+    <MESSAGE value="don't wait on exception" />
+    <MESSAGE value="don't wait on exception &amp; better initial pooling" />
+    <MESSAGE value="interactive search engine" />
+    <MESSAGE value="comment out disallow" />
+    <MESSAGE value="exit on empty line" />
+    <option name="LAST_COMMIT_MESSAGE" value="exit on empty line" />
   </component>
 </project>

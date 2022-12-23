@@ -8,34 +8,10 @@ import java.net.URLConnection;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
+import zearch.spider.util.Cache;
 
 public class RobotsParser {
-
-    public static RobotsParser SINGLETON = new RobotsParser();
-    private Cache<String, Set<String>> cache;
-    private RobotsParser() {
-        this.cache = new Cache<>(256);
-    }
-    public boolean isAllowed(URL url) {
-        Set<String> disallowedPaths = cache.get(url.getHost());
-        if (disallowedPaths == null) {
-            disallowedPaths = getDisallowedPaths(url);
-            cache.put(url.getHost(), disallowedPaths);
-        }
-
-        for (String disallow : disallowedPaths) {
-            try {
-                if ((url.getPath()+"/").matches(disallow+".*")) {
-                    return false;
-                }
-            } catch (Exception e){
-                continue;
-            }
-        }
-        return true;
-    }
-
-    private Set<String> getDisallowedPaths(URL url) {
+    public static Set<String> getDisallowedPaths(URL url) {
         URL robotsUrl;
         try {
             robotsUrl = new URL(url.getProtocol() + "://" + url.getHost() + "/robots.txt");
@@ -74,7 +50,7 @@ public class RobotsParser {
         return disallowed;
     }
 
-    private String getContents(URL url) {
+    private static String getContents(URL url) {
         String content = null;
         URLConnection connection = null;
         try {

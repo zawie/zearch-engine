@@ -1,4 +1,4 @@
-package zearch.spider.robots;
+package zearch.spider.util;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
