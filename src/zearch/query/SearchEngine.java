@@ -20,16 +20,14 @@ public class SearchEngine {
         String dbFilepath = args[0];
         IndexDatabase.connect(dbFilepath);
 
-        Integer amount = 16;
+        Integer amount = 8;
         Scanner scanner = new Scanner(System.in);
 
         String query;
         System.out.println("\n:::::: Zearch ::::::");
         System.out.print(" ⚲ ");
-        while(!(query = scanner.nextLine()).equals("exit")) {
+        while(!(query = scanner.nextLine()).isEmpty()) {
             System.out.println("::::::::::::::::::::");
-            if (query.isEmpty())
-                continue;
             List<URLScorePair> results = search(query, amount);
             for (URLScorePair r : results) {
                 System.out.println(" - "+r.getURL());
