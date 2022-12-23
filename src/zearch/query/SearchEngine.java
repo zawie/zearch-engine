@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.AbstractQueue;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.concurrent.LinkedBlockingDeque;
 
 public class SearchEngine {
@@ -19,15 +20,28 @@ public class SearchEngine {
         String dbFilepath = args[0];
         IndexDatabase.connect(dbFilepath);
 
-        String query = args[1];
+        Integer amount = 16;
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("query: "+query);
-
-        Integer amount = args.length > 2 ? Integer.parseInt(args[2]) : 16;
-        List<URLScorePair> results = search(query, amount);
-        for (URLScorePair r : results) {
-            System.out.println(r);
+        String query;
+        System.out.println("\n:::::: Zearch ::::::");
+        System.out.print(" ⚲ ");
+        while(!(query = scanner.nextLine()).equals("exit")) {
+            System.out.println("::::::::::::::::::::");
+            if (query.isEmpty())
+                continue;
+            List<URLScorePair> results = search(query, amount);
+            for (URLScorePair r : results) {
+                System.out.println(" - "+r.getURL());
+            }
+            System.out.println("::::::::::::::::::::");
+            System.out.println("\n:::::: Zearch ::::::");
+            System.out.print(" ⚲ ");
         }
+
+        System.out.println("::::::::::::::::::::");
+        System.out.println("Shutting down search engine.");
+        IndexDatabase.close();
     }
         public static List<URLScorePair> search(String query) throws SQLException {
             return search(query, 16);
