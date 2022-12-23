@@ -1,6 +1,8 @@
 package zearch.spider.util;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class RoundPartition<P,E> {
 
@@ -13,8 +15,8 @@ public class RoundPartition<P,E> {
     private int maxPartitionSize;
     private int maxPartitionCount;
     public RoundPartition(int maxPartitionSize, int maxPartitionCount) {
-        partitions = new HashMap<>();
-        partitionQueue = new LinkedList<>();
+        partitions = new ConcurrentHashMap<>();
+        partitionQueue = new LinkedBlockingQueue<>(maxPartitionSize);
         this.maxPartitionSize = maxPartitionSize;
         this.maxPartitionCount = maxPartitionCount;
         elementCount = 0;
@@ -43,15 +45,17 @@ public class RoundPartition<P,E> {
 
     public E pullNextPartition() {
         if (partitionQueue.isEmpty())
-            return null;
+            throw new NoSuchElementException();
         P partition = partitionQueue.remove();
+        partitionCount--;
         Queue<E> elements = partitions.get(partition);
         E element = elements.remove();
+        if (element == null)
+            throw new NoSuchElementException();
         elementCount--;
         if (!elements.isEmpty()) {
+            partitionCount++;
             partitionQueue.add(partition);
-        } else {
-            partitionCount--;
         }
         return element;
     }

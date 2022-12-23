@@ -26,12 +26,10 @@ public class Crawler extends Thread {
             sleep(period);
             try {
                 step();
-            } catch (NoSuchElementException e) {
-                System.out.println(
-                        "Crawler " + id + " found no element in queue.");
             } catch (Exception e) {
                 System.out.println(
-                        "Crawler " + id + " encountered an exception: " + e.toString());
+                        "Crawler " + id + " encountered an exception: " + e.toString() + e.getMessage());
+//                e.printStackTrace();
             }
         }
     }
@@ -45,8 +43,18 @@ public class Crawler extends Thread {
     }
 
     private void step() throws Exception {
-        URL url = urlPool.pull();
-        System.out.println(url+"...");
+        Long id = Thread.currentThread().getId();
+        URL url = null;
+        try {
+            url = urlPool.pull();
+        } catch (NoSuchElementException e) {
+            System.out.println(
+                    "Crawler " + id +" couldn't find valid element. Waiting");
+            sleep(1000);
+            return;
+        }
+
+        System.out.println(url);
         Document doc = null;
         try {
            doc = Scraper.getDocumentFromURL(url);

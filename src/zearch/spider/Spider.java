@@ -35,7 +35,7 @@ public class Spider {
         }
 
         for (int i = 0; i < numCrawlers; i++) {
-            Crawler crawler = new Crawler(urlPool, 100);
+            Crawler crawler = new Crawler(urlPool, 10);
             crawler.start();
         }
     }

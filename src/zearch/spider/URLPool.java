@@ -4,10 +4,8 @@ import zearch.spider.util.RoundPartition;
 import zearch.spider.robots.RobotsCache;
 
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class URLPool implements IPool<URL> {
 
@@ -16,12 +14,12 @@ public class URLPool implements IPool<URL> {
     private int maxVisitedSize = 1048*2048;
     private RobotsCache robots;
     private Map<String, Long> ungroundTime;
-    void URLPool() {
+    public URLPool() {
         // RoundPartition<Host, URL>
-        roundPartition = new RoundPartition<>(1048, 1048);
+        roundPartition = new RoundPartition<>(1048, 64);
         visited = new HashSet<>();
         robots = new RobotsCache(2048);
-        ungroundTime = new HashMap<>();
+        ungroundTime = new ConcurrentHashMap<>();
     }
     @Override
     public void push(URL url) {
@@ -41,11 +39,11 @@ public class URLPool implements IPool<URL> {
     }
 
     @Override
-    public URL pull() {
+    public URL pull() throws NoSuchElementException {
         return attemptPull(16);
     }
 
-    public URL attemptPull(int retryCount) {
+    public URL attemptPull(int retryCount) throws NoSuchElementException {
         long t = System.currentTimeMillis();
 
         URL url = roundPartition.pullNextPartition();
@@ -55,7 +53,7 @@ public class URLPool implements IPool<URL> {
             roundPartition.addTo(host, url);
             if (retryCount > 0)
                 return attemptPull(retryCount - 1);
-            return null;
+            throw new NoSuchElementException();
         }
         groundHost(url, 100);
         return url;
