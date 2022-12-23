@@ -31,7 +31,7 @@ public class Spider {
                 if (urlVisited.contains(url))
                     return;
                 if (!RobotsParser.SINGLETON.isAllowed(url)) {
-                    System.out.println(url.toString() + " is disallowed");
+//                    System.out.println(url.toString() + " is disallowed");
                     return;
                 }
                 try {
