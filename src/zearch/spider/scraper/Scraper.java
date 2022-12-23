@@ -1,5 +1,6 @@
 package zearch.spider.scraper;
 
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -12,11 +13,15 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Scraper {
     public static Document getDocumentFromURL(URL url) throws IOException {
-        return Jsoup.connect(url.toExternalForm()).get();
+        Connection conn = Jsoup.connect(url.toExternalForm());
+        conn.timeout(15000); // 15 second timeout
+        return conn.get();
     }
 
     public static Document getDocumentFromFilepath(String filepath) throws IOException {
@@ -72,6 +77,12 @@ public class Scraper {
         //Text Gram Score
         Map<String, Integer> textGramScore = Grammifier.computeGramScore(doc.text());
 
+        //Title Gram Score
+        String title = doc.title();
+        if (title == null)
+            title = "";
+        Map<String, Integer> titleGramScore = Grammifier.computeGramScore(title);
+
         // Meta Gram Score
         StringBuilder metaText = new StringBuilder(url);
         Map<String, String> metaData = parseMetaData(doc);
@@ -81,14 +92,21 @@ public class Scraper {
 
         Map<String, Integer> metaGramScore = Grammifier.computeGramScore(metaText.toString());
 
-        //Average meta and text gram score.
+        //Compute weighted average of subscores
         Map<String, Integer> gramScore = new HashMap<>();
-        for (String gram : metaGramScore.keySet()) {
-            gramScore.put(gram, metaGramScore.get(gram));
-        }
-        for (String gram : textGramScore.keySet()) {
-            Integer score = gramScore.getOrDefault(gram, 0) + (textGramScore.get(gram));
-            gramScore.put(gram, score/2);
+        Set<String> grams = new HashSet<>();
+        grams.addAll(metaGramScore.keySet());
+        grams.addAll(titleGramScore.keySet());
+        grams.addAll(textGramScore.keySet());
+
+        for (String gram : grams) {
+            Integer score = (
+                    200*titleGramScore.getOrDefault(gram, 0) +
+                    500*metaGramScore.getOrDefault(gram, 0) +
+                    300*textGramScore.getOrDefault(gram, 0)
+                )/1000;
+            score = Math.max(Math.min(score, 127), 0);
+            gramScore.put(gram, score);
         }
 
         return gramScore;
