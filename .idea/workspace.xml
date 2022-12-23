@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="better robots parser">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="downgrade to java 11">
+      <change afterPath="$PROJECT_DIR$/data/top500sites.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
@@ -204,7 +204,7 @@
       <updated>1671563140136</updated>
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
-      <workItem from="1671678194877" duration="16218000" />
+      <workItem from="1671678194877" duration="19364000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -353,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671727006354</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="downgrade to java 11">
+      <created>1671734865881</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1671734865881</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,6 +400,7 @@
     <MESSAGE value="updates and fix tests" />
     <MESSAGE value="better crawler" />
     <MESSAGE value="better robots parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="better robots parser" />
+    <MESSAGE value="downgrade to java 11" />
+    <option name="LAST_COMMIT_MESSAGE" value="downgrade to java 11" />
   </component>
 </project>

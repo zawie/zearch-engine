@@ -31,7 +31,7 @@ public class Spider {
                 if (urlVisited.contains(url))
                     return;
                 if (!RobotsParser.SINGLETON.isAllowed(url)) {
-//                    System.out.println(url.toString() + " is disallowed");
+                    System.out.println(url.toString() + " is disallowed");
                     return;
                 }
                 try {
@@ -54,9 +54,13 @@ public class Spider {
             }
         };
 
+        System.out.println("Enqueuing initial " + (args.length - 2) + " links.");
         for (int i = 2; i < args.length; i++) {
-            URL url = new URL(args[i]);
-            urlPool.push(url);
+            String link = args[i];
+            if (!link.startsWith("https://") && !link.startsWith("http://")) {
+                link = "https://" + link;
+            }
+            urlPool.push(new URL(link));
         }
 
         for (int i = 0; i < numCrawlers; i++) {

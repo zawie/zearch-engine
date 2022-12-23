@@ -29,12 +29,9 @@ public class Crawler extends Thread {
             } catch (NoSuchElementException e) {
                 System.out.println(
                         "Crawler " + id + " found no element in queue.");
-                sleep(1000);
             } catch (Exception e) {
                 System.out.println(
                         "Crawler " + id + " encountered an exception: " + e.toString());
-
-                sleep(1000);
             }
         }
     }
