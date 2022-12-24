@@ -8,7 +8,7 @@ import zearch.spider.scraper.Scraper;
 import java.net.URL;
 import java.util.*;
 
-public class Crawler extends Thread {
+public class Crawler implements Runnable {
 
     private URLPool urlPool;
     private int period;

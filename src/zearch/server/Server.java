@@ -16,11 +16,12 @@ import java.util.List;
 
 public class Server {
     public static void main(String[] args) throws IOException, SQLException {
-
-        HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
-        String path = "/api/search/";
-
         IndexDatabase.connect(args[0]);
+        start();
+    }
+    public static void start() throws IOException {
+        HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
+        String path = "/search/";
 
         server.createContext(path, (exchange -> {
             Headers headers = exchange.getResponseHeaders();
@@ -64,6 +65,5 @@ public class Server {
 
         server.setExecutor(null); // creates a default executor
         server.start();
-
     }
 }

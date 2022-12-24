@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="server">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="fix threading attempt">
+      <change afterPath="$PROJECT_DIR$/src/zearch/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +203,7 @@
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
       <workItem from="1671678194877" duration="33076000" />
-      <workItem from="1671821714890" duration="7703000" />
+      <workItem from="1671821714890" duration="9648000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -426,7 +429,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671901696923</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="server script">
+      <created>1671903234708</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1671903234708</updated>
+    </task>
+    <task id="LOCAL-00034" summary="fix threading attempt">
+      <created>1671904383759</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1671904383759</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,8 +461,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="database start" />
-    <MESSAGE value="first working database" />
     <MESSAGE value="trigrams" />
     <MESSAGE value="initial gram score" />
     <MESSAGE value="gramToScore 2.0" />
@@ -469,6 +484,8 @@
     <MESSAGE value="better crawler" />
     <MESSAGE value="count rows" />
     <MESSAGE value="server" />
-    <option name="LAST_COMMIT_MESSAGE" value="server" />
+    <MESSAGE value="server script" />
+    <MESSAGE value="fix threading attempt" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix threading attempt" />
   </component>
 </project>
