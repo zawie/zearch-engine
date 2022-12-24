@@ -1,1 +1,1 @@
-java -cp ./out:./lib/jsoup-1.15.3.jar:./lib/h2-2.1.214.jar zearch.spider.Main /mnt/zearch/index 256 $@
+java -cp ./out:./lib/jsoup-1.15.3.jar:./lib/h2-2.1.214.jar zearch.Main /mnt/zearch/index 256 $@
