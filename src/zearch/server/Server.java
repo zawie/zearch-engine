@@ -17,10 +17,10 @@ import java.util.List;
 public class Server {
     public static void main(String[] args) throws IOException, SQLException {
 
-        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
         String path = "/api/search/";
 
-        IndexDatabase.connect("~/Desktop/db");
+        IndexDatabase.connect(args[0]);
 
         server.createContext(path, (exchange -> {
             Headers headers = exchange.getResponseHeaders();

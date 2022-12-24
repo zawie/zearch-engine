@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="count rows">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/server/Server.java" afterDir="false" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spider.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/query/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/query/SearchEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +200,7 @@
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
       <workItem from="1671678194877" duration="33076000" />
-      <workItem from="1671821714890" duration="5996000" />
+      <workItem from="1671821714890" duration="7703000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -422,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671821924911</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="server">
+      <created>1671901696923</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1671901696923</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,7 +444,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="jsoup" />
     <MESSAGE value="database start" />
     <MESSAGE value="first working database" />
     <MESSAGE value="trigrams" />
@@ -465,6 +468,7 @@
     <MESSAGE value="better url spider queue" />
     <MESSAGE value="better crawler" />
     <MESSAGE value="count rows" />
-    <option name="LAST_COMMIT_MESSAGE" value="count rows" />
+    <MESSAGE value="server" />
+    <option name="LAST_COMMIT_MESSAGE" value="server" />
   </component>
 </project>
