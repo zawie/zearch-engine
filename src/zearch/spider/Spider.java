@@ -10,10 +10,6 @@ import java.util.concurrent.LinkedBlockingDeque;
 public class Spider {
     public static void main(String[] args) throws Exception {
 
-        if (args[0] == "help") {
-            System.out.println("Spider parameters: <database filepath> <num crawlers> [starting domains]");
-        }
-
         String dbFilepath = args[0];
         Integer numCrawlers = Integer.parseInt(args[1]);
 
@@ -35,8 +31,7 @@ public class Spider {
         }
 
         for (int i = 0; i < numCrawlers; i++) {
-            Crawler crawler = new Crawler(urlPool, 10);
-            crawler.start();
+            new Thread(new Crawler(urlPool, 10)).start();
         }
     }
 }
