@@ -46,6 +46,7 @@ public class SearchEngine {
         public static List<URLScorePair> search(String query) throws SQLException {
             return search(query, 16);
         }
+
         public static List<URLScorePair> search(String query, Integer amount) throws SQLException {
         Map<String, Integer> grams = Grammifier.grammify(query);
         grams.keySet().retainAll(GramData.SINGLETON.getGrams());

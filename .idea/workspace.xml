@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="better crawler">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="count rows">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spider.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/query/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/query/SearchEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,13 +98,33 @@
       <recent name="zearch.spider.scraper" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in spider">
+  <component name="RunManager" selected="Application.zearch.server.Server">
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="spider" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Spider" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zearch.spider.Spider" />
       <module name="spider" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="zearch.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="zearch.server.Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="zearch.server.Server" />
+      <module name="spider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,22 +158,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchEngineTest.searchTestLocal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spider" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="zearch.query.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="zearch.query" />
-      <option name="MAIN_CLASS_NAME" value="zearch.query.SearchEngineTest" />
-      <option name="METHOD_NAME" value="searchTestLocal" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SearchEngineTest.searchTestWeb" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spider" />
       <extension name="coverage">
@@ -168,27 +174,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="build" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
-      <makefile filename="$PROJECT_DIR$/Makefile" target="build" workingDirectory="" arguments="">
-        <envs />
-      </makefile>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.Spider" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.zearch.server.Server" />
       <item itemvalue="JUnit.RobotsParserTest.wikipediaTest" />
-      <item itemvalue="JUnit.SearchEngineTest.searchTestLocal" />
       <item itemvalue="JUnit.All in spider" />
       <item itemvalue="JUnit.SearchEngineTest.searchTestWeb" />
-      <item itemvalue="Makefile Target.build" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.zearch.server.Server" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.All in spider" />
         <item itemvalue="JUnit.RobotsParserTest.wikipediaTest" />
         <item itemvalue="JUnit.SearchEngineTest.searchTestWeb" />
-        <item itemvalue="JUnit.SearchEngineTest.searchTestLocal" />
-        <item itemvalue="Makefile Target.build" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +203,7 @@
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
       <workItem from="1671678194877" duration="33076000" />
-      <workItem from="1671821714890" duration="107000" />
+      <workItem from="1671821714890" duration="5996000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -415,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671783289768</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="count rows">
+      <created>1671821924911</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1671821924911</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +440,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="shortify" />
     <MESSAGE value="jsoup" />
     <MESSAGE value="database start" />
     <MESSAGE value="first working database" />
@@ -458,6 +464,7 @@
     <MESSAGE value="adjust document score &amp; timeout on Jsoup" />
     <MESSAGE value="better url spider queue" />
     <MESSAGE value="better crawler" />
-    <option name="LAST_COMMIT_MESSAGE" value="better crawler" />
+    <MESSAGE value="count rows" />
+    <option name="LAST_COMMIT_MESSAGE" value="count rows" />
   </component>
 </project>
