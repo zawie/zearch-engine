@@ -17,7 +17,7 @@ public class Spider {
 
     private ISpiderToModel model;
 
-    private static final int MAX_DOMAIN_COUNT = 128;
+    private static final int MAX_DOMAIN_COUNT = 1048;
     private static final int MAX_PATH_COUNT = 2048;
 
 
