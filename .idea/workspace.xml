@@ -4,44 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="fix capitalizaiton in makefile">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="ignore database_filepath">
       <change afterPath="$PROJECT_DIR$/database_filepath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/minhash/MinHasher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/spider/ISpiderToModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/spider/Scraper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/util/Pair.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.sh" beforeDir="false" afterPath="$PROJECT_DIR$/main.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.sh" beforeDir="false" afterPath="$PROJECT_DIR$/server.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/gram/GramData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/gram/Grammifier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/index/URLScorePair.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/query/SearchEngine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/server/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/IPool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/URLPool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/util/PartitionElementPair.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/util/RoundPartition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/html/rome.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/html/simple.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/html/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/gram/GramDataTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/gram/GrammifierTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/index/IndexDatabaseTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/query/SearchEngineTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/spider/robots/RobotsParserTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +199,7 @@
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
       <workItem from="1671678194877" duration="33076000" />
-      <workItem from="1671821714890" duration="40953000" />
+      <workItem from="1671821714890" duration="43030000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -501,7 +467,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671905265901</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="major rework &amp; refactor (new index method!)">
+      <created>1672124299048</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1672124299048</updated>
+    </task>
+    <task id="LOCAL-00040" summary="ignore database_filepath">
+      <created>1672124400870</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1672124400870</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,8 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="combined score" />
-    <MESSAGE value="proof of concept" />
     <MESSAGE value="test html files" />
     <MESSAGE value="more work" />
     <MESSAGE value="running version" />
@@ -544,6 +522,8 @@
     <MESSAGE value="fix make" />
     <MESSAGE value="fix main script" />
     <MESSAGE value="fix capitalizaiton in makefile" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix capitalizaiton in makefile" />
+    <MESSAGE value="major rework &amp; refactor (new index method!)" />
+    <MESSAGE value="ignore database_filepath" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore database_filepath" />
   </component>
 </project>
