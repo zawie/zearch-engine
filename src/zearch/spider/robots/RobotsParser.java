@@ -1,14 +1,11 @@
 package zearch.spider.robots;
 
-import java.io.BufferedReader;
-import java.io.StringReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
-import zearch.spider.util.Cache;
 
 public class RobotsParser {
     public static Set<String> getDisallowedPaths(URL url) {

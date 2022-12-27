@@ -4,8 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="fix make">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="fix capitalizaiton in makefile">
+      <change afterPath="$PROJECT_DIR$/database_filepath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/minhash/MinHasher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/spider/ISpiderToModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/spider/Scraper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/util/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.sh" beforeDir="false" afterPath="$PROJECT_DIR$/main.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.sh" beforeDir="false" afterPath="$PROJECT_DIR$/server.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/gram/GramData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/gram/Grammifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/index/IndexDatabase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/index/URLScorePair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/query/SearchEngine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/server/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Crawler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/IPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/URLPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/robots/RobotsParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/scraper/Scraper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/util/PartitionElementPair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/util/RoundPartition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/html/rome.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/html/simple.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/html/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/zearch/gram/GramDataTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/zearch/gram/GrammifierTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/zearch/index/IndexDatabaseTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/zearch/query/SearchEngineTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/zearch/spider/robots/RobotsParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/zearch/spider/scraper/ScraperTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +54,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="package-info" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -57,7 +93,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "/Users/zawie/Developer/repos/zearch/engine",
+    "last_opened_file_path": "/Users/zawie/Developer/repos/zearch/engine/src/zearch/v2/spider/robots",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,9 +111,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="zearch.v2.spider" />
       <recent name="zearch.index" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/zearch/v2/spider/robots" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -86,6 +124,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="zearch" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="zearch.spider.robots" />
       <recent name="zearch.query" />
@@ -93,8 +134,11 @@
       <recent name="zearch.index" />
       <recent name="zearch.spider.scraper" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="zearch.v2.database" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.zearch.server.Server">
+  <component name="RunManager" selected="Makefile Target.build">
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="spider" />
@@ -154,21 +198,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchEngineTest.searchTestWeb" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spider" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="zearch.query.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="zearch.query" />
-      <option name="MAIN_CLASS_NAME" value="zearch.query.SearchEngineTest" />
-      <option name="METHOD_NAME" value="searchTestWeb" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="build" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="build" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Application.Spider" />
@@ -176,15 +210,15 @@
       <item itemvalue="Application.zearch.server.Server" />
       <item itemvalue="JUnit.RobotsParserTest.wikipediaTest" />
       <item itemvalue="JUnit.All in spider" />
-      <item itemvalue="JUnit.SearchEngineTest.searchTestWeb" />
+      <item itemvalue="Makefile Target.build" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Makefile Target.build" />
         <item itemvalue="Application.zearch.server.Server" />
         <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.All in spider" />
         <item itemvalue="JUnit.RobotsParserTest.wikipediaTest" />
-        <item itemvalue="JUnit.SearchEngineTest.searchTestWeb" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +233,7 @@
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
       <workItem from="1671678194877" duration="33076000" />
-      <workItem from="1671821714890" duration="9831000" />
+      <workItem from="1671821714890" duration="40953000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -453,7 +487,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671905197452</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="fix main script">
+      <created>1671905233209</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1671905233209</updated>
+    </task>
+    <task id="LOCAL-00038" summary="fix capitalizaiton in makefile">
+      <created>1671905265901</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1671905265901</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,8 +519,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="gramToScore 2.0" />
-    <MESSAGE value="1 byte score" />
     <MESSAGE value="combined score" />
     <MESSAGE value="proof of concept" />
     <MESSAGE value="test html files" />
@@ -496,6 +542,8 @@
     <MESSAGE value="fix threading attempt" />
     <MESSAGE value="main" />
     <MESSAGE value="fix make" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix make" />
+    <MESSAGE value="fix main script" />
+    <MESSAGE value="fix capitalizaiton in makefile" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix capitalizaiton in makefile" />
   </component>
 </project>
