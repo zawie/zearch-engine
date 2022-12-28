@@ -81,4 +81,76 @@ public class IndexDatabase {
 //        statement.execute("DELETE FROM index_table WHERE `url` = '"+url+"';"); //TODO: Remove duplicate entries periodically
         statement.execute("INSERT INTO index_table ("+String.join(", ", columns)+") VALUES (" +String.join(", ", values)+ ")");
     }
+
+    public static Iterator<IndexEntry> getAllIndexEntries() {
+
+
+        Statement stmt = null;
+        ResultSet srs = null;
+        try {
+            stmt = connection.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE, //or ResultSet.TYPE_FORWARD_ONLY
+                    ResultSet.CONCUR_READ_ONLY);
+            srs = stmt.executeQuery("SELECT * FROM index_table");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        ResultSet finalSrs = srs;
+        return new Iterator<>() {
+            @Override
+            public boolean hasNext() {
+                boolean nextExists;
+                try {
+                    nextExists = finalSrs.next();
+                    finalSrs.previous();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                return nextExists;
+            }
+
+            @Override
+            public IndexEntry next() {
+                try {
+                    if (!finalSrs.next())
+                        return null;
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                long id;
+                try {
+                    id = finalSrs.getLong("id");
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                int[] hashes = new int[MinHasher.COUNT];
+                for (int h = 0; h < MinHasher.COUNT; h++) {
+                    try {
+                        hashes[h] = finalSrs.getByte("hash" + h);
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                return new IndexEntry(id, hashes);
+            }
+        };
+    }
+
+    public static Map<String, String> getMetaData(Long rowId) throws SQLException {
+        Statement statement = connection.createStatement();
+        List<String> columns = new LinkedList<>();
+        columns.add("url");
+        columns.add("title");
+        columns.add("description");
+        columns.add("keywords");
+        columns.add("author");
+        ResultSet rs = statement.executeQuery("SELECT ("+String.join(", ", columns)+") FROM index_table WHERE url = "+rowId);
+        //Retrieving the result
+        rs.next();
+        Map<String, String> metaData = new HashMap<>();
+        for (String col: columns) {
+            metaData.put(col, rs.getString(col));
+        }
+        return metaData;
+    }
 }

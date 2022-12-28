@@ -2,6 +2,7 @@ package zearch.minhash;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.io.StringReader;
 import java.util.Random;
 
 public class MinHasher {
@@ -16,6 +17,10 @@ public class MinHasher {
         rand.setSeed(SEED);
         for (int i = 0; i < COUNT; i++)
             this.seeds[i] = rand.nextInt();
+    }
+
+    public int[] computeHashes(String content) throws IOException {
+        return computeHashes(new StringReader(content));
     }
 
     public int[] computeHashes(Reader content) throws IOException {

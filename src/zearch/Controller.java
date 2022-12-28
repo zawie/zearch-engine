@@ -1,6 +1,10 @@
 package zearch;
 
 import zearch.database.IndexDatabase;
+import zearch.database.IndexEntry;
+import zearch.engine.ISearchEngineToModel;
+import zearch.engine.SearchEngine;
+import zearch.engine.SearchResult;
 import zearch.minhash.MinHasher;
 import zearch.spider.Spider;
 
@@ -8,8 +12,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Controller {
 
@@ -27,6 +30,43 @@ public class Controller {
         }
 
         MinHasher hasher = new MinHasher();
+        SearchEngine searchEngine = null;
+        if (runServer || numCrawlers <= 0) {
+            searchEngine = new SearchEngine(new ISearchEngineToModel() {
+                @Override
+                public Iterator<IndexEntry> getAllIndexEntries() {
+                    return IndexDatabase.getAllIndexEntries();
+                }
+
+                @Override
+                public int getNumberOfIndexEntries() {
+                    try {
+                        return IndexDatabase.getRowCount();
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+
+                @Override
+                public int[] computeMinhashes(String query) {
+                    try {
+                        return hasher.computeHashes(query);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+
+                @Override
+                public Map<String, String> getMetaData(Long id) {
+                    try {
+                        return IndexDatabase.getMetaData(id);
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);}
+
+                }
+            });
+        }
+
         if (runServer) {
             // TODO: Implement server
         }
@@ -53,6 +93,13 @@ public class Controller {
             }
 
             spider.startCrawling(numCrawlers);
+        } else if(!runServer) {
+            for (int i = 3; i < args.length; i++) {
+                String query = args[i];
+                System.out.println("query: "+query);
+                SearchResult result = searchEngine.search(query);
+                System.out.println(result.toJSON());
+            }
         }
     }
 
