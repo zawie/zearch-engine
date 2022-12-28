@@ -4,19 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="increase number of max domains stored">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="fix minhashing">
       <change afterPath="$PROJECT_DIR$/database_filepath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/search.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/search.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/database/IndexEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/engine/ISearchEngineToModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/engine/MinhashTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/engine/SearchResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tst/zearch/minhash/MinHasherTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.sh" beforeDir="false" afterPath="$PROJECT_DIR$/search.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/minhash/MinHasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/minhash/MinHasher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/ISpiderToModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/ISpiderToModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Scraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Scraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +29,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="package-info" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -106,24 +106,17 @@
       <recent name="zearch" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="zearch.minhash" />
       <recent name="zearch.spider.robots" />
       <recent name="zearch.query" />
       <recent name="zearch.gram" />
       <recent name="zearch.index" />
-      <recent name="zearch.spider.scraper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="zearch.v2.database" />
     </key>
   </component>
-  <component name="RunManager" selected="Makefile Target.build">
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server" />
-      <module name="spider" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.MinHasherTest">
     <configuration name="Spider" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zearch.spider.Spider" />
       <module name="spider" />
@@ -150,27 +143,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in spider" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MinHasherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spider" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.minhash.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zearch.minhash" />
+      <option name="MAIN_CLASS_NAME" value="zearch.minhash.MinHasherTest" />
+      <option name="METHOD_NAME" value="testLargeText" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RobotsParserTest.wikipediaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MinHasherTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spider" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.util.*" />
+          <option name="PATTERN" value="zearch.minhash.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="zearch.spider.robots" />
-      <option name="MAIN_CLASS_NAME" value="zearch.spider.robots.RobotsParserTest" />
-      <option name="METHOD_NAME" value="wikipediaTest" />
+      <option name="PACKAGE_NAME" value="zearch.minhash" />
+      <option name="MAIN_CLASS_NAME" value="zearch.minhash.MinHasherTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MinHasherTest.testLargeText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.minhash.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zearch.minhash" />
+      <option name="MAIN_CLASS_NAME" value="zearch.minhash.MinHasherTest" />
+      <option name="METHOD_NAME" value="testLargeText" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -184,19 +199,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Spider" />
-      <item itemvalue="Application.Server" />
       <item itemvalue="Application.zearch.server.Server" />
-      <item itemvalue="JUnit.RobotsParserTest.wikipediaTest" />
-      <item itemvalue="JUnit.All in spider" />
+      <item itemvalue="JUnit.MinHasherTest" />
+      <item itemvalue="JUnit.MinHasherTest.test1" />
+      <item itemvalue="JUnit.MinHasherTest.testLargeText" />
       <item itemvalue="Makefile Target.build" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MinHasherTest" />
+        <item itemvalue="JUnit.MinHasherTest.testLargeText" />
+        <item itemvalue="JUnit.MinHasherTest.test1" />
         <item itemvalue="Makefile Target.build" />
         <item itemvalue="Application.zearch.server.Server" />
-        <item itemvalue="Application.Server" />
-        <item itemvalue="JUnit.All in spider" />
-        <item itemvalue="JUnit.RobotsParserTest.wikipediaTest" />
       </list>
     </recent_temporary>
   </component>
@@ -211,7 +226,7 @@
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
       <workItem from="1671678194877" duration="33076000" />
-      <workItem from="1671821714890" duration="58130000" />
+      <workItem from="1671821714890" duration="69075000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -507,7 +522,35 @@
       <option name="project" value="LOCAL" />
       <updated>1672127505925</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="initial search engine attempt">
+      <created>1672191189625</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1672191189625</updated>
+    </task>
+    <task id="LOCAL-00044" summary="delete extra search script">
+      <created>1672191206897</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1672191206897</updated>
+    </task>
+    <task id="LOCAL-00045" summary="print num entries">
+      <created>1672191613067</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1672191613067</updated>
+    </task>
+    <task id="LOCAL-00046" summary="fix minhashing">
+      <created>1672196355619</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1672196355619</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,10 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="running version" />
-    <MESSAGE value="updates and fix tests" />
-    <MESSAGE value="better robots parser" />
-    <MESSAGE value="downgrade to java 11" />
     <MESSAGE value="top500sites data" />
     <MESSAGE value="don't wait on exception" />
     <MESSAGE value="don't wait on exception &amp; better initial pooling" />
@@ -550,6 +589,10 @@
     <MESSAGE value="ignore database_filepath" />
     <MESSAGE value="unique id per row" />
     <MESSAGE value="increase number of max domains stored" />
-    <option name="LAST_COMMIT_MESSAGE" value="increase number of max domains stored" />
+    <MESSAGE value="initial search engine attempt" />
+    <MESSAGE value="delete extra search script" />
+    <MESSAGE value="print num entries" />
+    <MESSAGE value="fix minhashing" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix minhashing" />
   </component>
 </project>

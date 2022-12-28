@@ -29,8 +29,9 @@ public class MinhashTable<E> {
     public Collection<E> query(int hashes[]) {
         assert(hashes.length >= K*L);
         Set<E> output = new HashSet<>();
+        int[] keys = new int[K + 1];
         for (int l = 0; l < L; l++) {
-            int[] keys = new int[K];
+            keys[K] = l;
             for (int k = 0; k < K; k++)
                 keys[k] = hashes[l*K + k];
             int key = keys.hashCode();

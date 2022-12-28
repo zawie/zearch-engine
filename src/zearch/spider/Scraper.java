@@ -70,7 +70,7 @@ public class Scraper {
         return metaData;
     }
 
-    public Reader getTextReader() {
-        return new StringReader(document.text());
+    public String getText() {
+        return document.text();
     }
 }

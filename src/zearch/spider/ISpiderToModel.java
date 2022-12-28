@@ -6,5 +6,5 @@ import java.util.Map;
 
 public interface ISpiderToModel {
 
-    void index(URL nextUrl, Map<String, String> metaData, Reader text);
+    void index(URL nextUrl, Map<String, String> metaData, String text);
 }

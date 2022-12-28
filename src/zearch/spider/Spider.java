@@ -46,7 +46,7 @@ public class Spider {
                     }
                     try {
                         Scraper scraper = new Scraper(nextUrl);
-                        model.index(nextUrl, scraper.parseMetaData(), scraper.getTextReader());
+                        model.index(nextUrl, scraper.parseMetaData(), scraper.getText());
                         List<URL> links = scraper.parseLinks();
                         Collections.shuffle(links);
                         for (URL link : links)

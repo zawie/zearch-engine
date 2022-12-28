@@ -72,9 +72,9 @@ public class Controller {
         }
 
         if (numCrawlers > 0) {
-            Spider spider = new Spider((url, metaData, textReader) -> {
+            Spider spider = new Spider((url, metaData, text) -> {
                 try {
-                    IndexDatabase.write(url, metaData, hasher.computeHashes(textReader));
+                    IndexDatabase.write(url, metaData, hasher.computeHashes(text));
                 } catch (Exception e) {
                     System.out.println("Encountered an exception while indexing: " +e.getMessage());
                     e.printStackTrace();
