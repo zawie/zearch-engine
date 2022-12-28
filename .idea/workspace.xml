@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="fix minhashing">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="attempt fix minhashing">
       <change afterPath="$PROJECT_DIR$/database_filepath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tst/zearch/minhash/MinHasherTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search.sh" beforeDir="false" afterPath="$PROJECT_DIR$/search.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/minhash/MinHasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/minhash/MinHasher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/ISpiderToModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/ISpiderToModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Scraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Scraper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -226,7 +219,7 @@
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
       <workItem from="1671678194877" duration="33076000" />
-      <workItem from="1671821714890" duration="69075000" />
+      <workItem from="1671821714890" duration="70550000" />
     </task>
     <task id="LOCAL-00001" summary="Initial spider">
       <created>1671567337506</created>
@@ -550,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672196355619</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="attempt fix minhashing">
+      <created>1672209930510</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1672209930510</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="top500sites data" />
     <MESSAGE value="don't wait on exception" />
     <MESSAGE value="don't wait on exception &amp; better initial pooling" />
     <MESSAGE value="interactive search engine" />
@@ -593,6 +592,7 @@
     <MESSAGE value="delete extra search script" />
     <MESSAGE value="print num entries" />
     <MESSAGE value="fix minhashing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix minhashing" />
+    <MESSAGE value="attempt fix minhashing" />
+    <option name="LAST_COMMIT_MESSAGE" value="attempt fix minhashing" />
   </component>
 </project>

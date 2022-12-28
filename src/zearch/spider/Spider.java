@@ -57,13 +57,13 @@ public class Spider {
                                     " ✕\t"+ status + "\t" + nextUrl
                             );
                             if (status != 403 && status != 404) {
-                                ground(nextUrl);
+                                ground(nextUrl, 60*1000);
                             }
                     } catch (java.net.UnknownHostException e) {
                         System.out.println(
                                 " ✕\tUnknown host\t" + nextUrl
                         );
-                        ground(nextUrl);
+                        ground(nextUrl, 60*1000);
                     } catch (Exception e) {
                         System.out.println(
                                 " ✕\tCrawler " + crawlerId + " encountered an exception on " + nextUrl
@@ -71,7 +71,7 @@ public class Spider {
                         System.out.println("==================================");
                         e.printStackTrace();
                         System.out.println("==================================");
-                        ground(nextUrl);
+                        ground(nextUrl, 60*1000);
                     }
                 }
             }).start();
@@ -110,12 +110,12 @@ public class Spider {
         }
         return parts[parts.length - 2] + "." + parts[parts.length - 1];
     }
-    private void ground(URL url) {
+    private void ground(URL url, long ms) {
         long t = System.currentTimeMillis();
         String domain = getDomain(url);
         domainQueue.remove(domain);
         domainQueue.add(domain);
-        ungroundTime.put(domain, Math.max(ungroundTime.getOrDefault(domain, (long) 0), t + 60000)); // 1 minute
+        ungroundTime.put(domain, Math.max(ungroundTime.getOrDefault(domain, (long) 0), t + ms));
     }
 
     private URL getNextUrl() throws NoSuchElementException {
@@ -146,7 +146,7 @@ public class Spider {
             domainQueue.add(domain);
         }
         visited.add(url);
-        ungroundTime.put(domain, t + 1000);
+        ground(url, 100);
         return url;
     }
 
