@@ -126,7 +126,8 @@ public class IndexDatabase {
                 int[] hashes = new int[MinHasher.COUNT];
                 for (int h = 0; h < MinHasher.COUNT; h++) {
                     try {
-                        hashes[h] = finalSrs.getByte("hash" + h);
+                       byte b = finalSrs.getByte("hash" + h);
+                       hashes[h] = b & 0xFF; // Ignore the "sign" of the byte.
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }

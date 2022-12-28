@@ -34,7 +34,10 @@ public class MinHasher {
         int index = 3;
         int c;
         while((c = content.read()) >= 0) {
-            gram[index % 3] = Character.toLowerCase((char) c);
+            char ch = (char) c;
+            if (Character.isLetterOrDigit(ch) && ch != ' ')
+                continue;
+            gram[index % 3] = Character.toLowerCase(ch);
             for (int h = 0; h < COUNT; h+=2) {
                 int i0 = index % 3;
                 int i1 = (index - 1) % 3;
@@ -49,15 +52,14 @@ public class MinHasher {
 
     private int computeHash(char char1, char char2, char char3, int seed) {
         int[] chars = new int[]{seed, char1, char2, char3};
+        final int p = 31, m = 1000000007;
         int h = 0;
-        for(int i = 0; i < chars.length; i++) {
-            // CRC variant: Do a 5-bit left circular shift of h. Then XOR in ki.
-            int c = chars[i];
-            int highOrder = h & 0xf8000000;     // extract high-order 5 bits from h
-            h = h << 5;                         // shift h left by 5 bits
-            h = h ^ (highOrder >> 27);          // move the highOrder 5 bits to the low-order
-            h = h ^ c;                          // XOR into h
+        long p_pow = 1;
+        for (int i = 0; i < 4; i++) {
+            h = (int)((h + (chars[i] - 'a' + 1) * p_pow) % m);
+            p_pow = (p_pow * p) % m;
         }
+
         return h & 0xff; // extract bottom byte
     }
 }

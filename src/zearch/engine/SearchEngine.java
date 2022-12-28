@@ -41,6 +41,7 @@ public class SearchEngine {
         Iterator<IndexEntry> iter = model.getAllIndexEntries();
         while (iter.hasNext()) {
             IndexEntry entry = iter.next();
+            System.out.println(entry.getID() + ": " + entry.getHashes()[0] + ", " + entry.getHashes()[1]);
             minhashTable.insert(entry.getID(), entry.getHashes());
         }
     }
