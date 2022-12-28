@@ -49,8 +49,11 @@ public class Spider {
                         model.index(nextUrl, scraper.parseMetaData(), scraper.getText());
                         List<URL> links = scraper.parseLinks();
                         Collections.shuffle(links);
-                        for (URL link : links)
+                        for (URL link : links) {
+                            offerURL(new URL(link.getProtocol() +"://"+link.getHost()));
+                            offerURL(new URL(link.getProtocol() +"://"+getDomain(link)));
                             offerURL(link);
+                        }
                     } catch (org.jsoup.HttpStatusException e) {
                             int status = e.getStatusCode();
                             System.out.println(
