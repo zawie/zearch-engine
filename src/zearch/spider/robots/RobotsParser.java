@@ -9,6 +9,7 @@ import java.util.Set;
 
 public class RobotsParser {
     public static Set<String> getDisallowedPaths(URL url) {
+//        System.out.println(" - Checking robots of " + url.getHost());
         URL robotsUrl;
         try {
             robotsUrl = new URL(url.getProtocol() + "://" + url.getHost() + "/robots.txt");
@@ -52,6 +53,7 @@ public class RobotsParser {
         URLConnection connection = null;
         try {
             connection = url.openConnection();
+            connection.setConnectTimeout(1000);
             Scanner scanner = new Scanner(connection.getInputStream());
             scanner.useDelimiter("\\Z");
             content = scanner.next();

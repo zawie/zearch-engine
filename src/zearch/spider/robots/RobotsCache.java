@@ -1,6 +1,6 @@
 package zearch.spider.robots;
 
-import zearch.spider.util.Cache;
+import zearch.util.Cache;
 
 import java.net.URL;
 import java.util.Set;

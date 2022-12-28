@@ -40,8 +40,8 @@ public class Spider {
                     try {
                         nextUrl = getNextUrl();
                     } catch (NoSuchElementException e) {
-//                        System.out.println("Crawler " + crawlerId + " did not get a URL.");
-                        sleep(1000);
+                        System.out.println("Crawler " + crawlerId + " did not get a URL.");
+                        sleep(5000);
                         continue;
                     }
                     try {
@@ -82,11 +82,8 @@ public class Spider {
         String domain = getDomain(url);
         if (visited.contains(url))
             return;
-        if (!robots.isAllowed(url)) {
-            return;
-        }
 
-       if (!domainToURLs.containsKey(domain)) {
+        if (!domainToURLs.containsKey(domain)) {
            if (domainToURLs.keySet().size() < MAX_DOMAIN_COUNT) {
                domainQueue.add(domain);
                domainToURLs.put(domain, new ConcurrentLinkedQueue<>());
@@ -142,10 +139,10 @@ public class Spider {
         }
         if (urls.isEmpty()) {
             domainToURLs.remove(domain);
-        } else {
-            domainQueue.add(domain);
         }
         visited.add(url);
+        if (!robots.isAllowed(url))
+            return getNextUrl();
         ground(url, 100);
         return url;
     }
