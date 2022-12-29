@@ -1,4 +1,4 @@
-package zearch.engine;
+package zearch.engine.datastructures;
 
 import java.util.*;
 

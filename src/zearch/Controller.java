@@ -97,9 +97,8 @@ public class Controller {
         } else if(!runServer) {
             for (int i = 3; i < args.length; i++) {
                 String query = args[i];
-                System.out.println("query: "+query);
                 SearchResult result = searchEngine.search(query);
-                System.out.println(result.toJSON());
+                result.print(10);
             }
         }
     }

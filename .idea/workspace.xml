@@ -4,17 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="add more links">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="fix minhashtable">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20220924.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_json_20120521.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database_filepath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tst/zearch/engine/MinhashTableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/GramData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/Grammifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/Similarity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tst/zearch/engine/similarity/GrammifierTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tst/zearch/engine/similarity/SimilarityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/trigrams.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/trigrams.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search.sh" beforeDir="false" afterPath="$PROJECT_DIR$/search.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/zearch-engine.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/engine/ISearchEngineToModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/ISearchEngineToModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/engine/MinhashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/MinhashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/MinhashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/datastructures/MinhashTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/util/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/util/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/zearch/engine/MinhashTableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/engine/MinhashTableTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,34 +65,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "/Users/zawie/Developer/repos/zearch/engine",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/zawie/Developer/repos/zearch/engine/lib&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="zearch.database" />
@@ -90,34 +101,39 @@
       <recent name="zearch.index" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/lib/org/json" />
       <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/zearch/v2/spider/robots" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/out" />
+      <recent name="$PROJECT_DIR$/lib/org/json" />
       <recent name="$PROJECT_DIR$/lib" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="zearch" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="zearch.engine.similarity" />
       <recent name="zearch.engine" />
       <recent name="zearch.minhash" />
       <recent name="zearch.spider.robots" />
       <recent name="zearch.query" />
-      <recent name="zearch.gram" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="zearch.v2.database" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MinhashTableTest.test1">
+  <component name="RunManager" selected="JUnit.SimilarityTest.test1">
     <configuration name="Spider" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zearch.spider.Spider" />
-      <module name="spider" />
+      <module name="zearch-engine" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="zearch.util.*" />
@@ -128,59 +144,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MinHasherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spider" />
+    <configuration name="GrammifierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="zearch-engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.minhash.*" />
+          <option name="PATTERN" value="zearch.engine.similarity.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="zearch.minhash" />
-      <option name="MAIN_CLASS_NAME" value="zearch.minhash.MinHasherTest" />
-      <option name="METHOD_NAME" value="testLargeText" />
+      <option name="PACKAGE_NAME" value="zearch.engine.similarity" />
+      <option name="MAIN_CLASS_NAME" value="zearch.engine.similarity.GrammifierTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MinHasherTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spider" />
+    <configuration name="GrammifierTest.testAbcs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="zearch-engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.minhash.*" />
+          <option name="PATTERN" value="zearch.engine.similarity.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="zearch.minhash" />
-      <option name="MAIN_CLASS_NAME" value="zearch.minhash.MinHasherTest" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="PACKAGE_NAME" value="zearch.engine.similarity" />
+      <option name="MAIN_CLASS_NAME" value="zearch.engine.similarity.GrammifierTest" />
+      <option name="METHOD_NAME" value="testAbcs" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MinHasherTest.testLargeText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spider" />
+    <configuration name="GrammifierTest.testcomputeGramScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="zearch-engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.minhash.*" />
+          <option name="PATTERN" value="zearch.engine.similarity.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="zearch.minhash" />
-      <option name="MAIN_CLASS_NAME" value="zearch.minhash.MinHasherTest" />
-      <option name="METHOD_NAME" value="testLargeText" />
+      <option name="PACKAGE_NAME" value="zearch.engine.similarity" />
+      <option name="MAIN_CLASS_NAME" value="zearch.engine.similarity.GrammifierTest" />
+      <option name="METHOD_NAME" value="testcomputeGramScore" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="MinhashTableTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spider" />
+      <module name="zearch-engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.engine.*" />
+          <option name="PATTERN" value="zearch.engine.datastructures.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -192,27 +207,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="build" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
-      <makefile filename="$PROJECT_DIR$/Makefile" target="build" workingDirectory="" arguments="">
-        <envs />
-      </makefile>
-      <method v="2" />
+    <configuration name="SimilarityTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="zearch-engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.engine.similarity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zearch.engine.similarity" />
+      <option name="MAIN_CLASS_NAME" value="zearch.engine.similarity.SimilarityTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
       <item itemvalue="Application.Spider" />
-      <item itemvalue="JUnit.MinHasherTest" />
-      <item itemvalue="JUnit.MinHasherTest.test1" />
-      <item itemvalue="JUnit.MinHasherTest.testLargeText" />
+      <item itemvalue="JUnit.GrammifierTest" />
+      <item itemvalue="JUnit.GrammifierTest.testAbcs" />
+      <item itemvalue="JUnit.GrammifierTest.testcomputeGramScore" />
+      <item itemvalue="JUnit.SimilarityTest.test1" />
       <item itemvalue="JUnit.MinhashTableTest.test1" />
-      <item itemvalue="Makefile Target.build" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SimilarityTest.test1" />
+        <item itemvalue="JUnit.GrammifierTest" />
+        <item itemvalue="JUnit.GrammifierTest.testAbcs" />
+        <item itemvalue="JUnit.GrammifierTest.testcomputeGramScore" />
         <item itemvalue="JUnit.MinhashTableTest.test1" />
-        <item itemvalue="JUnit.MinHasherTest" />
-        <item itemvalue="JUnit.MinHasherTest.testLargeText" />
-        <item itemvalue="JUnit.MinHasherTest.test1" />
-        <item itemvalue="Makefile Target.build" />
       </list>
     </recent_temporary>
   </component>
@@ -227,14 +252,9 @@
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
       <workItem from="1671678194877" duration="33076000" />
-      <workItem from="1671821714890" duration="83544000" />
-    </task>
-    <task id="LOCAL-00002" summary="BoundedQueue">
-      <created>1671567957817</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1671567957817</updated>
+      <workItem from="1671821714890" duration="87358000" />
+      <workItem from="1672344750676" duration="1834000" />
+      <workItem from="1672346594516" duration="3588000" />
     </task>
     <task id="LOCAL-00003" summary="crawler">
       <created>1671573804442</created>
@@ -572,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672263060274</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="fix minhashtable">
+      <created>1672340934395</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1672340934395</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +617,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="comment out disallow" />
     <MESSAGE value="exit on empty line" />
     <MESSAGE value="adjust document score &amp; timeout on Jsoup" />
     <MESSAGE value="better url spider queue" />
@@ -615,6 +641,7 @@
     <MESSAGE value="change ground method" />
     <MESSAGE value="fix crawl workflow" />
     <MESSAGE value="add more links" />
-    <option name="LAST_COMMIT_MESSAGE" value="add more links" />
+    <MESSAGE value="fix minhashtable" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix minhashtable" />
   </component>
 </project>

@@ -1,9 +1,8 @@
 package zearch.engine;
 
 import org.junit.jupiter.api.Test;
+import zearch.engine.datastructures.MinhashTable;
 
-import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
