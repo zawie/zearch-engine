@@ -20,9 +20,9 @@ public class MinhashTable<E> {
             keys[K] = l;
            for (int k = 0; k < K; k++)
                keys[k] = hashes[l*K + k];
-           Integer key = keys.hashCode();
-           table.putIfAbsent(key, new HashSet<>());
-           table.get(key).add(element);
+            Integer key = Arrays.hashCode(keys);
+            table.putIfAbsent(key, new HashSet<>());
+            table.get(key).add(element);
         }
     }
 
@@ -34,7 +34,7 @@ public class MinhashTable<E> {
             keys[K] = l;
             for (int k = 0; k < K; k++)
                 keys[k] = hashes[l*K + k];
-            int key = keys.hashCode();
+            Integer key = Arrays.hashCode(keys);
             output.addAll(table.getOrDefault(key, Collections.emptySet()));
         }
         return output;

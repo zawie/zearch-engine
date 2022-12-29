@@ -19,13 +19,14 @@ public class SearchEngine {
         int hashes[] = model.computeMinhashes(query);
         Collection<Long> rowIds = minhashTable.query(hashes);
 
-        System.out.println("Search results:");
+//        System.out.println("Number of results: " + rowIds.size());
+//        System.out.println("\\/\\/\\/Search results:\\/\\/\\/");
         for (Long id : rowIds) {
-            Map<String, String> metaData = model.getMetaData(id);
-            System.out.println(" - " + metaData.getOrDefault("title", "No Title")+ ": " + metaData.getOrDefault("url", "No URL"));
-        }
-        System.out.println("End search results:");
+            Map<String, String> data = model.getData(id);
 
+//           System.out.println(data.getOrDefault("title", "No Title")+ ":\t" + data.getOrDefault("url", "No URL"));
+        }
+//        System.out.println("/\\/\\/\\End search results/\\/\\/\\");
         return new SearchResult();
     }
 
@@ -34,7 +35,7 @@ public class SearchEngine {
 
         System.out.println("Num entires: " + numEntries);
         int K = Math.max((int) (Math.log(numEntries) / Math.log(256)), 1); // log base 256
-        int L = MinHasher.COUNT/K;
+        int L = 1; //MinHasher.COUNT/K;
 
         this.minhashTable = new MinhashTable<>(K, L);
 

@@ -13,5 +13,5 @@ public interface ISearchEngineToModel {
 
     int[] computeMinhashes(String query);
 
-    Map<String, String> getMetaData(Long id);
+    Map<String, String> getData(Long id);
 }

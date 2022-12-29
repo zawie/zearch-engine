@@ -137,7 +137,7 @@ public class IndexDatabase {
         };
     }
 
-    public static Map<String, String> getMetaData(Long rowId) throws SQLException {
+    public static Map<String, String> getData(Long rowId) throws SQLException {
         Statement statement = connection.createStatement();
         List<String> columns = new LinkedList<>();
         columns.add("url");
@@ -145,13 +145,16 @@ public class IndexDatabase {
         columns.add("description");
         columns.add("keywords");
         columns.add("author");
-        ResultSet rs = statement.executeQuery("SELECT ("+String.join(", ", columns)+") FROM index_table WHERE url = "+rowId);
+        ResultSet rs = statement.executeQuery("SELECT "+String.join(", ", columns)+" FROM index_table WHERE id = "+rowId);
         //Retrieving the result
-        rs.next();
-        Map<String, String> metaData = new HashMap<>();
-        for (String col: columns) {
-            metaData.put(col, rs.getString(col));
+        ResultSetMetaData rsmd = rs.getMetaData();
+        int columnsNumber = rsmd.getColumnCount();
+        Map<String, String> data = new HashMap<>();
+        while (rs.next()) {
+            for(int i = 1; i < columnsNumber; i++) {
+                data.put(rsmd.getColumnLabel(i).toLowerCase(), rs.getString(i));
+            }
         }
-        return metaData;
+        return data;
     }
 }

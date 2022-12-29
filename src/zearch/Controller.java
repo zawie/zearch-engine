@@ -57,9 +57,9 @@ public class Controller {
                 }
 
                 @Override
-                public Map<String, String> getMetaData(Long id) {
+                public Map<String, String> getData(Long id) {
                     try {
-                        return IndexDatabase.getMetaData(id);
+                        return IndexDatabase.getData(id);
                     } catch (SQLException e) {
                         throw new RuntimeException(e);}
 

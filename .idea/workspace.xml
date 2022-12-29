@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="attempt fix minhashing">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="add more links">
       <change afterPath="$PROJECT_DIR$/database_filepath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tst/zearch/engine/MinhashTableTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search.sh" beforeDir="false" afterPath="$PROJECT_DIR$/search.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/ISearchEngineToModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/ISearchEngineToModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/MinhashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/MinhashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,36 +104,23 @@
       <recent name="zearch" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="zearch.engine" />
       <recent name="zearch.minhash" />
       <recent name="zearch.spider.robots" />
       <recent name="zearch.query" />
       <recent name="zearch.gram" />
-      <recent name="zearch.index" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="zearch.v2.database" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MinHasherTest">
+  <component name="RunManager" selected="JUnit.MinhashTableTest.test1">
     <configuration name="Spider" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zearch.spider.Spider" />
       <module name="spider" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="zearch.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="zearch.server.Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="zearch.server.Server" />
-      <module name="spider" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="zearch.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -184,6 +176,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MinhashTableTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.engine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zearch.engine" />
+      <option name="MAIN_CLASS_NAME" value="zearch.engine.MinhashTableTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="build" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/Makefile" target="build" workingDirectory="" arguments="">
         <envs />
@@ -192,19 +200,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Spider" />
-      <item itemvalue="Application.zearch.server.Server" />
       <item itemvalue="JUnit.MinHasherTest" />
       <item itemvalue="JUnit.MinHasherTest.test1" />
       <item itemvalue="JUnit.MinHasherTest.testLargeText" />
+      <item itemvalue="JUnit.MinhashTableTest.test1" />
       <item itemvalue="Makefile Target.build" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MinhashTableTest.test1" />
         <item itemvalue="JUnit.MinHasherTest" />
         <item itemvalue="JUnit.MinHasherTest.testLargeText" />
         <item itemvalue="JUnit.MinHasherTest.test1" />
         <item itemvalue="Makefile Target.build" />
-        <item itemvalue="Application.zearch.server.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -219,14 +227,7 @@
       <workItem from="1671609120113" duration="77000" />
       <workItem from="1671609402847" duration="18238000" />
       <workItem from="1671678194877" duration="33076000" />
-      <workItem from="1671821714890" duration="70550000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial spider">
-      <created>1671567337506</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1671567337506</updated>
+      <workItem from="1671821714890" duration="83544000" />
     </task>
     <task id="LOCAL-00002" summary="BoundedQueue">
       <created>1671567957817</created>
@@ -550,7 +551,28 @@
       <option name="project" value="LOCAL" />
       <updated>1672209930510</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="change ground method">
+      <created>1672211107883</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1672211107883</updated>
+    </task>
+    <task id="LOCAL-00049" summary="fix crawl workflow">
+      <created>1672257216338</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1672257216338</updated>
+    </task>
+    <task id="LOCAL-00050" summary="add more links">
+      <created>1672263060273</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1672263060274</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,9 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="don't wait on exception" />
-    <MESSAGE value="don't wait on exception &amp; better initial pooling" />
-    <MESSAGE value="interactive search engine" />
     <MESSAGE value="comment out disallow" />
     <MESSAGE value="exit on empty line" />
     <MESSAGE value="adjust document score &amp; timeout on Jsoup" />
@@ -593,6 +612,9 @@
     <MESSAGE value="print num entries" />
     <MESSAGE value="fix minhashing" />
     <MESSAGE value="attempt fix minhashing" />
-    <option name="LAST_COMMIT_MESSAGE" value="attempt fix minhashing" />
+    <MESSAGE value="change ground method" />
+    <MESSAGE value="fix crawl workflow" />
+    <MESSAGE value="add more links" />
+    <option name="LAST_COMMIT_MESSAGE" value="add more links" />
   </component>
 </project>
