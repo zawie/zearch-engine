@@ -4,28 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="fix minhashtable">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20220924.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_json_20120521.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database_filepath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/GramData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/Grammifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/Similarity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tst/zearch/engine/similarity/GrammifierTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tst/zearch/engine/similarity/SimilarityTest.java" afterDir="false" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="initial search engine">
+      <change afterPath="$PROJECT_DIR$/src/zearch/server/IServerToModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/trigrams.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/trigrams.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search.sh" beforeDir="false" afterPath="$PROJECT_DIR$/search.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/zearch-engine.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/engine/MinhashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/datastructures/MinhashTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/util/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/util/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/engine/MinhashTableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/engine/MinhashTableTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +25,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Interface" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -254,14 +240,7 @@
       <workItem from="1671678194877" duration="33076000" />
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
-      <workItem from="1672346594516" duration="3588000" />
-    </task>
-    <task id="LOCAL-00003" summary="crawler">
-      <created>1671573804442</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1671573804442</updated>
+      <workItem from="1672346594516" duration="4356000" />
     </task>
     <task id="LOCAL-00004" summary="more implementation &amp; tests">
       <created>1671584809205</created>
@@ -599,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672340934395</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="initial search engine">
+      <created>1672350340532</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1672350340532</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +603,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="exit on empty line" />
     <MESSAGE value="adjust document score &amp; timeout on Jsoup" />
     <MESSAGE value="better url spider queue" />
     <MESSAGE value="better crawler" />
@@ -642,6 +627,7 @@
     <MESSAGE value="fix crawl workflow" />
     <MESSAGE value="add more links" />
     <MESSAGE value="fix minhashtable" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix minhashtable" />
+    <MESSAGE value="initial search engine" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial search engine" />
   </component>
 </project>

@@ -6,6 +6,8 @@ import zearch.engine.ISearchEngineToModel;
 import zearch.engine.SearchEngine;
 import zearch.engine.SearchResult;
 import zearch.minhash.MinHasher;
+import zearch.server.IServerToModel;
+import zearch.server.Server;
 import zearch.spider.Spider;
 
 import java.io.IOException;
@@ -65,11 +67,26 @@ public class Controller {
 
                 }
             });
+
+            if (runServer) {
+                SearchEngine finalSearchEngine = searchEngine;
+                Server server = new Server(new IServerToModel() {
+                    @Override
+                    public SearchResult search(String query) {
+                        return finalSearchEngine.search(query);
+                    }
+                });
+
+                try {
+                    server.start();
+                } catch (IOException e) {
+                    System.out.println("Failed to start server!");
+                    throw new RuntimeException(e);
+                }
+            }
         }
 
-        if (runServer) {
-            // TODO: Implement server
-        }
+
 
         if (numCrawlers > 0) {
             Spider spider = new Spider((url, metaData, text) -> {
