@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="refresh minhashtable every hour" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="Penalize missing meta information">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchResult.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -232,14 +236,7 @@
       <workItem from="1671678194877" duration="33076000" />
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
-      <workItem from="1672346594516" duration="12567000" />
-    </task>
-    <task id="LOCAL-00017" summary="more work">
-      <created>1671675125781</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1671675125781</updated>
+      <workItem from="1672346594516" duration="13402000" />
     </task>
     <task id="LOCAL-00018" summary="running version">
       <created>1671689347747</created>
@@ -577,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672432385067</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Penalize missing meta information">
+      <created>1672433074096</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1672433074096</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +599,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ignore database_filepath" />
     <MESSAGE value="unique id per row" />
     <MESSAGE value="increase number of max domains stored" />
     <MESSAGE value="initial search engine attempt" />
@@ -620,6 +623,7 @@
     <MESSAGE value="add more CORS" />
     <MESSAGE value="remove duplicates from index" />
     <MESSAGE value="refresh minhashtable every hour" />
-    <option name="LAST_COMMIT_MESSAGE" value="refresh minhashtable every hour" />
+    <MESSAGE value="Penalize missing meta information" />
+    <option name="LAST_COMMIT_MESSAGE" value="Penalize missing meta information" />
   </component>
 </project>

@@ -46,12 +46,11 @@ public class SearchEngine {
             orderedResults.add(new Pair<>(data, score));
         }
 
-        List<Map<String, String>> sites = new LinkedList<>();
+        List<Pair<Map<String, String>, Double>> topResults = new LinkedList<>();
         for (int i = 0; !orderedResults.isEmpty() && i < MAX_RETURNED; i++) {
-            Pair<Map<String, String>, Double> pair = orderedResults.poll();
-            sites.add(pair.getFirst());
+            topResults.add(orderedResults.poll());
         }
-        SearchResult result = new SearchResult(query, sites);
+        SearchResult result = new SearchResult(query, topResults);
 
         return result;
     }
