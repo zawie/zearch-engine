@@ -25,7 +25,13 @@ public class Server {
         String path = "/search/";
         server.createContext(path, (exchange -> {
             Headers headers = exchange.getResponseHeaders();
-            if ("GET".equals(exchange.getRequestMethod())) {
+
+            if ("OPTIONS".equalsIgnoreCase(exchange.getRequestMethod())) {
+                exchange.getResponseHeaders().add("Access-Control-Allow-Methods", "GET, OPTIONS");
+                exchange.getResponseHeaders().add("Access-Control-Allow-Headers", "Content-Type,Authorization");
+                exchange.sendResponseHeaders(204, -1);
+                return;
+            } else if ("GET".equalsIgnoreCase(exchange.getRequestMethod())) {
                 String query = exchange.getRequestURI()
                         .getQuery()
                         .substring("query=".length())
