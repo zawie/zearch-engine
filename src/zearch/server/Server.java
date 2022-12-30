@@ -15,14 +15,14 @@ import java.util.List;
 public class Server {
 
     private IServerToModel model;
-    private static final int PORT = 80;
-    public Server(IServerToModel model) {
-        this.model = model;
-    }
-    public void start() throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(PORT), 0);
-        String path = "/search/";
+    private HttpServer server;
 
+    private static final int PORT = 80;
+    public Server(IServerToModel model) throws IOException {
+        this.model = model;
+        this.server = HttpServer.create(new InetSocketAddress(PORT), 0);
+
+        String path = "/search/";
         server.createContext(path, (exchange -> {
             Headers headers = exchange.getResponseHeaders();
             if ("GET".equals(exchange.getRequestMethod())) {
@@ -39,6 +39,7 @@ public class Server {
                     return;
                 }
                 headers.set("Content-Type", String.format("application/json; charset=%s", StandardCharsets.UTF_8));
+                headers.set("Access-Control-Allow-Origin" , "*");
                 exchange.sendResponseHeaders(200, responseText.getBytes().length);
                 OutputStream output = exchange.getResponseBody();
                 output.write(responseText.getBytes());
@@ -48,8 +49,8 @@ public class Server {
             }
             exchange.close();
         }));
-
-
+    }
+    public void start() throws IOException {
         server.setExecutor(null); // creates a default executor
         server.start();
     }
