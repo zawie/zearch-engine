@@ -17,7 +17,7 @@ public class Server {
     private IServerToModel model;
     private HttpServer server;
 
-    private static final int PORT = 8080;
+    private static final int PORT = 80;
     public Server(IServerToModel model) throws IOException {
         this.model = model;
         this.server = HttpServer.create(new InetSocketAddress(PORT), 0);
