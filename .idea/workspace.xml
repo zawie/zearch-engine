@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="initial search engine">
-      <change afterPath="$PROJECT_DIR$/src/zearch/server/IServerToModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="server factor &amp; Access-Control-Allow-Origin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.sh" beforeDir="false" afterPath="$PROJECT_DIR$/search.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spider.sh" beforeDir="false" afterPath="$PROJECT_DIR$/spider.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,49 +235,7 @@
       <workItem from="1671678194877" duration="33076000" />
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
-      <workItem from="1672346594516" duration="4356000" />
-    </task>
-    <task id="LOCAL-00004" summary="more implementation &amp; tests">
-      <created>1671584809205</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1671584809206</updated>
-    </task>
-    <task id="LOCAL-00005" summary="parseMetaDataTest">
-      <created>1671584984005</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1671584984005</updated>
-    </task>
-    <task id="LOCAL-00006" summary="scraper tests">
-      <created>1671585220925</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1671585220925</updated>
-    </task>
-    <task id="LOCAL-00007" summary="jsoup">
-      <created>1671586705845</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1671586705845</updated>
-    </task>
-    <task id="LOCAL-00008" summary="database start">
-      <created>1671614614420</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1671614614420</updated>
-    </task>
-    <task id="LOCAL-00009" summary="database start">
-      <created>1671644205305</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1671644205305</updated>
+      <workItem from="1672346594516" duration="8510000" />
     </task>
     <task id="LOCAL-00010" summary="first working database">
       <created>1671651965306</created>
@@ -585,7 +538,49 @@
       <option name="project" value="LOCAL" />
       <updated>1672350340532</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="implements server">
+      <created>1672351221172</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1672351221172</updated>
+    </task>
+    <task id="LOCAL-00054" summary="adds org.json">
+      <created>1672351253100</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1672351253100</updated>
+    </task>
+    <task id="LOCAL-00055" summary="add quotes to search script">
+      <created>1672351278947</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1672351278947</updated>
+    </task>
+    <task id="LOCAL-00056" summary="change project name">
+      <created>1672351297715</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1672351297715</updated>
+    </task>
+    <task id="LOCAL-00057" summary="server factor &amp; Access-Control-Allow-Origin">
+      <created>1672391849959</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1672391849959</updated>
+    </task>
+    <task id="LOCAL-00058" summary="server factor &amp; Access-Control-Allow-Origin">
+      <created>1672391923404</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1672391923404</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,11 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adjust document score &amp; timeout on Jsoup" />
-    <MESSAGE value="better url spider queue" />
-    <MESSAGE value="better crawler" />
-    <MESSAGE value="count rows" />
-    <MESSAGE value="server" />
     <MESSAGE value="server script" />
     <MESSAGE value="fix threading attempt" />
     <MESSAGE value="main" />
@@ -628,6 +618,11 @@
     <MESSAGE value="add more links" />
     <MESSAGE value="fix minhashtable" />
     <MESSAGE value="initial search engine" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial search engine" />
+    <MESSAGE value="implements server" />
+    <MESSAGE value="adds org.json" />
+    <MESSAGE value="add quotes to search script" />
+    <MESSAGE value="change project name" />
+    <MESSAGE value="server factor &amp; Access-Control-Allow-Origin" />
+    <option name="LAST_COMMIT_MESSAGE" value="server factor &amp; Access-Control-Allow-Origin" />
   </component>
 </project>

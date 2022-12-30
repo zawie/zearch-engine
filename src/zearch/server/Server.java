@@ -17,7 +17,7 @@ public class Server {
     private IServerToModel model;
     private HttpServer server;
 
-    private static final int PORT = 80;
+    private static final int PORT = 8080;
     public Server(IServerToModel model) throws IOException {
         this.model = model;
         this.server = HttpServer.create(new InetSocketAddress(PORT), 0);
@@ -39,7 +39,8 @@ public class Server {
                     return;
                 }
                 headers.set("Content-Type", String.format("application/json; charset=%s", StandardCharsets.UTF_8));
-                headers.set("Access-Control-Allow-Origin" , "*");
+                headers.add("Access-Control-Allow-Origin" , "*");
+
                 exchange.sendResponseHeaders(200, responseText.getBytes().length);
                 OutputStream output = exchange.getResponseBody();
                 output.write(responseText.getBytes());
