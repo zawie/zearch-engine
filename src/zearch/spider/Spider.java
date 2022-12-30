@@ -142,6 +142,7 @@ public class Spider {
         }
         if (urls.isEmpty()) {
             domainToURLs.remove(domain);
+            domainQueue.remove(domain);
         }
         visited.add(url);
         if (!robots.isAllowed(url))
