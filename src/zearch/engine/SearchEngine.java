@@ -38,7 +38,12 @@ public class SearchEngine {
                 metaText.append(" ").append(v);
             }
             Double score = Similarity.similarity(query, metaText.toString());
-            orderedResults.add( new Pair<>(data, score));
+            // Penalize missing meta information
+            if (!data.containsKey("description"))
+                score /= 10;
+            if (!data.containsKey("title"))
+                score /= 20;
+            orderedResults.add(new Pair<>(data, score));
         }
 
         List<Map<String, String>> sites = new LinkedList<>();

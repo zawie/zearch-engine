@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="remove duplicates from index">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="refresh minhashtable every hour" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -234,14 +232,7 @@
       <workItem from="1671678194877" duration="33076000" />
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
-      <workItem from="1672346594516" duration="12063000" />
-    </task>
-    <task id="LOCAL-00016" summary="proof of concept">
-      <created>1671674291437</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1671674291437</updated>
+      <workItem from="1672346594516" duration="12567000" />
     </task>
     <task id="LOCAL-00017" summary="more work">
       <created>1671675125781</created>
@@ -579,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672431917977</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="refresh minhashtable every hour">
+      <created>1672432385067</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1672432385067</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +595,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="major rework &amp; refactor (new index method!)" />
     <MESSAGE value="ignore database_filepath" />
     <MESSAGE value="unique id per row" />
     <MESSAGE value="increase number of max domains stored" />
@@ -622,6 +619,7 @@
     <MESSAGE value="move Access-Control-Allow-Origin header" />
     <MESSAGE value="add more CORS" />
     <MESSAGE value="remove duplicates from index" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove duplicates from index" />
+    <MESSAGE value="refresh minhashtable every hour" />
+    <option name="LAST_COMMIT_MESSAGE" value="refresh minhashtable every hour" />
   </component>
 </project>
