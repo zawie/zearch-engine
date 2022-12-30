@@ -70,14 +70,15 @@ public class Controller {
 
             if (runServer) {
                 SearchEngine finalSearchEngine = searchEngine;
-                Server server = new Server(new IServerToModel() {
-                    @Override
-                    public SearchResult search(String query) {
-                        return finalSearchEngine.search(query);
-                    }
-                });
 
                 try {
+                    Server server = new Server(new IServerToModel() {
+                        @Override
+                        public SearchResult search(String query) {
+                            return finalSearchEngine.search(query);
+                        }
+                    });
+
                     server.start();
                 } catch (IOException e) {
                     System.out.println("Failed to start server!");
@@ -85,8 +86,6 @@ public class Controller {
                 }
             }
         }
-
-
 
         if (numCrawlers > 0) {
             Spider spider = new Spider((url, metaData, text) -> {

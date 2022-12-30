@@ -38,7 +38,6 @@ public class SearchEngine {
                 metaText.append(" ").append(v);
             }
             Double score = Similarity.similarity(query, metaText.toString());
-            System.out.println(score + ": " + data.get("url") + " | " + data.getOrDefault("title", "No title"));
             orderedResults.add( new Pair<>(data, score));
         }
 
