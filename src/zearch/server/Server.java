@@ -30,6 +30,13 @@ public class Server {
             if ("OPTIONS".equalsIgnoreCase(exchange.getRequestMethod())) {
                 exchange.getResponseHeaders().add("Access-Control-Allow-Methods", "GET, OPTIONS");
                 exchange.getResponseHeaders().add("Access-Control-Allow-Headers", "Content-Type,Authorization");
+                exchange.getResponseHeaders().add("Access-Control-Allow-Headers", "Access-Control-Allow-Headers");
+                exchange.getResponseHeaders().add("Access-Control-Allow-Headers", "Origin");
+                exchange.getResponseHeaders().add("Access-Control-Allow-Headers", "Accept");
+                exchange.getResponseHeaders().add("Access-Control-Allow-Headers", "X-Requested-With");
+                exchange.getResponseHeaders().add("Access-Control-Allow-Headers", "Content-Type");
+                exchange.getResponseHeaders().add("Access-Control-Allow-Headers", "Access-Control-Request-Method");
+                exchange.getResponseHeaders().add("Access-Control-Allow-Headers", "Access-Control-Request-Headers");
                 exchange.sendResponseHeaders(204, -1);
                 return;
             } else if ("GET".equalsIgnoreCase(exchange.getRequestMethod())) {
