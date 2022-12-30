@@ -34,6 +34,11 @@ public class Controller {
         MinHasher hasher = new MinHasher();
         SearchEngine searchEngine = null;
         if (runServer || numCrawlers <= 0) {
+            try {
+                IndexDatabase.removeDuplicates();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
             searchEngine = new SearchEngine(new ISearchEngineToModel() {
                 @Override
                 public Iterator<IndexEntry> getAllIndexEntries() {

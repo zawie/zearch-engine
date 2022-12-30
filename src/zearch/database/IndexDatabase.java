@@ -157,4 +157,9 @@ public class IndexDatabase {
         }
         return data;
     }
+
+    public static void removeDuplicates() throws SQLException {
+        Statement statement = connection.createStatement();
+        statement.execute("DELETE FROM index_table WHERE id NOT IN (SELECT MAX(ID) AS MaxRecordID FROM index_table GROUP BY url)");
+    }
 }
