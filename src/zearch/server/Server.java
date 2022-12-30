@@ -25,6 +25,7 @@ public class Server {
         String path = "/search/";
         server.createContext(path, (exchange -> {
             Headers headers = exchange.getResponseHeaders();
+            headers.add("Access-Control-Allow-Origin" , "*");
 
             if ("OPTIONS".equalsIgnoreCase(exchange.getRequestMethod())) {
                 exchange.getResponseHeaders().add("Access-Control-Allow-Methods", "GET, OPTIONS");
@@ -45,7 +46,6 @@ public class Server {
                     return;
                 }
                 headers.set("Content-Type", String.format("application/json; charset=%s", StandardCharsets.UTF_8));
-                headers.add("Access-Control-Allow-Origin" , "*");
 
                 exchange.sendResponseHeaders(200, responseText.getBytes().length);
                 OutputStream output = exchange.getResponseBody();
