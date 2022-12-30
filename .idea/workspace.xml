@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="fix port back to 80" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="remove duplicates from index">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -232,35 +234,7 @@
       <workItem from="1671678194877" duration="33076000" />
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
-      <workItem from="1672346594516" duration="8829000" />
-    </task>
-    <task id="LOCAL-00012" summary="initial gram score">
-      <created>1671655750879</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1671655750879</updated>
-    </task>
-    <task id="LOCAL-00013" summary="gramToScore 2.0">
-      <created>1671656609064</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1671656609064</updated>
-    </task>
-    <task id="LOCAL-00014" summary="1 byte score">
-      <created>1671657292166</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1671657292166</updated>
-    </task>
-    <task id="LOCAL-00015" summary="combined score">
-      <created>1671659095215</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1671659095215</updated>
+      <workItem from="1672346594516" duration="12063000" />
     </task>
     <task id="LOCAL-00016" summary="proof of concept">
       <created>1671674291437</created>
@@ -577,7 +551,35 @@
       <option name="project" value="LOCAL" />
       <updated>1672425603570</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="handle OPTIONS method">
+      <created>1672425984662</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1672425984662</updated>
+    </task>
+    <task id="LOCAL-00062" summary="move Access-Control-Allow-Origin header">
+      <created>1672426101687</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1672426101687</updated>
+    </task>
+    <task id="LOCAL-00063" summary="add more CORS">
+      <created>1672429370874</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1672429370874</updated>
+    </task>
+    <task id="LOCAL-00064" summary="remove duplicates from index">
+      <created>1672431917977</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1672431917977</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,10 +597,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="main" />
-    <MESSAGE value="fix make" />
-    <MESSAGE value="fix main script" />
-    <MESSAGE value="fix capitalizaiton in makefile" />
     <MESSAGE value="major rework &amp; refactor (new index method!)" />
     <MESSAGE value="ignore database_filepath" />
     <MESSAGE value="unique id per row" />
@@ -620,6 +618,10 @@
     <MESSAGE value="server factor &amp; Access-Control-Allow-Origin" />
     <MESSAGE value="cors fix attempt" />
     <MESSAGE value="fix port back to 80" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix port back to 80" />
+    <MESSAGE value="handle OPTIONS method" />
+    <MESSAGE value="move Access-Control-Allow-Origin header" />
+    <MESSAGE value="add more CORS" />
+    <MESSAGE value="remove duplicates from index" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove duplicates from index" />
   </component>
 </project>

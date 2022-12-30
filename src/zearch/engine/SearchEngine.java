@@ -67,4 +67,8 @@ public class SearchEngine {
         }
     }
 
+    public void refresh() {
+        generateMinhashTable();
+    }
+
 }

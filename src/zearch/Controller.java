@@ -16,6 +16,8 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.*;
 
+import static java.lang.Thread.sleep;
+
 public class Controller {
 
     public static void main(String[] args) {
@@ -122,8 +124,19 @@ public class Controller {
                 result.print(10);
             }
         }
+
+        //Refresh search engine every hour
+        while (runServer) {
+            try {
+                sleep(60*60*1000);
+                System.out.println("Refreshing Search Engine!");
+                IndexDatabase.removeDuplicates();
+                searchEngine.refresh();
+            } catch (Exception e) {
+                System.out.println("Failed to refresh");
+                e.printStackTrace();
+            }
+        }
     }
-
-
 
 }
