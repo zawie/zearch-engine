@@ -86,7 +86,11 @@ public class Server {
                 try {
                     responseText = model.search(query).toJSON();
                 } catch (Exception e) {
-                    exchange.sendResponseHeaders(500, -1);// 500 Server Error
+                    responseText = "{\"error\": \""+e.toString()+"\"}";
+                    exchange.sendResponseHeaders(500, responseText.length()); // 500 Server Error
+                    OutputStream output = exchange.getResponseBody();
+                    output.write(responseText.getBytes());
+                    output.flush();
                     return;
                 }
                 headers.set("Content-Type", String.format("application/json; charset=%s", StandardCharsets.UTF_8));
