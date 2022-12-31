@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="include score in respose">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="reduce thread count on main script">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/spider/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/spider/Spider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,21 +235,7 @@
       <workItem from="1671678194877" duration="33076000" />
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
-      <workItem from="1672346594516" duration="16821000" />
-    </task>
-    <task id="LOCAL-00019" summary="updates and fix tests">
-      <created>1671695933375</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1671695933375</updated>
-    </task>
-    <task id="LOCAL-00020" summary="better crawler">
-      <created>1671726732051</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1671726732051</updated>
+      <workItem from="1672346594516" duration="18111000" />
     </task>
     <task id="LOCAL-00021" summary="better robots parser">
       <created>1671727006354</created>
@@ -581,7 +566,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672433493670</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="remove domain from queue on empty urls">
+      <created>1672442922890</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1672442922890</updated>
+    </task>
+    <task id="LOCAL-00069" summary="reduce thread count on main script">
+      <created>1672442979627</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1672442979627</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,8 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="increase number of max domains stored" />
-    <MESSAGE value="initial search engine attempt" />
     <MESSAGE value="delete extra search script" />
     <MESSAGE value="print num entries" />
     <MESSAGE value="fix minhashing" />
@@ -624,6 +621,8 @@
     <MESSAGE value="refresh minhashtable every hour" />
     <MESSAGE value="Penalize missing meta information" />
     <MESSAGE value="include score in respose" />
-    <option name="LAST_COMMIT_MESSAGE" value="include score in respose" />
+    <MESSAGE value="remove domain from queue on empty urls" />
+    <MESSAGE value="reduce thread count on main script" />
+    <option name="LAST_COMMIT_MESSAGE" value="reduce thread count on main script" />
   </component>
 </project>
