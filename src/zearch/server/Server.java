@@ -23,7 +23,7 @@ public class Server {
     public Server(IServerToModel model) throws IOException, NoSuchAlgorithmException, KeyStoreException, CertificateException, UnrecoverableKeyException, KeyManagementException {
         this.model = model;
         this.server = HttpsServer.create(new InetSocketAddress(PORT), 0);
-        this.sslContext = SSLContext.getInstance("SSL");
+        this.sslContext = SSLContext.getInstance("TLS");
 
         // Initialise the keystore
         char[] password = "simulator".toCharArray();
