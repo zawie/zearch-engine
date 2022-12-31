@@ -87,6 +87,7 @@ public class Controller {
                     });
 
                     server.start();
+                    System.out.println("Started server!");
                 } catch (Exception e) {
                     System.out.println("Failed to start server!");
                     throw new RuntimeException(e);
