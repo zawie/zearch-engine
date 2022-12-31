@@ -1,26 +1,63 @@
 package zearch.server;
 
 import com.sun.net.httpserver.Headers;
-import com.sun.net.httpserver.HttpServer;
-import zearch.engine.SearchResult;
+import com.sun.net.httpserver.HttpsConfigurator;
+import com.sun.net.httpserver.HttpsParameters;
+import com.sun.net.httpserver.HttpsServer;
 
+import javax.net.ssl.*;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.security.*;
+import java.security.cert.CertificateException;
 
 public class Server {
 
     private IServerToModel model;
-    private HttpServer server;
-
-    private static final int PORT = 80;
-    public Server(IServerToModel model) throws IOException {
+    private HttpsServer server;
+    private SSLContext sslContext;
+    private static final int PORT = 443;
+    public Server(IServerToModel model) throws IOException, NoSuchAlgorithmException, KeyStoreException, CertificateException, UnrecoverableKeyException, KeyManagementException {
         this.model = model;
-        this.server = HttpServer.create(new InetSocketAddress(PORT), 0);
+        this.server = HttpsServer.create(new InetSocketAddress(PORT), 0);
+        this.sslContext = SSLContext.getInstance("TLS");
+
+        // Initialise the keystore
+        char[] password = "simulator".toCharArray();
+        KeyStore ks = KeyStore.getInstance("JKS");
+        FileInputStream fis = new FileInputStream("lig.keystore");
+        ks.load(fis, password);
+
+        // Set up the key manager factory
+        KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
+        kmf.init(ks, password);
+
+        // Set up the trust manager factory
+        TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");
+        tmf.init(ks);
+
+        sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
+        server.setHttpsConfigurator(new HttpsConfigurator(sslContext) {
+            public void configure(HttpsParameters params) {
+                try {
+                    // Initialise the SSL context
+                    SSLContext c = SSLContext.getDefault();
+                    SSLEngine engine = c.createSSLEngine();
+                    params.setNeedClientAuth(false);
+                    params.setCipherSuites(engine.getEnabledCipherSuites());
+                    params.setProtocols(engine.getEnabledProtocols());
+
+                    // Get the default parameters
+                    SSLParameters defaultSSLParameters = c.getDefaultSSLParameters();
+                    params.setSSLParameters(defaultSSLParameters);
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
 
         String path = "/search/";
         server.createContext(path, (exchange -> {
