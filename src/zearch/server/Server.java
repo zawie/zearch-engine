@@ -1,9 +1,6 @@
 package zearch.server;
 
-import com.sun.net.httpserver.Headers;
-import com.sun.net.httpserver.HttpsConfigurator;
-import com.sun.net.httpserver.HttpsParameters;
-import com.sun.net.httpserver.HttpsServer;
+import com.sun.net.httpserver.*;
 
 import javax.net.ssl.*;
 import java.io.FileInputStream;
@@ -60,7 +57,8 @@ public class Server {
         });
 
         String path = "/search/";
-        server.createContext(path, (exchange -> {
+        server.createContext(path, (httpExchange -> {
+            HttpsExchange exchange = (HttpsExchange) httpExchange;
             Headers headers = exchange.getResponseHeaders();
             headers.add("Access-Control-Allow-Origin" , "*");
 
