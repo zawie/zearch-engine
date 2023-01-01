@@ -79,7 +79,6 @@ public class Spider {
     }
 
     public void offerURL(URL url) {
-        String domain = getDomain(url);
         if (visited.contains(url))
             return;
 
@@ -97,6 +96,7 @@ public class Spider {
         }
         return parts[parts.length - 2] + "." + parts[parts.length - 1];
     }
+
     private void ground(URL url, long ms) {
         long t = System.currentTimeMillis();
         String domain = getDomain(url);
@@ -104,8 +104,9 @@ public class Spider {
     }
 
     private URL getNextUrl() throws NoSuchElementException {
+        System.out.println("(get) Queue size: "+urlQueue.size());
         long t = System.currentTimeMillis();
-        URL url = null;
+        URL url;
         while((url = urlQueue.remove()) != null) {
             String domain = getDomain(url);
             Long allowed = ungroundTime.getOrDefault(domain, 0l);
