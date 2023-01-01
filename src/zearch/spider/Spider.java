@@ -104,7 +104,6 @@ public class Spider {
     }
 
     private URL getNextUrl() throws NoSuchElementException {
-        System.out.println("(get) Queue size: "+urlQueue.size());
         long t = System.currentTimeMillis();
         URL url;
         while((url = urlQueue.remove()) != null) {
