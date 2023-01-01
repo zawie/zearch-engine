@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="print when searches were made" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="stop printing queue">
+      <change afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/ComboSimilarity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/ISimilarity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/word/JaccardWordSimilarity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/top500sites.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/top500sites.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/similarity/GramData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/gram/GramData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/similarity/Grammifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/gram/Grammifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/similarity/Similarity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/gram/GramSimilarity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/zearch/engine/similarity/GrammifierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/engine/similarity/GrammifierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/zearch/engine/similarity/SimilarityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/engine/similarity/SimilarityTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,9 +29,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -126,7 +138,7 @@
       <module name="zearch-engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.engine.similarity.*" />
+          <option name="PATTERN" value="zearch.engine.similarity.gram.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,7 +153,7 @@
       <module name="zearch-engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.engine.similarity.*" />
+          <option name="PATTERN" value="zearch.engine.similarity.gram.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,7 +169,7 @@
       <module name="zearch-engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.engine.similarity.*" />
+          <option name="PATTERN" value="zearch.engine.similarity.gram.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -189,7 +201,7 @@
       <module name="zearch-engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.engine.similarity.*" />
+          <option name="PATTERN" value="zearch.engine.similarity.gram.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -232,91 +244,7 @@
       <workItem from="1671678194877" duration="33076000" />
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
-      <workItem from="1672346594516" duration="18703000" />
-    </task>
-    <task id="LOCAL-00022" summary="downgrade to java 11">
-      <created>1671734865881</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1671734865881</updated>
-    </task>
-    <task id="LOCAL-00023" summary="top500sites data">
-      <created>1671757685741</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1671757685741</updated>
-    </task>
-    <task id="LOCAL-00024" summary="don't wait on exception &amp; better initial pooling">
-      <created>1671757785277</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1671757785277</updated>
-    </task>
-    <task id="LOCAL-00025" summary="interactive search engine">
-      <created>1671760234972</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1671760234972</updated>
-    </task>
-    <task id="LOCAL-00026" summary="comment out disallow">
-      <created>1671760278307</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1671760278307</updated>
-    </task>
-    <task id="LOCAL-00027" summary="exit on empty line">
-      <created>1671773230716</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1671773230716</updated>
-    </task>
-    <task id="LOCAL-00028" summary="adjust document score &amp; timeout on Jsoup">
-      <created>1671781471491</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1671781471491</updated>
-    </task>
-    <task id="LOCAL-00029" summary="better url spider queue">
-      <created>1671781494549</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1671781494549</updated>
-    </task>
-    <task id="LOCAL-00030" summary="better crawler">
-      <created>1671783289768</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1671783289768</updated>
-    </task>
-    <task id="LOCAL-00031" summary="count rows">
-      <created>1671821924911</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1671821924911</updated>
-    </task>
-    <task id="LOCAL-00032" summary="server">
-      <created>1671901696923</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1671901696923</updated>
-    </task>
-    <task id="LOCAL-00033" summary="server script">
-      <created>1671903234708</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1671903234708</updated>
+      <workItem from="1672346594516" duration="34852000" />
     </task>
     <task id="LOCAL-00034" summary="fix threading attempt">
       <created>1671904383759</created>
@@ -577,7 +505,91 @@
       <option name="project" value="LOCAL" />
       <updated>1672445171487</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="group by title &amp; description">
+      <created>1672445984555</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1672445984555</updated>
+    </task>
+    <task id="LOCAL-00072" summary="https attempt">
+      <created>1672509375731</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1672509375731</updated>
+    </task>
+    <task id="LOCAL-00073" summary="more meaningful 500 error">
+      <created>1672509905773</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1672509905773</updated>
+    </task>
+    <task id="LOCAL-00074" summary="print server start">
+      <created>1672521330439</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1672521330439</updated>
+    </task>
+    <task id="LOCAL-00075" summary="change https protocol">
+      <created>1672521514195</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1672521514195</updated>
+    </task>
+    <task id="LOCAL-00076" summary="change https protocol to TLS">
+      <created>1672528331664</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1672528331664</updated>
+    </task>
+    <task id="LOCAL-00077" summary="cast exchange">
+      <created>1672528870359</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1672528870359</updated>
+    </task>
+    <task id="LOCAL-00078" summary="attempt to not use kmf">
+      <created>1672529366874</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1672529366874</updated>
+    </task>
+    <task id="LOCAL-00079" summary="add back kmf">
+      <created>1672530352949</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1672530352949</updated>
+    </task>
+    <task id="LOCAL-00080" summary="simplify URL queue">
+      <created>1672532141828</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1672532141828</updated>
+    </task>
+    <task id="LOCAL-00081" summary="print queue size">
+      <created>1672532442495</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1672532442495</updated>
+    </task>
+    <task id="LOCAL-00082" summary="stop printing queue">
+      <created>1672533031053</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1672533031053</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,18 +607,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="print num entries" />
-    <MESSAGE value="fix minhashing" />
-    <MESSAGE value="attempt fix minhashing" />
-    <MESSAGE value="change ground method" />
-    <MESSAGE value="fix crawl workflow" />
-    <MESSAGE value="add more links" />
-    <MESSAGE value="fix minhashtable" />
-    <MESSAGE value="initial search engine" />
-    <MESSAGE value="implements server" />
-    <MESSAGE value="adds org.json" />
-    <MESSAGE value="add quotes to search script" />
-    <MESSAGE value="change project name" />
     <MESSAGE value="server factor &amp; Access-Control-Allow-Origin" />
     <MESSAGE value="cors fix attempt" />
     <MESSAGE value="fix port back to 80" />
@@ -620,6 +620,18 @@
     <MESSAGE value="remove domain from queue on empty urls" />
     <MESSAGE value="reduce thread count on main script" />
     <MESSAGE value="print when searches were made" />
-    <option name="LAST_COMMIT_MESSAGE" value="print when searches were made" />
+    <MESSAGE value="group by title &amp; description" />
+    <MESSAGE value="https attempt" />
+    <MESSAGE value="more meaningful 500 error" />
+    <MESSAGE value="print server start" />
+    <MESSAGE value="change https protocol" />
+    <MESSAGE value="change https protocol to TLS" />
+    <MESSAGE value="cast exchange" />
+    <MESSAGE value="attempt to not use kmf" />
+    <MESSAGE value="add back kmf" />
+    <MESSAGE value="simplify URL queue" />
+    <MESSAGE value="print queue size" />
+    <MESSAGE value="stop printing queue" />
+    <option name="LAST_COMMIT_MESSAGE" value="stop printing queue" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package zearch.engine.similarity;
+package zearch.engine.similarity.gram;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

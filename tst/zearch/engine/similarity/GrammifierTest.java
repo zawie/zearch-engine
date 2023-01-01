@@ -1,6 +1,7 @@
 package zearch.engine.similarity;
 
 import org.junit.jupiter.api.Test;
+import zearch.engine.similarity.gram.Grammifier;
 
 import java.util.Map;
 

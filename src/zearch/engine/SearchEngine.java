@@ -2,8 +2,11 @@ package zearch.engine;
 
 import zearch.database.IndexEntry;
 import zearch.engine.datastructures.MinhashTable;
+import zearch.engine.similarity.ComboSimilarity;
+import zearch.engine.similarity.ISimilarity;
+import zearch.engine.similarity.word.JaccardWordSimilarity;
 import zearch.minhash.MinHasher;
-import zearch.engine.similarity.Similarity;
+import zearch.engine.similarity.gram.GramSimilarity;
 import zearch.util.Pair;
 
 import java.util.*;
@@ -13,6 +16,11 @@ public class SearchEngine {
     private ISearchEngineToModel model;
     private static final int MAX_INDEPTH_COMPARED = 10000;
     private static final int MAX_RETURNED = 50;
+
+    private ISimilarity similarity = new ComboSimilarity(
+            new GramSimilarity(),
+            new JaccardWordSimilarity()
+    );
 
     private MinhashTable<Long> minhashTable;
     public SearchEngine(ISearchEngineToModel model) {
@@ -38,7 +46,7 @@ public class SearchEngine {
             for (String v : data.values()) {
                 metaText.append(" ").append(v);
             }
-            Double score = Similarity.similarity(query, metaText.toString());
+            Double score = similarity.similarity(query, metaText.toString());
             // Penalize missing meta information
             if (!data.containsKey("description"))
                 score /= 10;
