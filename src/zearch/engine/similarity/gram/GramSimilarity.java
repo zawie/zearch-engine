@@ -18,14 +18,14 @@ public class GramSimilarity implements ISimilarity {
         Map<String, Integer> aGrams = Grammifier.grammify(a);
         Map<String, Integer> bGrams = Grammifier.grammify(b);
 
-        int aGramCount = 0;
-        int englishGramCount = 0;
+        long aGramCount = 0;
+        long englishGramCount = 0;
         for (String gram : aGrams.keySet()) {
             aGramCount += aGrams.get(gram);
             englishGramCount += GramData.SINGLETON.getCount(gram);
             score += ((double) aGrams.get(gram)*bGrams.getOrDefault(gram,0))/((double) GramData.SINGLETON.getCount(gram));
         }
-        int bGramCount = 0;
+        long bGramCount = 0;
         for (String gram : bGrams.keySet()) {
             bGramCount += bGrams.get(gram);
         }
