@@ -10,15 +10,13 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class Spider {
 
     private Set<URL> visited;
-    private Map<String, Queue<URL>> domainToURLs;
-    private Queue<String> domainQueue;
+    private Queue<URL> urlQueue;
 
     private Map<String, Long> ungroundTime;
 
     private ISpiderToModel model;
 
-    private static final int MAX_DOMAIN_COUNT = 1048;
-    private static final int MAX_PATH_COUNT = 2048;
+    private static final int MAX_QUEUE_SIZE = 131072;
 
 
     private static RobotsCache robots = new RobotsCache(2048);
@@ -27,8 +25,7 @@ public class Spider {
         this.model = model;
         this.visited = new HashSet<>();
         this.ungroundTime = new ConcurrentHashMap<>();
-        this.domainToURLs = new ConcurrentHashMap<>();
-        this.domainQueue = new ConcurrentLinkedQueue<>();
+        this.urlQueue = new ConcurrentLinkedQueue<>();
     }
 
     public void startCrawling(int numThreads) {
@@ -86,18 +83,8 @@ public class Spider {
         if (visited.contains(url))
             return;
 
-        if (!domainToURLs.containsKey(domain)) {
-           if (domainToURLs.keySet().size() < MAX_DOMAIN_COUNT) {
-               domainQueue.add(domain);
-               domainToURLs.put(domain, new ConcurrentLinkedQueue<>());
-           } else {
-               return;
-           }
-       }
-
-       Queue<URL> urls = domainToURLs.get(domain);
-       if (urls.size() < MAX_PATH_COUNT) {
-           urls.add(url);
+       if (urlQueue.size() < MAX_QUEUE_SIZE) {
+           urlQueue.add(url);
            visited.add(url);
        }
     }
@@ -113,38 +100,26 @@ public class Spider {
     private void ground(URL url, long ms) {
         long t = System.currentTimeMillis();
         String domain = getDomain(url);
-        domainQueue.remove(domain);
-        domainQueue.add(domain);
         ungroundTime.put(domain, Math.max(ungroundTime.getOrDefault(domain, (long) 0), t + ms));
     }
 
     private URL getNextUrl() throws NoSuchElementException {
         long t = System.currentTimeMillis();
-        String domain = null;
-        for (String d : domainQueue) {
-            Long allowed = ungroundTime.getOrDefault(d, 0l);
+        URL url = null;
+        while((url = urlQueue.remove()) != null) {
+            String domain = getDomain(url);
+            Long allowed = ungroundTime.getOrDefault(domain, 0l);
             if (t > allowed) {
-                domain = d;
                 break;
+            } else {
+                urlQueue.add(url);
             }
         }
-        if (domain == null) {
-           throw new NoSuchElementException();
-        }
 
-        Queue<URL> urls = domainToURLs.get(domain);
-        if (urls == null) {
-            throw new NoSuchElementException();
-        }
-        URL url = urls.poll();
         if (url == null) {
             throw new NoSuchElementException();
         }
-        if (urls.isEmpty()) {
-            domainToURLs.remove(domain);
-            domainQueue.remove(domain);
-        }
-        visited.add(url);
+
         if (!robots.isAllowed(url))
             return getNextUrl();
         ground(url, 100);
