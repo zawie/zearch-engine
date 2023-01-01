@@ -29,7 +29,7 @@ public class SearchEngine {
     }
 
     public SearchResult search(String query) {
-        System.out.println("Making searchg: '"+query+"'");
+        System.out.println("Query: '"+query+"'");
         int hashes[] = model.computeMinhashes(query);
         Collection<Long> rowIds = minhashTable.query(hashes);
 
