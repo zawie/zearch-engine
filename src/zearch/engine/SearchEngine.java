@@ -67,7 +67,7 @@ public class SearchEngine {
     private void generateMinhashTable() {
         int numEntries = model.getNumberOfIndexEntries();
 
-//        System.out.println("Num entries: " + numEntries);
+        System.out.println("Num entries: " + numEntries);
         int K = Math.max((int) (Math.log(numEntries) / Math.log(256)), 1); // log base 256
         int L = MinHasher.COUNT/K;
 
