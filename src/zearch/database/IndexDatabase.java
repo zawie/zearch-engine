@@ -120,7 +120,6 @@ public class IndexDatabase {
 
             @Override
             public IndexHashesEntry next() {
-                System.out.println("Free memory: " + Runtime.getRuntime().freeMemory());
                 try {
                     if (!srs.next())
                         return null;
