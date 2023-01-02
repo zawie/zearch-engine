@@ -12,6 +12,7 @@ public class IndexDatabase {
     private static Connection connection;
 
     public static void close() throws SQLException {
+        connection.commit();
         connection.close();
     }
 
@@ -19,6 +20,7 @@ public class IndexDatabase {
         String jdbcURL = "jdbc:h2:"+dbFilepath;
 
         connection = DriverManager.getConnection(jdbcURL, "admin", "password");
+        connection.setAutoCommit(false);
 
         System.out.println("Connected to H2 embedded database.");
 
@@ -64,13 +66,13 @@ public class IndexDatabase {
         columns.add("timestamp");
         values.add("CURRENT_TIMESTAMP");
         columns.add("title");
-        values.add("'" + boundString(metaData.getOrDefault("title",""), 128).replaceAll("'", "''")          + "'");
+        values.add("'" + boundString(metaData.getOrDefault("title",""), 128 - 8).replaceAll("'", "''")          + "'");
         columns.add("description");
-        values.add("'" + boundString(metaData.getOrDefault("description",""), 1024).replaceAll("'", "''")        + "'");
+        values.add("'" + boundString(metaData.getOrDefault("description",""), 1024 - 8).replaceAll("'", "''")        + "'");
         columns.add("keywords");
-        values.add("'" + boundString(metaData.getOrDefault("keywords",""), 256).replaceAll("'", "''")           + "'");
+        values.add("'" + boundString(metaData.getOrDefault("keywords",""), 256 - 8).replaceAll("'", "''")           + "'");
         columns.add("author");
-        values.add("'" + boundString(metaData.getOrDefault("author",""), 64).replaceAll("'", "''")             + "'");
+        values.add("'" + boundString(metaData.getOrDefault("author",""), 64 - 8).replaceAll("'", "''")             + "'");
 
         assert(hashes.length == MinHasher.COUNT);
         for (int h = 0; h < MinHasher.COUNT; h++) {
@@ -79,15 +81,14 @@ public class IndexDatabase {
             columns.add("`hash"+h+"`");
             values.add("X'" + hex + "'");
         }
-//        statement.execute("DELETE FROM index_table WHERE `url` = '"+url+"';"); //TODO: Remove duplicate entries periodically
         statement.execute("INSERT INTO index_table ("+String.join(", ", columns)+") VALUES (" +String.join(", ", values)+ ")");
+        statement.close();
     }
 
     public static Iterator<IndexHashesEntry> getAllIndexEntries() {
+        final Statement stmt ;
+        final ResultSet srs;
 
-
-        Statement stmt = null;
-        ResultSet srs = null;
         try {
             stmt = connection.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE, //or ResultSet.TYPE_FORWARD_ONLY
@@ -96,16 +97,23 @@ public class IndexDatabase {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        ResultSet finalSrs = srs;
+
         return new Iterator<>() {
             @Override
             public boolean hasNext() {
                 boolean nextExists;
                 try {
-                    nextExists = finalSrs.next();
-                    finalSrs.previous();
+                    nextExists = srs.next();
+                    srs.previous();
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
+                }
+                if(!nextExists) {
+                    try {
+                        stmt.close();
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
                 return nextExists;
             }
@@ -113,21 +121,21 @@ public class IndexDatabase {
             @Override
             public IndexHashesEntry next() {
                 try {
-                    if (!finalSrs.next())
+                    if (!srs.next())
                         return null;
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
                 long id;
                 try {
-                    id = finalSrs.getLong("id");
+                    id = srs.getLong("id");
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
                 int[] hashes = new int[MinHasher.COUNT];
                 for (int h = 0; h < MinHasher.COUNT; h++) {
                     try {
-                       byte b = finalSrs.getByte("hash" + h);
+                       byte b = srs.getByte("hash" + h);
                        hashes[h] = Byte.toUnsignedInt(b);
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
@@ -156,11 +164,13 @@ public class IndexDatabase {
                 data.put(rsmd.getColumnLabel(i).toLowerCase(), rs.getString(i));
             }
         }
+        statement.close();
         return data;
     }
 
     public static void removeDuplicates() throws SQLException {
         Statement statement = connection.createStatement();
         statement.execute("DELETE FROM index_table WHERE id NOT IN (SELECT MAX(ID) AS MaxRecordID FROM index_table GROUP BY title, description)");
+        connection.commit();
     }
 }
