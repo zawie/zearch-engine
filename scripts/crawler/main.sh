@@ -1,1 +1,1 @@
-java -cp ./out:./lib/jsoup-1.15.3.jar:./lib/aws-java-sdk-1.12.376.jar zearch.controller.Crawler 2 "$@"
+java -cp ./out:./lib/jsoup-1.15.3.jar zearch.controller.Crawler 2 "$@"
