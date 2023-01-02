@@ -17,7 +17,7 @@ public class IndexEnqueuer {
 
         Runtime rt = Runtime.getRuntime();
         Process pr = rt.exec("aws sqs send-message"
-                + " --queue-url" + queueUrl
+                + " --queue-url " + queueUrl
                 + " --region us-west-2"
                 + " --message-body '" + entry.toJSON() +"'");
     }
