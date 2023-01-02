@@ -1,7 +1,9 @@
 package zearch.sqs.index;
 import zearch.util.IndexRowEntry;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class IndexEnqueuer {
 
@@ -20,8 +22,14 @@ public class IndexEnqueuer {
                 + " --queue-url " + queueUrl
                 + " --region us-west-2"
                 + " --message-body '" + entry.toJSON() + "'";
-        System.out.println(cmd);
+//        System.out.println(cmd);
         Process pr = rt.exec(cmd);
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(pr.getInputStream()));
+        String line = "";
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
     }
 
 }
