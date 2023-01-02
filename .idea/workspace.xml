@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="make short message for testing reasons">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="print output">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/sqs/index/IndexEnqueuer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/sqs/index/IndexEnqueuer.java" afterDir="false" />
     </list>
@@ -236,21 +236,7 @@
       <workItem from="1671678194877" duration="33076000" />
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
-      <workItem from="1672346594516" duration="52656000" />
-    </task>
-    <task id="LOCAL-00044" summary="delete extra search script">
-      <created>1672191206897</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1672191206897</updated>
-    </task>
-    <task id="LOCAL-00045" summary="print num entries">
-      <created>1672191613067</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1672191613067</updated>
+      <workItem from="1672346594516" duration="53365000" />
     </task>
     <task id="LOCAL-00046" summary="fix minhashing">
       <created>1672196355619</created>
@@ -581,7 +567,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672649195217</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="attempt sending json again">
+      <created>1672649445367</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1672649445367</updated>
+    </task>
+    <task id="LOCAL-00094" summary="print output">
+      <created>1672649804543</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1672649804543</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,8 +599,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="include score in respose" />
-    <MESSAGE value="remove domain from queue on empty urls" />
     <MESSAGE value="reduce thread count on main script" />
     <MESSAGE value="print when searches were made" />
     <MESSAGE value="group by title &amp; description" />
@@ -624,6 +622,8 @@
     <MESSAGE value="fix spacing on enquerer" />
     <MESSAGE value="print entry json" />
     <MESSAGE value="make short message for testing reasons" />
-    <option name="LAST_COMMIT_MESSAGE" value="make short message for testing reasons" />
+    <MESSAGE value="attempt sending json again" />
+    <MESSAGE value="print output" />
+    <option name="LAST_COMMIT_MESSAGE" value="print output" />
   </component>
 </project>

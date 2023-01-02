@@ -22,8 +22,7 @@ public class IndexEnqueuer {
                 + " --queue-url " + queueUrl
                 + " --region us-west-2"
                 + " --message-body '" + entry.toJSON() + "'";
-//        System.out.println(cmd);
-        Process pr = rt.exec(cmd);
+        Process pr = rt.exec(new String[] { "bash", "-c", cmd });
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(pr.getInputStream()));
         String line = "";
