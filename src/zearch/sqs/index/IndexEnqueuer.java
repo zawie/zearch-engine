@@ -16,10 +16,12 @@ public class IndexEnqueuer {
     public void enqueue(IndexRowEntry entry) throws IOException, InterruptedException {
 
         Runtime rt = Runtime.getRuntime();
-        Process pr = rt.exec("aws sqs send-message"
+        String cmd = "aws sqs send-message"
                 + " --queue-url " + queueUrl
                 + " --region us-west-2"
-                + " --message-body '" + entry.getURL().toString() +"'"); //TODO: Return json of entry!!!
+                + " --message-body '" + entry.toJSON() + "'";
+        System.out.println(cmd);
+        Process pr = rt.exec(cmd);
     }
 
 }

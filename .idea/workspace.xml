@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="crawler controller, sqs, and controller refactor">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="make short message for testing reasons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/crawler/main.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/crawler/main.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/sqs/index/IndexEnqueuer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/sqs/index/IndexEnqueuer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -238,35 +236,7 @@
       <workItem from="1671678194877" duration="33076000" />
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
-      <workItem from="1672346594516" duration="50946000" />
-    </task>
-    <task id="LOCAL-00040" summary="ignore database_filepath">
-      <created>1672124400870</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1672124400870</updated>
-    </task>
-    <task id="LOCAL-00041" summary="unique id per row">
-      <created>1672127365238</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1672127365238</updated>
-    </task>
-    <task id="LOCAL-00042" summary="increase number of max domains stored">
-      <created>1672127505925</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1672127505925</updated>
-    </task>
-    <task id="LOCAL-00043" summary="initial search engine attempt">
-      <created>1672191189625</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1672191189625</updated>
+      <workItem from="1672346594516" duration="52656000" />
     </task>
     <task id="LOCAL-00044" summary="delete extra search script">
       <created>1672191206897</created>
@@ -583,7 +553,35 @@
       <option name="project" value="LOCAL" />
       <updated>1672627183328</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="enqueuer">
+      <created>1672647931564</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1672647931564</updated>
+    </task>
+    <task id="LOCAL-00090" summary="fix spacing on enquerer">
+      <created>1672648606297</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1672648606297</updated>
+    </task>
+    <task id="LOCAL-00091" summary="print entry json">
+      <created>1672648653004</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1672648653004</updated>
+    </task>
+    <task id="LOCAL-00092" summary="make short message for testing reasons">
+      <created>1672649195217</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1672649195217</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,10 +599,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add more CORS" />
-    <MESSAGE value="remove duplicates from index" />
-    <MESSAGE value="refresh minhashtable every hour" />
-    <MESSAGE value="Penalize missing meta information" />
     <MESSAGE value="include score in respose" />
     <MESSAGE value="remove domain from queue on empty urls" />
     <MESSAGE value="reduce thread count on main script" />
@@ -626,6 +620,10 @@
     <MESSAGE value="adjust print statements in searchengine" />
     <MESSAGE value="switch gram counts to longs" />
     <MESSAGE value="crawler controller, sqs, and controller refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="crawler controller, sqs, and controller refactor" />
+    <MESSAGE value="enqueuer" />
+    <MESSAGE value="fix spacing on enquerer" />
+    <MESSAGE value="print entry json" />
+    <MESSAGE value="make short message for testing reasons" />
+    <option name="LAST_COMMIT_MESSAGE" value="make short message for testing reasons" />
   </component>
 </project>
