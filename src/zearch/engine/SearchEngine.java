@@ -1,6 +1,6 @@
 package zearch.engine;
 
-import zearch.database.IndexEntry;
+import zearch.util.IndexHashesEntry;
 import zearch.engine.datastructures.MinhashTable;
 import zearch.engine.similarity.ComboSimilarity;
 import zearch.engine.similarity.ISimilarity;
@@ -73,9 +73,9 @@ public class SearchEngine {
 
         this.minhashTable = new MinhashTable<>(K, L);
 
-        Iterator<IndexEntry> iter = model.getAllIndexEntries();
+        Iterator<IndexHashesEntry> iter = model.getAllIndexEntries();
         while (iter.hasNext()) {
-            IndexEntry entry = iter.next();
+            IndexHashesEntry entry = iter.next();
             minhashTable.insert(entry.getID(), entry.getHashes());
         }
     }

@@ -26,5 +26,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="h2-2.1.214" level="project" />
+    <orderEntry type="library" name="aws-java-sdk-1.12.376" level="project" />
   </component>
 </module>

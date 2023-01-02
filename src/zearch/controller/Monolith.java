@@ -1,7 +1,7 @@
-package zearch;
+package zearch.controller;
 
 import zearch.database.IndexDatabase;
-import zearch.database.IndexEntry;
+import zearch.util.IndexHashesEntry;
 import zearch.engine.ISearchEngineToModel;
 import zearch.engine.SearchEngine;
 import zearch.engine.SearchResult;
@@ -18,7 +18,7 @@ import java.util.*;
 
 import static java.lang.Thread.sleep;
 
-public class Controller {
+public class Monolith {
 
     public static void main(String[] args) {
         String dbFilepath = args[0];
@@ -43,7 +43,7 @@ public class Controller {
             }
             searchEngine = new SearchEngine(new ISearchEngineToModel() {
                 @Override
-                public Iterator<IndexEntry> getAllIndexEntries() {
+                public Iterator<IndexHashesEntry> getAllIndexEntries() {
                     return IndexDatabase.getAllIndexEntries();
                 }
 

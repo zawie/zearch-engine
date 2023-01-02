@@ -1,12 +1,12 @@
-package zearch.database;
+package zearch.util;
 
 import java.util.Arrays;
 
-public class IndexEntry {
+public class IndexHashesEntry {
 
     private long id;
     private int[] hashes;
-    public IndexEntry(long id, int[] hashes) {
+    public IndexHashesEntry(long id, int[] hashes) {
         this.id = id;
         this.hashes = Arrays.copyOf(hashes, hashes.length);
     }

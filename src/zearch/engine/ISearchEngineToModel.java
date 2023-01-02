@@ -1,13 +1,13 @@
 package zearch.engine;
 
-import zearch.database.IndexEntry;
+import zearch.util.IndexHashesEntry;
 
 import java.util.Iterator;
 import java.util.Map;
 
 public interface ISearchEngineToModel {
 
-    Iterator<IndexEntry> getAllIndexEntries();
+    Iterator<IndexHashesEntry> getAllIndexEntries();
 
     int getNumberOfIndexEntries();
 

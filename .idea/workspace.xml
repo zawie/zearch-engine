@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="stop printing queue">
-      <change afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/ComboSimilarity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/ISimilarity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/word/JaccardWordSimilarity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/top500sites.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/top500sites.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/engine/similarity/GramData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/gram/GramData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/engine/similarity/Grammifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/gram/Grammifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/engine/similarity/Similarity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/gram/GramSimilarity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/engine/similarity/GrammifierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/engine/similarity/GrammifierTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/zearch/engine/similarity/SimilarityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tst/zearch/engine/similarity/SimilarityTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="crawler controller, sqs, and controller refactor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,34 +43,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/zawie/Developer/repos/zearch/engine/lib&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "/Users/zawie/Developer/repos/zearch/engine/scripts/spider",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="zearch.database" />
@@ -91,20 +79,21 @@
       <recent name="zearch.index" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts/spider" />
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/lib/org/json" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/zearch/v2/spider/robots" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/scripts/monolith" />
+      <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/out" />
-      <recent name="$PROJECT_DIR$/lib/org/json" />
-      <recent name="$PROJECT_DIR$/lib" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="zearch" />
@@ -244,42 +233,7 @@
       <workItem from="1671678194877" duration="33076000" />
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
-      <workItem from="1672346594516" duration="34852000" />
-    </task>
-    <task id="LOCAL-00034" summary="fix threading attempt">
-      <created>1671904383759</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1671904383759</updated>
-    </task>
-    <task id="LOCAL-00035" summary="main">
-      <created>1671905121477</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1671905121477</updated>
-    </task>
-    <task id="LOCAL-00036" summary="fix make">
-      <created>1671905197452</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1671905197452</updated>
-    </task>
-    <task id="LOCAL-00037" summary="fix main script">
-      <created>1671905233209</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1671905233209</updated>
-    </task>
-    <task id="LOCAL-00038" summary="fix capitalizaiton in makefile">
-      <created>1671905265901</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1671905265901</updated>
+      <workItem from="1672346594516" duration="45805000" />
     </task>
     <task id="LOCAL-00039" summary="major rework &amp; refactor (new index method!)">
       <created>1672124299048</created>
@@ -589,7 +543,42 @@
       <option name="project" value="LOCAL" />
       <updated>1672533031053</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="word similarity metric added">
+      <created>1672547216019</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1672547216019</updated>
+    </task>
+    <task id="LOCAL-00084" summary="print num entries">
+      <created>1672547318653</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1672547318653</updated>
+    </task>
+    <task id="LOCAL-00085" summary="adjust print statements in searchengine">
+      <created>1672547423518</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1672547423518</updated>
+    </task>
+    <task id="LOCAL-00086" summary="switch gram counts to longs">
+      <created>1672547747190</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1672547747190</updated>
+    </task>
+    <task id="LOCAL-00087" summary="crawler controller, sqs, and controller refactor">
+      <created>1672626901664</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1672626901665</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,11 +596,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="server factor &amp; Access-Control-Allow-Origin" />
-    <MESSAGE value="cors fix attempt" />
-    <MESSAGE value="fix port back to 80" />
-    <MESSAGE value="handle OPTIONS method" />
-    <MESSAGE value="move Access-Control-Allow-Origin header" />
     <MESSAGE value="add more CORS" />
     <MESSAGE value="remove duplicates from index" />
     <MESSAGE value="refresh minhashtable every hour" />
@@ -632,6 +616,11 @@
     <MESSAGE value="simplify URL queue" />
     <MESSAGE value="print queue size" />
     <MESSAGE value="stop printing queue" />
-    <option name="LAST_COMMIT_MESSAGE" value="stop printing queue" />
+    <MESSAGE value="word similarity metric added" />
+    <MESSAGE value="print num entries" />
+    <MESSAGE value="adjust print statements in searchengine" />
+    <MESSAGE value="switch gram counts to longs" />
+    <MESSAGE value="crawler controller, sqs, and controller refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="crawler controller, sqs, and controller refactor" />
   </component>
 </project>

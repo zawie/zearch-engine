@@ -1,6 +1,7 @@
 package zearch.database;
 
 import zearch.minhash.MinHasher;
+import zearch.util.IndexHashesEntry;
 
 import java.net.URL;
 import java.sql.*;
@@ -82,7 +83,7 @@ public class IndexDatabase {
         statement.execute("INSERT INTO index_table ("+String.join(", ", columns)+") VALUES (" +String.join(", ", values)+ ")");
     }
 
-    public static Iterator<IndexEntry> getAllIndexEntries() {
+    public static Iterator<IndexHashesEntry> getAllIndexEntries() {
 
 
         Statement stmt = null;
@@ -110,7 +111,7 @@ public class IndexDatabase {
             }
 
             @Override
-            public IndexEntry next() {
+            public IndexHashesEntry next() {
                 try {
                     if (!finalSrs.next())
                         return null;
@@ -132,7 +133,7 @@ public class IndexDatabase {
                         throw new RuntimeException(e);
                     }
                 }
-                return new IndexEntry(id, hashes);
+                return new IndexHashesEntry(id, hashes);
             }
         };
     }
