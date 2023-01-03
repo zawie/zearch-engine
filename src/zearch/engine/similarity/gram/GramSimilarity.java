@@ -32,7 +32,7 @@ public class GramSimilarity implements ISimilarity {
             score += (
                 (double) aGrams.get(gram) * bGrams.getOrDefault(gram,0)
             )/(
-                (double) aGramCount * bGramCount
+                (double) aGramCount * bGramCount * GramData.SINGLETON.getCount(gram)
             ) ;
         }
 

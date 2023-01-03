@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="renable auto commit">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="multiply">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/controller/Monolith.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/controller/Monolith.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/zearch/engine/similarity/gram/GramSimilarity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/gram/GramSimilarity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -238,27 +237,6 @@
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
       <workItem from="1672346594516" duration="60848000" />
-    </task>
-    <task id="LOCAL-00052" summary="initial search engine">
-      <created>1672350340532</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1672350340532</updated>
-    </task>
-    <task id="LOCAL-00053" summary="implements server">
-      <created>1672351221172</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1672351221172</updated>
-    </task>
-    <task id="LOCAL-00054" summary="adds org.json">
-      <created>1672351253100</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1672351253100</updated>
     </task>
     <task id="LOCAL-00055" summary="add quotes to search script">
       <created>1672351278947</created>
@@ -582,7 +560,28 @@
       <option name="project" value="LOCAL" />
       <updated>1672705414888</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="normalize similarity">
+      <created>1672767213807</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1672767213807</updated>
+    </task>
+    <task id="LOCAL-00102" summary="reduce pool and compared">
+      <created>1672767288322</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1672767288322</updated>
+    </task>
+    <task id="LOCAL-00103" summary="multiply">
+      <created>1672769903154</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1672769903154</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,9 +599,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change https protocol" />
-    <MESSAGE value="change https protocol to TLS" />
-    <MESSAGE value="cast exchange" />
     <MESSAGE value="attempt to not use kmf" />
     <MESSAGE value="add back kmf" />
     <MESSAGE value="simplify URL queue" />
@@ -625,6 +621,9 @@
     <MESSAGE value="remove free memory print" />
     <MESSAGE value="add sim tests" />
     <MESSAGE value="renable auto commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="renable auto commit" />
+    <MESSAGE value="normalize similarity" />
+    <MESSAGE value="reduce pool and compared" />
+    <MESSAGE value="multiply" />
+    <option name="LAST_COMMIT_MESSAGE" value="multiply" />
   </component>
 </project>
