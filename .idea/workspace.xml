@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="remove free memory print">
-      <change afterPath="$PROJECT_DIR$/tst/zearch/engine/similarity/gram/GramSimilarityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tst/zearch/engine/similarity/word/JaccardWordSimilarityTest.java" afterDir="false" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="renable auto commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/controller/Monolith.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/controller/Monolith.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/similarity/gram/GramSimilarity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/similarity/gram/GramSimilarity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +59,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "/Users/zawie/Developer/repos/zearch/engine/src",
+    "last_opened_file_path": "/Users/zawie/Developer/repos/zearch/engine",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -238,21 +237,7 @@
       <workItem from="1671678194877" duration="33076000" />
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
-      <workItem from="1672346594516" duration="60051000" />
-    </task>
-    <task id="LOCAL-00050" summary="add more links">
-      <created>1672263060273</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1672263060274</updated>
-    </task>
-    <task id="LOCAL-00051" summary="fix minhashtable">
-      <created>1672340934395</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1672340934395</updated>
+      <workItem from="1672346594516" duration="60848000" />
     </task>
     <task id="LOCAL-00052" summary="initial search engine">
       <created>1672350340532</created>
@@ -583,7 +568,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672703413322</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="add sim tests">
+      <created>1672705403984</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1672705403984</updated>
+    </task>
+    <task id="LOCAL-00100" summary="renable auto commit">
+      <created>1672705414888</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1672705414888</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,8 +600,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="more meaningful 500 error" />
-    <MESSAGE value="print server start" />
     <MESSAGE value="change https protocol" />
     <MESSAGE value="change https protocol to TLS" />
     <MESSAGE value="cast exchange" />
@@ -626,6 +623,8 @@
     <MESSAGE value="turn off auto commit" />
     <MESSAGE value="print free memory" />
     <MESSAGE value="remove free memory print" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove free memory print" />
+    <MESSAGE value="add sim tests" />
+    <MESSAGE value="renable auto commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="renable auto commit" />
   </component>
 </project>

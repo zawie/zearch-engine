@@ -123,7 +123,6 @@ public class Monolith {
                 String query = args[i];
                 SearchResult result = searchEngine.search(query);
                 result.print(10);
-                System.out.println(result.toJSON());
             }
         }
 
