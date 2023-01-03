@@ -30,10 +30,10 @@ public class GramSimilarity implements ISimilarity {
 
         for (String gram : aGrams.keySet()) {
             score += (
-                (double) aGrams.get(gram) + bGrams.getOrDefault(gram,0)
+                (double) aGrams.get(gram) * bGrams.getOrDefault(gram,0)
             )/(
-                (double) aGramCount + bGramCount
-            );
+                (double) aGramCount * bGramCount
+            ) ;
         }
 
         return score;
