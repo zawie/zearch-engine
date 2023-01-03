@@ -20,7 +20,7 @@ public class IndexDatabase {
         String jdbcURL = "jdbc:h2:"+dbFilepath;
 
         connection = DriverManager.getConnection(jdbcURL, "admin", "password");
-        connection.setAutoCommit(false);
+        connection.setAutoCommit(true);
 
         System.out.println("Connected to H2 embedded database.");
 
@@ -39,6 +39,7 @@ public class IndexDatabase {
         }
         statement.execute("CREATE TABLE IF NOT EXISTS index_table ("+columns+");");
         connection.commit(); // now the database physically exists
+        statement.close();
     }
 
     public static int getRowCount() throws SQLException {
@@ -46,7 +47,9 @@ public class IndexDatabase {
         ResultSet rs = statement.executeQuery("SELECT count(*) from index_table");
         //Retrieving the result
         rs.next();
-        return rs.getInt(1);
+        int count = rs.getInt(1);
+        statement.close();
+        return count;
     }
 
     private static String boundString(String s, int maxSize) {
@@ -172,5 +175,6 @@ public class IndexDatabase {
         Statement statement = connection.createStatement();
         statement.execute("DELETE FROM index_table WHERE id NOT IN (SELECT MAX(ID) AS MaxRecordID FROM index_table GROUP BY title, description)");
         connection.commit();
+        statement.close();
     }
 }
