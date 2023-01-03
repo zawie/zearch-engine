@@ -14,8 +14,9 @@ import java.util.*;
 public class SearchEngine {
 
     private ISearchEngineToModel model;
-    private static final int MAX_INDEPTH_COMPARED = 10000;
-    private static final int MAX_RETURNED = 50;
+    private static final int MAX_INDEPTH_COMPARED = 5000;
+    private static final int MAX_RETURNED = 30;
+
 
     private ISimilarity similarity = new ComboSimilarity(
             new GramSimilarity(),
