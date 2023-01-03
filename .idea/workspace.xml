@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="print output">
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="remove free memory print">
+      <change afterPath="$PROJECT_DIR$/tst/zearch/engine/similarity/gram/GramSimilarityTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tst/zearch/engine/similarity/word/JaccardWordSimilarityTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zearch/sqs/index/IndexEnqueuer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/sqs/index/IndexEnqueuer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +22,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -102,17 +104,17 @@
       <recent name="zearch" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="zearch.engine.similarity.word" />
+      <recent name="zearch.engine.similarity.gram" />
       <recent name="zearch.engine.similarity" />
       <recent name="zearch.engine" />
       <recent name="zearch.minhash" />
-      <recent name="zearch.spider.robots" />
-      <recent name="zearch.query" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="zearch.v2.database" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SimilarityTest.test1">
+  <component name="RunManager" selected="JUnit.GramSimilarityTest.test1">
     <configuration name="Spider" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zearch.spider.Spider" />
       <module name="zearch-engine" />
@@ -122,6 +124,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GramSimilarityTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="zearch-engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.engine.similarity.gram.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="zearch.engine.similarity.gram" />
+      <option name="MAIN_CLASS_NAME" value="zearch.engine.similarity.gram.GramSimilarityTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,32 +175,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GrammifierTest.testcomputeGramScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JaccardWordSimilarityTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="zearch-engine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zearch.engine.similarity.gram.*" />
+          <option name="PATTERN" value="zearch.engine.similarity.word.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="zearch.engine.similarity" />
-      <option name="MAIN_CLASS_NAME" value="zearch.engine.similarity.GrammifierTest" />
-      <option name="METHOD_NAME" value="testcomputeGramScore" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MinhashTableTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="zearch-engine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="zearch.engine.datastructures.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="zearch.engine" />
-      <option name="MAIN_CLASS_NAME" value="zearch.engine.MinhashTableTest" />
+      <option name="PACKAGE_NAME" value="zearch.engine.similarity.word" />
+      <option name="MAIN_CLASS_NAME" value="zearch.engine.similarity.word.JaccardWordSimilarityTest" />
       <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -207,19 +209,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Spider" />
+      <item itemvalue="JUnit.GramSimilarityTest.test1" />
       <item itemvalue="JUnit.GrammifierTest" />
       <item itemvalue="JUnit.GrammifierTest.testAbcs" />
-      <item itemvalue="JUnit.GrammifierTest.testcomputeGramScore" />
+      <item itemvalue="JUnit.JaccardWordSimilarityTest.test1" />
       <item itemvalue="JUnit.SimilarityTest.test1" />
-      <item itemvalue="JUnit.MinhashTableTest.test1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GramSimilarityTest.test1" />
+        <item itemvalue="JUnit.JaccardWordSimilarityTest.test1" />
         <item itemvalue="JUnit.SimilarityTest.test1" />
         <item itemvalue="JUnit.GrammifierTest" />
         <item itemvalue="JUnit.GrammifierTest.testAbcs" />
-        <item itemvalue="JUnit.GrammifierTest.testcomputeGramScore" />
-        <item itemvalue="JUnit.MinhashTableTest.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -236,35 +238,7 @@
       <workItem from="1671678194877" duration="33076000" />
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
-      <workItem from="1672346594516" duration="53365000" />
-    </task>
-    <task id="LOCAL-00046" summary="fix minhashing">
-      <created>1672196355619</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1672196355619</updated>
-    </task>
-    <task id="LOCAL-00047" summary="attempt fix minhashing">
-      <created>1672209930510</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1672209930510</updated>
-    </task>
-    <task id="LOCAL-00048" summary="change ground method">
-      <created>1672211107883</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1672211107883</updated>
-    </task>
-    <task id="LOCAL-00049" summary="fix crawl workflow">
-      <created>1672257216338</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1672257216338</updated>
+      <workItem from="1672346594516" duration="60051000" />
     </task>
     <task id="LOCAL-00050" summary="add more links">
       <created>1672263060273</created>
@@ -581,7 +555,35 @@
       <option name="project" value="LOCAL" />
       <updated>1672649804543</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="run command using bash">
+      <created>1672650187061</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1672650187061</updated>
+    </task>
+    <task id="LOCAL-00096" summary="turn off auto commit">
+      <created>1672701896039</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1672701896039</updated>
+    </task>
+    <task id="LOCAL-00097" summary="print free memory">
+      <created>1672702244078</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1672702244078</updated>
+    </task>
+    <task id="LOCAL-00098" summary="remove free memory print">
+      <created>1672703413322</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1672703413322</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,10 +601,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reduce thread count on main script" />
-    <MESSAGE value="print when searches were made" />
-    <MESSAGE value="group by title &amp; description" />
-    <MESSAGE value="https attempt" />
     <MESSAGE value="more meaningful 500 error" />
     <MESSAGE value="print server start" />
     <MESSAGE value="change https protocol" />
@@ -624,6 +622,10 @@
     <MESSAGE value="make short message for testing reasons" />
     <MESSAGE value="attempt sending json again" />
     <MESSAGE value="print output" />
-    <option name="LAST_COMMIT_MESSAGE" value="print output" />
+    <MESSAGE value="run command using bash" />
+    <MESSAGE value="turn off auto commit" />
+    <MESSAGE value="print free memory" />
+    <MESSAGE value="remove free memory print" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove free memory print" />
   </component>
 </project>
