@@ -8,8 +8,10 @@ import zearch.engine.similarity.word.JaccardWordSimilarity;
 import zearch.minhash.MinHasher;
 import zearch.engine.similarity.gram.GramSimilarity;
 import zearch.util.Pair;
+import zearch.util.TopKCollector;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class SearchEngine {
 
@@ -32,37 +34,26 @@ public class SearchEngine {
     public SearchResult search(String query) {
         System.out.println("Query: '"+query+"'");
         int hashes[] = model.computeMinhashes(query);
-        Collection<Long> rowIds = minhashTable.query(hashes);
 
-        PriorityQueue<Pair<Map<String, String>, Double>> orderedResults = new PriorityQueue<>(
-                (o1, o2) -> -Double.compare(o1.getSecond(), o2.getSecond())
+        return new SearchResult(query,
+            minhashTable.query(hashes).stream()
+                .unordered()
+                .limit(MAX_INDEPTH_COMPARED)
+                .parallel()
+                .map(id -> model.getData(id))
+                .map(data -> {
+                    double score = similarity.similarity(
+                            query,
+                            data.values().stream().parallel().collect(Collectors.joining(" "))
+                    );
+                    if (!data.containsKey("description"))
+                        score /= 10;
+                    if (!data.containsKey("title"))
+                        score /= 20;
+                    return new Pair<>(data, score);
+                })
+                .collect(new TopKCollector<>(MAX_RETURNED, Comparator.comparing(Pair::getSecond)))
         );
-
-        int idsProcessed = 0;
-        for (Long id : rowIds) {
-            if (++idsProcessed > MAX_INDEPTH_COMPARED)
-                break;
-            Map<String, String> data = model.getData(id);
-            StringBuilder metaText = new StringBuilder();
-            for (String v : data.values()) {
-                metaText.append(" ").append(v);
-            }
-            Double score = similarity.similarity(query, metaText.toString());
-            // Penalize missing meta information
-            if (!data.containsKey("description"))
-                score /= 10;
-            if (!data.containsKey("title"))
-                score /= 20;
-            orderedResults.add(new Pair<>(data, score));
-        }
-
-        List<Pair<Map<String, String>, Double>> topResults = new LinkedList<>();
-        for (int i = 0; !orderedResults.isEmpty() && i < MAX_RETURNED; i++) {
-            topResults.add(orderedResults.poll());
-        }
-        SearchResult result = new SearchResult(query, topResults);
-
-        return result;
     }
 
     private void generateMinhashTable() {
