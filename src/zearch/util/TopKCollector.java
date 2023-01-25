@@ -45,7 +45,11 @@ public class TopKCollector<T> implements Collector<T, TreeSet<T>, List<T>> {
 
     @Override
     public Function<TreeSet<T>, List<T>> finisher() {
-        return (container) -> container.stream().collect(Collectors.toList());
+        return (container) -> {
+            List<T> list = container.stream().collect(Collectors.toList());
+            Collections.reverse(list);
+            return list;
+        };
     }
 
     @Override

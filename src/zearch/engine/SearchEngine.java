@@ -52,7 +52,7 @@ public class SearchEngine {
                         score /= 20;
                     return new Pair<>(data, score);
                 })
-                .collect(new TopKCollector<>(MAX_RETURNED, Comparator.comparing(Pair::getSecond)))
+                .collect(new TopKCollector<>(MAX_RETURNED, Comparator.comparingDouble(Pair::getSecond)))
         );
     }
 
