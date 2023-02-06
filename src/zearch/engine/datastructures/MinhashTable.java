@@ -5,13 +5,16 @@ import java.util.stream.Stream;
 
 public class MinhashTable<E> {
 
-    private Map<Integer, Set<E>> table;
-    private int K;
-    private int L;
+    private Set<E>[] table;
+    private final int K;
+    private final int L;
+
+    private final int B = 100000;
     public MinhashTable(int K, int L) {
         this.L = L;
         this.K = K;
-        this.table = new HashMap<>();
+
+        this.table = new Set[B];
     }
 
     public void insert(E element, int hashes[]) {
@@ -22,8 +25,10 @@ public class MinhashTable<E> {
            for (int k = 0; k < K; k++)
                keys[k] = hashes[l*K + k];
             Integer key = Arrays.hashCode(keys);
-            table.putIfAbsent(key, new HashSet<>());
-            table.get(key).add(element);
+            if (table[key % B] == null) {
+                table[key % B] = new HashSet<>();
+            }
+            table[key % B].add(element);
         }
     }
 
@@ -40,7 +45,7 @@ public class MinhashTable<E> {
                 return keys;
             })
             .map(Arrays::hashCode)
-            .filter(key -> table.containsKey(key))
-            .flatMap(key -> table.get(key).stream());
+            .filter(key -> table[key % B] != null)
+            .flatMap(key -> table[key % B].stream());
     }
 }
