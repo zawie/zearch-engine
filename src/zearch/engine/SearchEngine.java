@@ -36,7 +36,7 @@ public class SearchEngine {
         int hashes[] = model.computeMinhashes(query);
 
         return new SearchResult(query,
-            minhashTable.query(hashes).stream()
+            minhashTable.query(hashes)
                 .unordered()
                 .limit(MAX_INDEPTH_COMPARED)
                 .parallel()

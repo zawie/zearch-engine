@@ -1,6 +1,7 @@
 package zearch.engine.datastructures;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class MinhashTable<E> {
 
@@ -26,17 +27,20 @@ public class MinhashTable<E> {
         }
     }
 
-    public Collection<E> query(int hashes[]) {
+    public Stream<E> query(int[] hashes) {
         assert(hashes.length >= K*L);
-        Set<E> output = new HashSet<>();
-        int[] keys = new int[K + 1];
-        for (int l = 0; l < L; l++) {
-            keys[K] = l;
-            for (int k = 0; k < K; k++)
-                keys[k] = hashes[l*K + k];
-            Integer key = Arrays.hashCode(keys);
-            output.addAll(table.getOrDefault(key, Collections.emptySet()));
-        }
-        return output;
+        return Stream.iterate(0, n-> n+1)
+            .limit(L)
+            .parallel()
+            .map(l -> {
+                int[] keys = new int[K + 1];
+                keys[K] = l;
+                for (int k = 0; k < K; k++)
+                    keys[k] = hashes[l*K + k];
+                return keys;
+            })
+            .map(Arrays::hashCode)
+            .filter(key -> table.containsKey(key))
+            .flatMap(key -> table.get(key).stream());
     }
 }
