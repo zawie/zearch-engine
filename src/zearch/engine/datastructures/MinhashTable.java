@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 public class MinhashTable<E> {
 
-    private LinkedHashSet<E>[] table;
+    private Set<E>[] table;
     private final int K;
     private final int L;
 
@@ -14,7 +14,7 @@ public class MinhashTable<E> {
         this.L = L;
         this.K = K;
 
-        this.table = new LinkedHashSet[B];
+        this.table = new Set[B];
     }
 
     public void insert(E element, int hashes[]) {
@@ -26,7 +26,7 @@ public class MinhashTable<E> {
                keys[k] = hashes[l*K + k];
             Integer key = Arrays.hashCode(keys);
             if (table[key % B] == null) {
-                table[key % B] = new LinkedHashSet<>();
+                table[key % B] = new HashSet<>();
             }
             table[key % B].add(element);
         }
