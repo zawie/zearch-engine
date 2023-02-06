@@ -14,7 +14,7 @@ public class SearchResult {
 
     private String JSONstring;
 
-    public SearchResult(String query, List<Pair<Map<String, String>, Double>> topResults) {
+    public SearchResult(String query, List<Pair<Map<String, String>, Double>> topResults, Double queryTime) {
         this.query = query;
         this.topResults = topResults;
 
@@ -34,6 +34,7 @@ public class SearchResult {
                 site.put("score", score);
                 list.put(site);
             }
+            result.put("query_time", queryTime);
             result.put("count", topResults.size());
             result.put("results", list);
             this.JSONstring = result.toString();

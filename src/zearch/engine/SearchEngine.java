@@ -35,8 +35,8 @@ public class SearchEngine {
         System.out.println("Query: '"+query+"'");
         int hashes[] = model.computeMinhashes(query);
 
-        return new SearchResult(query,
-            minhashTable.query(hashes)
+        long t0 = System.nanoTime();
+        var results =  minhashTable.query(hashes)
                 .unordered()
                 .limit(MAX_INDEPTH_COMPARED)
                 .parallel()
@@ -52,8 +52,10 @@ public class SearchEngine {
                         score /= 20;
                     return new Pair<>(data, score);
                 })
-                .collect(new TopKCollector<>(MAX_RETURNED, Comparator.comparingDouble(Pair::getSecond)))
-        );
+                .collect(new TopKCollector<>(MAX_RETURNED, Comparator.comparingDouble(Pair::getSecond)));
+        long t1 = System.nanoTime();
+
+        return new SearchResult(query, results, ( (double) (t1 - t0)) / 1000000000.0);
     }
 
     private void generateMinhashTable() {
