@@ -8,7 +8,7 @@ import java.text.StringCharacterIterator;
 
 public class MinHasher {
 
-    public static final int COUNT = 4096;
+    public static final int COUNT = 1024;
 
     private static final int gramSize = 9;
 
