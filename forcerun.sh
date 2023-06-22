@@ -7,5 +7,6 @@ make
 # Stop all currently running java tasks
 kill -9 `ps -C java -o pid=`
 
+SITES=$(shuf -n 50 data/top500sites.txt | sed ':a;N;$!ba;s/\n/ /g')
 # Run the program
-./scripts/monolith/main.sh https://en.wikipedia.org/wiki/List_of_most_visited_websites > output.log &
+./scripts/monolith/main.sh $SITES > output.log &
