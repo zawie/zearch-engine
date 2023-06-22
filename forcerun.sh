@@ -9,4 +9,4 @@ kill -9 `ps -C java -o pid=`
 
 SITES=$(shuf -n 50 data/top500sites.txt | sed ':a;N;$!ba;s/\n/ /g')
 # Run the program
-nohup ./scripts/monolith/main.sh $SITES
+nohup ./scripts/monolith/main.sh $SITES &
