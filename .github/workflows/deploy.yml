@@ -21,13 +21,9 @@ jobs:
     - name: Install SSH client
       run: sudo apt-get install -y openssh-client
 
-    - name: Deploy to EC2
+    - name: Deploy to Server
       run: |
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ssh_key
         chmod 600 ssh_key
 
-        ssh -o StrictHostKeyChecking=no -i ssh_key ${{ secrets.PROD_USER }}@api.search.zawie.io "cd ~/zearch-engine && git pull origin main"
-
-    - name: Run Java program
-      run: |
-        ssh -o StrictHostKeyChecking=no -i ssh_key ${{ secrets.PROD_USER }}@api.search.zawie.io "cd ~/zearch-engine && sudo ./scripts/main.sh"
+        ssh -o StrictHostKeyChecking=no -i ssh_key ${{ secrets.PROD_USER }}@api.search.zawie.io "cd ~/zearch-engine && sudo ./forcerun.sh"
