@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="decrease defualt thread count" />
+    <list default="true" id="4fe06c05-4281-4ca5-b2aa-e140aedb152e" name="Changes" comment="increase minhash count (4096)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/database/IndexDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/ISearchEngineToModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/ISearchEngineToModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/SearchEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zearch/engine/datastructures/MinhashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zearch/engine/datastructures/MinhashTable.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +24,8 @@
       <list>
         <option value="package-info" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,6 +69,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -109,7 +116,20 @@
       <recent name="zearch.v2.database" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GramSimilarityTest.test1">
+  <component name="RunManager" selected="Application.Monolith">
+    <configuration name="Monolith" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="zearch.controller.Monolith" />
+      <module name="zearch-engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="zearch.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Spider" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zearch.spider.Spider" />
       <module name="zearch-engine" />
@@ -154,22 +174,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GrammifierTest.testAbcs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="zearch-engine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="zearch.engine.similarity.gram.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="zearch.engine.similarity" />
-      <option name="MAIN_CLASS_NAME" value="zearch.engine.similarity.GrammifierTest" />
-      <option name="METHOD_NAME" value="testAbcs" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="JaccardWordSimilarityTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="zearch-engine" />
       <extension name="coverage">
@@ -204,19 +208,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Spider" />
+      <item itemvalue="Application.Monolith" />
       <item itemvalue="JUnit.GramSimilarityTest.test1" />
       <item itemvalue="JUnit.GrammifierTest" />
-      <item itemvalue="JUnit.GrammifierTest.testAbcs" />
       <item itemvalue="JUnit.JaccardWordSimilarityTest.test1" />
       <item itemvalue="JUnit.SimilarityTest.test1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Monolith" />
         <item itemvalue="JUnit.GramSimilarityTest.test1" />
         <item itemvalue="JUnit.JaccardWordSimilarityTest.test1" />
         <item itemvalue="JUnit.SimilarityTest.test1" />
         <item itemvalue="JUnit.GrammifierTest" />
-        <item itemvalue="JUnit.GrammifierTest.testAbcs" />
       </list>
     </recent_temporary>
   </component>
@@ -234,83 +238,14 @@
       <workItem from="1671821714890" duration="87358000" />
       <workItem from="1672344750676" duration="1834000" />
       <workItem from="1672346594516" duration="60848000" />
-    </task>
-    <task id="LOCAL-00057" summary="server factor &amp; Access-Control-Allow-Origin">
-      <created>1672391849959</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1672391849959</updated>
-    </task>
-    <task id="LOCAL-00058" summary="server factor &amp; Access-Control-Allow-Origin">
-      <created>1672391923404</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1672391923404</updated>
-    </task>
-    <task id="LOCAL-00059" summary="cors fix attempt">
-      <created>1672425419463</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1672425419463</updated>
-    </task>
-    <task id="LOCAL-00060" summary="fix port back to 80">
-      <created>1672425603570</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1672425603570</updated>
-    </task>
-    <task id="LOCAL-00061" summary="handle OPTIONS method">
-      <created>1672425984662</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1672425984662</updated>
-    </task>
-    <task id="LOCAL-00062" summary="move Access-Control-Allow-Origin header">
-      <created>1672426101687</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1672426101687</updated>
-    </task>
-    <task id="LOCAL-00063" summary="add more CORS">
-      <created>1672429370874</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1672429370874</updated>
-    </task>
-    <task id="LOCAL-00064" summary="remove duplicates from index">
-      <created>1672431917977</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1672431917977</updated>
-    </task>
-    <task id="LOCAL-00065" summary="refresh minhashtable every hour">
-      <created>1672432385067</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1672432385067</updated>
-    </task>
-    <task id="LOCAL-00066" summary="Penalize missing meta information">
-      <created>1672433074096</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1672433074096</updated>
-    </task>
-    <task id="LOCAL-00067" summary="include score in respose">
-      <created>1672433493670</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1672433493670</updated>
+      <workItem from="1674675608565" duration="1295000" />
+      <workItem from="1676153179772" duration="2038000" />
+      <workItem from="1676512070921" duration="598000" />
+      <workItem from="1676761976569" duration="597000" />
+      <workItem from="1677532027964" duration="43000" />
+      <workItem from="1681504928088" duration="336000" />
+      <workItem from="1681681721994" duration="16000" />
+      <workItem from="1687532247307" duration="106000" />
     </task>
     <task id="LOCAL-00068" summary="remove domain from queue on empty urls">
       <created>1672442922890</created>
@@ -578,7 +513,84 @@
       <option name="project" value="LOCAL" />
       <updated>1672770578663</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="make search functional">
+      <created>1674622316145</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1674622316145</updated>
+    </task>
+    <task id="LOCAL-00107" summary="fix order">
+      <created>1674666388254</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1674666388254</updated>
+    </task>
+    <task id="LOCAL-00108" summary="stream query">
+      <created>1675723061197</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1675723061198</updated>
+    </task>
+    <task id="LOCAL-00109" summary="array instead of hashmap">
+      <created>1675723956112</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1675723956113</updated>
+    </task>
+    <task id="LOCAL-00110" summary="LinkedHashSet">
+      <created>1675724604465</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1675724604465</updated>
+    </task>
+    <task id="LOCAL-00111" summary="back to HashSet">
+      <created>1675725942729</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1675725942730</updated>
+    </task>
+    <task id="LOCAL-00112" summary="update scripter">
+      <created>1675726023923</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1675726023924</updated>
+    </task>
+    <task id="LOCAL-00113" summary="add query time">
+      <created>1675726894251</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1675726894254</updated>
+    </task>
+    <task id="LOCAL-00114" summary="reduce minhash count (1024)">
+      <created>1675732947243</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1675732947244</updated>
+    </task>
+    <task id="LOCAL-00115" summary="increase minhash count (2048)">
+      <created>1675733429795</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1675733429796</updated>
+    </task>
+    <task id="LOCAL-00116" summary="increase minhash count (4096)">
+      <created>1676153451441</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1676153451442</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,17 +608,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="simplify URL queue" />
-    <MESSAGE value="print queue size" />
-    <MESSAGE value="stop printing queue" />
-    <MESSAGE value="word similarity metric added" />
-    <MESSAGE value="print num entries" />
-    <MESSAGE value="adjust print statements in searchengine" />
-    <MESSAGE value="switch gram counts to longs" />
-    <MESSAGE value="crawler controller, sqs, and controller refactor" />
-    <MESSAGE value="enqueuer" />
-    <MESSAGE value="fix spacing on enquerer" />
-    <MESSAGE value="print entry json" />
     <MESSAGE value="make short message for testing reasons" />
     <MESSAGE value="attempt sending json again" />
     <MESSAGE value="print output" />
@@ -621,6 +622,17 @@
     <MESSAGE value="multiply" />
     <MESSAGE value="dividing by gram count" />
     <MESSAGE value="decrease defualt thread count" />
-    <option name="LAST_COMMIT_MESSAGE" value="decrease defualt thread count" />
+    <MESSAGE value="make search functional" />
+    <MESSAGE value="fix order" />
+    <MESSAGE value="stream query" />
+    <MESSAGE value="array instead of hashmap" />
+    <MESSAGE value="LinkedHashSet" />
+    <MESSAGE value="back to HashSet" />
+    <MESSAGE value="update scripter" />
+    <MESSAGE value="add query time" />
+    <MESSAGE value="reduce minhash count (1024)" />
+    <MESSAGE value="increase minhash count (2048)" />
+    <MESSAGE value="increase minhash count (4096)" />
+    <option name="LAST_COMMIT_MESSAGE" value="increase minhash count (4096)" />
   </component>
 </project>

@@ -7,7 +7,7 @@ import java.util.Map;
 
 public interface ISearchEngineToModel {
 
-    Iterator<IndexHashesEntry> getAllIndexEntries();
+    Stream<IndexHashesEntry> getAllIndexEntries();
 
     int getNumberOfIndexEntries();
 

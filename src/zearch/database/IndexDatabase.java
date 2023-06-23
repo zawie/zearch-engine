@@ -6,6 +6,8 @@ import zearch.util.IndexHashesEntry;
 import java.net.URL;
 import java.sql.*;
 import java.util.*;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class IndexDatabase {
 
@@ -88,7 +90,7 @@ public class IndexDatabase {
         statement.close();
     }
 
-    public static Iterator<IndexHashesEntry> getAllIndexEntries() {
+    public static Stream<IndexHashesEntry> getAllIndexEntries() {
         final Statement stmt ;
         final ResultSet srs;
 
@@ -101,28 +103,11 @@ public class IndexDatabase {
             throw new RuntimeException(e);
         }
 
-        return new Iterator<>() {
-            @Override
-            public boolean hasNext() {
-                boolean nextExists;
-                try {
-                    nextExists = srs.next();
-                    srs.previous();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                if(!nextExists) {
-                    try {
-                        stmt.close();
-                    } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-                return nextExists;
-            }
+
+        return java.util.stream.StreamSupport.stream(new Supplier<IndexHashesEntry>() {
 
             @Override
-            public IndexHashesEntry next() {
+            public IndexHashesEntry get() {
                 try {
                     if (!srs.next())
                         return null;
@@ -146,7 +131,54 @@ public class IndexDatabase {
                 }
                 return new IndexHashesEntry(id, hashes);
             }
-        };
+        );
+
+//        return new Iterator<>() {
+//            @Override
+//            public boolean hasNext() {
+//                boolean nextExists;
+//                try {
+//                    nextExists = srs.next();
+//                    srs.previous();
+//                } catch (SQLException e) {
+//                    throw new RuntimeException(e);
+//                }
+//                if(!nextExists) {
+//                    try {
+//                        stmt.close();
+//                    } catch (SQLException e) {
+//                        throw new RuntimeException(e);
+//                    }
+//                }
+//                return nextExists;
+//            }
+//
+//            @Override
+//            public IndexHashesEntry next() {
+//                try {
+//                    if (!srs.next())
+//                        return null;
+//                } catch (SQLException e) {
+//                    throw new RuntimeException(e);
+//                }
+//                long id;
+//                try {
+//                    id = srs.getLong("id");
+//                } catch (SQLException e) {
+//                    throw new RuntimeException(e);
+//                }
+//                int[] hashes = new int[MinHasher.COUNT];
+//                for (int h = 0; h < MinHasher.COUNT; h++) {
+//                    try {
+//                       byte b = srs.getByte("hash" + h);
+//                       hashes[h] = Byte.toUnsignedInt(b);
+//                    } catch (SQLException e) {
+//                        throw new RuntimeException(e);
+//                    }
+//                }
+//                return new IndexHashesEntry(id, hashes);
+//            }
+//        };
     }
 
     public static Map<String, String> getData(Long rowId) throws SQLException {

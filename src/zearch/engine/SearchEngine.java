@@ -67,7 +67,7 @@ public class SearchEngine {
 
         this.minhashTable = new MinhashTable<>(K, L);
 
-        Iterator<IndexHashesEntry> iter = model.getAllIndexEntries();
+        Stream<IndexHashesEntry> iter = model.getAllIndexEntries();
         while (iter.hasNext()) {
             IndexHashesEntry entry = iter.next();
             minhashTable.insert(entry.getID(), entry.getHashes());
